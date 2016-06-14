@@ -1,24 +1,34 @@
 // app
 
+
+// slid files
 @import "config";
 @import "mixin";
 
+
 // foundation
 @import "foundation/_reset";
+@import "foundation/_base";
 
 
 // layout
 @import "layout/_header";
 @import "layout/_footer";
+@import "layout/_main";
 
 
-// object
+// object - c
 @import "object/component/_button";
-@import "object/component/_social";
+@import "object/component/_ads";
+@import "object/component/_icon";
 
 
-//@import "object/project/_hoge";
+// object - p
+@import "object/project/_post";
+@import "object/project/_cover";
 
+
+// object - u
 //@import "object/utility/_hoge";
 
 

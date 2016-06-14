@@ -1,86 +1,91 @@
 //reset css
 
+
+// font
+@import "fonts";
+
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, figure, figcaption, footer, header, 
 menu, nav, output, ruby, section, summary, time, mark, audio, video, main {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	font-weight: normal;
-	font-style: normal;
-	vertical-align: baseline;
-	background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 article, aside, details, figcaption, figure, footer, header, menu, nav, section, main {
-	display: block;
-	margin: 0;
+  display: block;
+  margin: 0;
 }
 
 body {
-	line-height: $line-height;
-	font-size: $font-size;
-	font-family: $font-family;
-	text-align: left;
-	color: $text-main-color;
-	background: $background-body-color;
+  line-height: $line-height;
+  font-size: $font-size;
+  font-family: $font-family;
+  text-align: left;
+  color: $text-main-color;
+  background: $background-body-color;
 }
 
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 
 img {
-	-ms-interpolation-mode: bicubic;
-	vertical-align: bottom;
-	max-width: 100%;
-	height: auto;
-	width /***/: auto;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+  width /***/: auto;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 //	transition: $base-transition;
-	color: $link-color;
-	&:hover {
-		color: $hover-color;
-	}
-	&:focus {
-		outline: none;
-	}
+  color: $link-color;
+  &:hover {
+    color: $hover-color;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 input, textarea, select {
-	font-family: inherit;
-	vertical-align: middle;
+  font-family: inherit;
+  vertical-align: middle;
 }
 
 input[type="submit"] {
-	cursor: pointer;
-	border-radius: 0;
+  cursor: pointer;
+  border-radius: 0;
 }
 
 em,strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 

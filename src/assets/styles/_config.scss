@@ -2,20 +2,18 @@
 
 
 // --- color ---
-//$main-color: #01050d;
-//$accent-color1: #ea6060;
-//$accent-color2: #4ec6f8;
-//$accent-color3: #dd1f24;
-
-
 // --- text color ---
 $text-main-color: #00a6c1;
-//$text-sub-color: #f0f0f0;
+
+
+// --- logo color ---
+$logo-color: #00a6c1;
+$logo-hover-color: #7FF0FF;
 
 
 // --- link color ---
 $link-color: #00CAE5;
-$hover-color: #E4FAFE;
+$hover-color: #7FF0FF;
 
 $block-link-color: #00a6c1;
 $block-hover-color: #ffffff;
@@ -31,8 +29,6 @@ $background-line-main-color: #00a6c1;
 $background-line-sub-color: #e0e0e0;
 
 
-
-
 // --- sns color ---
 $twitter-color: #55ACEE;
 $facebook-color: #3B5998;
@@ -43,21 +39,24 @@ $googleplus-color: #dd4b39;
 
 
 // --- font ---
-$font-family: "Hiragino Sans", "ヒラギノ角ゴシック", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-$font-family-g: 'Georgia', serif;
+$font-family: "Noto Sans", "Hiragino Sans", "ヒラギノ角ゴシック", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+$font-family-g: "Georgia", serif;
+
 
 // --- google fonts ---
-$font-family-qs: 'Quattrocento Sans', sans-serif;
-$font-family-q: 'Quattrocento', serif;
-$font-family-c: 'Cinzel', serif;
-$font-family-gd: 'Gilda Display', serif;
-$font-family-bsc: 'Bilbo Swash Caps', cursive;
-$font-family-noto: 'Noto Serif', serif;
-$font-family-cardo: 'Cardo', serif;
-$font-family-lato: 'Lato', sans-serif;
+$font-family-q-sans: "Quattrocento Sans", sans-serif;
+$font-family-q: "Quattrocento", serif;
+$font-family-c: "Cinzel", serif;
+$font-family-gd: "Gilda Display", serif;
+$font-family-bsc: "Bilbo Swash Caps", cursive;
+$font-family-noto-sans: "Noto Sans", sans-serif;
+$font-family-noto: "Noto Serif", serif;
+$font-family-cardo: "Cardo", serif;
+$font-family-lato: "Lato", sans-serif;
+
 
 // --- code fonts ---
-$font-family-code: 'Source Code Pro', monospace;
+$font-family-code: "Source Code Pro", monospace;
 
 
 

@@ -1,7 +1,125 @@
+// header
+
+
 .header {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 40px;
+  background: $background-main-color;
+  &__ttl {
+    width: 50%;
+    font-family: $font-family-lato;
+    font-weight: 300;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    a {
+      color: $logo-color;
+      transition: $base-transition;
+      &:hover {
+        color: $logo-hover-color;
+      }
+    }
+    span {
+      font-weight: 700;
+    }
+  }
+  &__nav {
+    width: 50%;
+    &-lists {
+      display: flex;
+      justify-content: flex-end;
+      li {
+        height: 40px;
+        margin-left: 20px;
+        &:first-child {
+          margin-left: 0;
+        }
+        a {
+          display: block;
+          text-transform: uppercase;
+          font-family: $font-family-q-sans;
+          font-size: 11px;
+          letter-spacing: 1px;
+          transition: $base-transition;
+        }
+      }
+    }
+  }
+  &:before,
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: $background-main-color;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

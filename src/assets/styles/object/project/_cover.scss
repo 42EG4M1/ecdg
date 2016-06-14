@@ -1,0 +1,93 @@
+// cover
+
+
+
+.p-cover {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 40px auto 80px;
+  &__ttl {
+    order: 2;
+    flex-grow: 2;
+    font-size: 11px;
+    text-align: center;
+  }
+  &__nav {
+    order: 1;
+    flex-grow: 1;
+    &-lists {
+      display: flex;
+    }
+  }
+  &__share {
+    order: 3;
+    flex-grow: 2;
+    text-align: right;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+// fonts
+
+
+
+
+// --- sans serif ---
+// Lato:100,100i,300,300i,400,400i,700,700i,900,900i
+// Noto+Sans:400,400i,700,700i
+// Quattrocento+Sans:400,400i,700,700i
+// Source+Code+Pro:200,300,400,500,600,700,900
+
+// --- serif ---
+// Noto+Serif:400,400i,700,700i
+// Quattrocento:400,700
+
+
+
+
+// var
+$lato: "Lato:300,700";
+$noto: "Noto+Serif";
+$notoSans: "Noto+Sans";
+$quattrocento: "Quattrocento";
+$quattrocentoSams: "Quattrocento+Sans";
+$sourseCodePro: "Source+Code+Pro";
+
+
+
+
+// Embed ※複数指定はパイプ区切り
+@import url('https://fonts.googleapis.com/css?family=#{$lato}|#{$notoSans}|#{$quattrocentoSams}');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
