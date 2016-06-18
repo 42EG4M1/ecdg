@@ -1,13 +1,20 @@
 // ads
 
 
+
+
 .c-ads {
-  
+  &__inner {
+    p {
+      width: 100%;
+      max-width: 728px;
+      height: 90px;//100%
+      margin: 0 auto;
+      text-align: center;
+      background: $background-main-color;
+    }
+  }
 }
-
-
-
-
 
 
 

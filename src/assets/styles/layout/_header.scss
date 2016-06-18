@@ -41,11 +41,15 @@
         }
         a {
           display: block;
+          color: $text-main-color;
           text-transform: uppercase;
           font-family: $font-family-q-sans;
           font-size: 11px;
           letter-spacing: 1px;
           transition: $base-transition;
+          &:hover {
+            color: $hover-color;
+          }
         }
       }
     }

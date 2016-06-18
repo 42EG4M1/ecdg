@@ -7,6 +7,7 @@ $maxWidth: 1440px;
   box-sizing: border-box;
   width: 100%;
   padding: 0 50px;
+  background: $background-body-color;
   &__inner {
     width: 100%;
     max-width: $maxWidth;

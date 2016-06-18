@@ -3,15 +3,114 @@
 
 
 .p-post {
-  
+  display: flex;
+  flex-wrap: wrap;
+  &__list {
+    width: 100%;
+    max-width: 272px;
+    margin: 0 0 56px 20px;
+    &:nth-of-type(n+1):not(:nth-of-type(n+21)) {
+      order: 1;
+    }
+    &:nth-of-type(n+21):not(:nth-of-type(n+41)) {
+      order: 3;
+    }
+    &:nth-of-type(n+41):not(:nth-of-type(n+61)) {
+      order: 5;
+    }
+    &:nth-of-type(n+61) {
+      order: 7;
+    }
+    &:nth-of-type(5n+1) {
+      margin-left: 0;
+    }
+    &--no1,
+    &--no2,
+    &--no3 {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 56px;
+    }
+    &--no1 {
+      order: 2;
+    }
+    &--no2 {
+      order: 4;
+    }
+    &--no3 {
+      order: 6;
+    }
+  }
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  &__ttl {
+    order: 2;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 8px;
+    font-size: 12px;
+    a {
+      color: $text-main-color;
+      transition: $base-transition;
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+  &__eyecatch {
+    order: 1;
+    width: 100%;
+    height: 200px;
+    background: $background-main-color;
+    a {
+      display: block;
+    }
+  }
+  &__date {
+    order: 3;
+    margin-top: 5px;
+    font-family: $font-family-lato;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  &__taxonomy {
+    order: 4;
+    margin-top: 5px;
+    padding-top: 3px;
+    font-family: $font-family-lato;
+    border-top: 1px solid $background-main-color;
+    a {
+      transition: $base-transition;
+    }
+    span {
+      position: relative;
+      margin-right: 20px;
+      &:not(:last-child):after {
+        content: "/";
+        position: absolute;
+        top: 0;
+        right: -12px;
+        color: $text-main-color;
+      }
+    }
+  }
+  &__like {
+    position: absolute;
+    top: 208px;
+    right: 0;
+    cursor: pointer;
+    .c-icon.heart {
+      height: 14px;
+      fill: #ddd;
+    }
+    &:hover .c-icon.heart {
+      fill: $heart-color;
+    }
+  }
 }
-
-
-
-
-
-
-
 
 
 
