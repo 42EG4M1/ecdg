@@ -1,0 +1,51 @@
+// aff
+
+
+
+.p-aff {
+  width: 100%;
+  background: $background-body-color;
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 56px;
+  }
+  &__item {
+    width: 120px;
+    height: 90px;
+    margin: 0 10px;
+    background: $background-main-color;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
