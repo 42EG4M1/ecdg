@@ -1,0 +1,104 @@
+// search
+
+
+.c-search {
+  position: relative;
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__submit {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    vertical-align: top;
+    border: 1px solid $line-color;
+    border-right: none;
+    border-radius: none;
+    transition: width .3s ease;
+  }
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid $line-color;
+    border-left-color: transparent;
+    transition: left .3s ease;
+  }
+  &:hover &__inner &__submit,
+  &__submit:focus {
+    width: 160px;
+  }
+  &:hover &__icon,
+  &__submit:focus + &__icon{
+    position: absolute;
+    left: 160px;
+    background: #fff;
+    z-index: -1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

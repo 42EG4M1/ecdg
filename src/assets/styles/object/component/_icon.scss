@@ -1,9 +1,52 @@
 // icon
 
 .c-icon {
+  max-width: 20px;
   height: 16px;
-  a:hoveer &--tw {
-    fill: $twitter-color;
+  fill: $link-color;
+  vertical-align: middle;
+  transition: $base-transition;
+  transform: translateY(-2px);
+  a:hover & {
+    fill: $hover-color;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

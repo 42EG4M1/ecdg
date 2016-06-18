@@ -11,21 +11,67 @@
   margin: 40px auto 80px;
   &__ttl {
     order: 2;
-    flex-grow: 2;
-    font-size: 11px;
+    flex: 1 1 30%;
+    font-size: 12px;
     text-align: center;
   }
-  &__nav {
+  &__inner--nav {
     order: 1;
-    flex-grow: 1;
-    &-lists {
-      display: flex;
+    flex: 1 1 35%;
+  }
+  &__inner--share {
+    order: 3;
+    flex: 1 1 35%;
+    text-align: right;
+  }
+  &__nav {
+    display: flex;
+    position: relative;
+    &-list {
+      > a {
+        box-sizing: border-box;
+        display: block;
+        height: 40px;
+        padding: 0 10px;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-family: $font-family-q-sans;
+        letter-spacing: 1px;
+        border: 1px solid $line-color;
+        border-right: none;
+        .c-icon {
+          height: 6px;
+          transform: translateY(-1px);
+          transition: 0s;
+        }
+      }
+    }
+    &-search {
+      width: 40px;
+      height: 40px;
+      .c-icon {
+        transform: translateY(-1px);
+      }
     }
   }
   &__share {
-    order: 3;
-    flex-grow: 2;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    &-txt {
+      margin-right: 20px;
+      a {
+        display: block;
+        font-size: 11px;
+        transition: $base-transition;
+        .c-icon {
+          height: 12px;
+          margin-left: 3px;
+        }
+      }
+    }
+    &-svg {
+      margin-left: 16px;
+    }
   }
 }
 
@@ -33,17 +79,61 @@
 
 
 
+.p-cover__dd {
+  display: none;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 600px;
+  &-list {
+    text-align: center;
+    > a {
+      display: block;
+      width: 100px;
+      height: 40px;
+      padding: 0 10px;
+      color: #fff;
+      background: $block-link-color;
+      @include ellipsis;
+      &:hover {
+        background: $block-hover-color;
+      }
+    }
+  }
+  .p-cover__nav-list:hover & {
+    display: flex;
+  }
+}
 
 
 
+.p-cover__nav-list:hover > a {
+  color: #fff;
+  background: $block-link-color;
+  .c-icon {
+    fill: #fff;
+  }
+}
 
 
-
-
-
-
-
-
+//
+//
+//
+//@media #{$mq1440} {
+//.p-cover__dd {
+//  max-width: 1440px;
+//  background: #fff;
+//  border: 1px solid $line-color;
+//  z-index: 1;
+//  &-list {
+//    flex: 0 1 120px;
+//    text-align: center;
+//  }
+//}
+//}
+//
+//
 
 
 
