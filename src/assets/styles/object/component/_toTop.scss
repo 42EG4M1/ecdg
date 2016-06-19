@@ -1,0 +1,47 @@
+// to top
+
+
+
+.to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 80px;
+  a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: $accent-color;
+    transition: $base-transition;
+    .c-icon.arrowUp {
+      fill: #fff;
+      height: 8px;
+    }
+    &:hover {
+      background: $block-hover-color;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

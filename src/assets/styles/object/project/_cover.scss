@@ -8,7 +8,7 @@
   width: 100%;
   height: 40px;
   line-height: 40px;
-  margin: 40px auto 80px;
+  margin: $base-margin auto;
   &__ttl {
     order: 2;
     flex: 1 1 30%;

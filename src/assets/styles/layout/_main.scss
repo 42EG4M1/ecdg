@@ -1,16 +1,15 @@
 // main
 
-$maxWidth: 1440px;
 
 
 .main {
   box-sizing: border-box;
   width: 100%;
-  padding: 0 50px;
+  padding: 0 100px;
   background: $background-body-color;
   &__inner {
     width: 100%;
-    max-width: $maxWidth;
+    max-width: $max-width;
     height: 100%;
     margin: 0 auto;
   }

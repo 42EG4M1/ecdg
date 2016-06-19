@@ -1,7 +1,18 @@
 // config
 
 
-// --- color ---
+// --- color --- 
+// 明度 ->
+// $var: lighten($color, n%);
+// $var: darken($color, n%);
+// 彩度 ->
+// $var: saturate($color, n%);
+// $var: desaturate($color, n%);
+// 透明度 ->
+// $var: transparentize($color, n);
+// $var: rgba($color, n);
+
+
 // --- text color ---
 $text-main-color: #00a6c1;
 
@@ -20,8 +31,8 @@ $block-hover-color: #7FF0FF;
 
 
 // --- bk color ---
-$background-main-color: #e4fafe;
-$background-body-color: #fff;
+$background-main-color: #fff;
+$background-body-color: #e4fafe;
 
 
 // --- line color ---
@@ -35,8 +46,9 @@ $instagram-color: #231F20;
 $googleplus-color: #dd4b39;
 
 
-// --- icon ---
-$heart-color: #E2264D;
+// --- accent ---
+$accent-color: #00a6c1;
+$accent-color-2: #E2264D;
 
 
 
@@ -71,6 +83,19 @@ $font-size: 12px;
 
 // --- line height ---
 $line-height: 1.7;
+
+
+
+
+// --- width ---
+$max-width: 1920px;
+
+
+
+
+// --- margin ---
+$base-margin: 64px;
+$main-margin: 80px;
 
 
 
