@@ -7,7 +7,8 @@ $post-width: calc(20.3125% - 30px);// 18.75%+(30px/1920px)
 .p-post {
   display: flex;
   flex-wrap: wrap;
-  &__list {
+  &__item {
+//    display: flex; 最下部のflexitemを揃える場合
     width: $post-width;
     margin: 0 0 $main-margin 30px;
     &:nth-of-type(n+1):not(:nth-of-type(n+21)) {
@@ -43,6 +44,7 @@ $post-width: calc(20.3125% - 30px);// 18.75%+(30px/1920px)
     }
   }
   &__inner {
+//    flex: 1 1 100%; 最下部のflexitemを揃える場合
     display: flex;
     flex-direction: column;
   }
@@ -50,6 +52,7 @@ $post-width: calc(20.3125% - 30px);// 18.75%+(30px/1920px)
     order: 2;
     width: 100%;
     margin-top: 16px;
+//    margin: 16px 0; 最下部のflexitemを揃える場合
     font-size: 13px;
     a {
       color: $text-main-color;
@@ -59,7 +62,7 @@ $post-width: calc(20.3125% - 30px);// 18.75%+(30px/1920px)
       }
     }
   }
-  &__eyecatch {
+  &__thumb {
     position: relative;
     order: 1;
     width: 100%;
@@ -105,7 +108,8 @@ $post-width: calc(20.3125% - 30px);// 18.75%+(30px/1920px)
   }
   &__meta {
     order: 3;
-    margin-top: 10px;
+    margin-top: 16px;
+//    margin-top: auto; 最下部のflexitemを揃える場合
     &-inner {
       display: flex;
       justify-content: space-between;
