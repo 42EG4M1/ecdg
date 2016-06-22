@@ -4,13 +4,86 @@
 .c-pager {
   margin-bottom: $base-margin;
   &__inner {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    a {
+    a:not(.next):not(.prev) {
+      position: relative;
+      display: block;
       transition: $base-transition;
+      overflow: hidden;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: calc(50% - 10px);
+        width: 0;
+        height: 1px;
+        background: $line-color;
+        transition: width .3s ease;
+      }
+      &:hover:before {
+        right: auto;
+        left: calc(50% - 10px);
+        width: 20px;
+      }
     }
   }
   &__num {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     margin: 0 10px;
+    text-align: center;
+    &.prev,
+    &.next {
+      position: relative;
+      width: auto;
+      padding: 0 20px;
+      transition: $base-transition;
+      &:before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border: 1px solid $line-color;
+        transform: rotate(45deg);
+        transition: all .2s ease;
+        @include vertical-center;
+      }
+    }
+    &.prev {
+      &:before {
+        left: 3px;
+        border-top: none;
+        border-right: none;
+      }
+      &:hover:before {
+        left: 0;
+      }
+    }
+    &.next {
+      &:before {
+        right: 3px;
+        border-left: none;
+        border-bottom: none;
+      }
+      &:hover:before {
+        right: 0;
+      }
+    }
+    &.current {
+      position: relative;
+      font-weight: bold;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 10px);
+        width: 20px;
+        height: 1px;
+        background: $line-color;
+      }
+    }
   }
 }
 
