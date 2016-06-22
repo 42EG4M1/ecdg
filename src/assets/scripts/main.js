@@ -3,41 +3,6 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   function coverFixed() {
     var $win = $(window),
         elm = document.getElementById('js-cover');
@@ -108,7 +73,15 @@
   
   
   function scrollInViews() {
-    
+    var win = $(window),
+        winH = win.height(),
+        winTop = win.scrollTop(),
+        $wrap = $('#js-wrapper');
+    if (winTop > winH / 3) {
+      $wrap.addClass('is-active');
+    } else {
+      $wrap.removeClass('is-active');
+    }
   }
   
   
@@ -120,14 +93,12 @@
   
   function scrollInit() {
     coverFixed();
+    scrollInViews();
   }
   
   
   $(function () {
-    var winW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-        win = $(window),
-        winH = win.height();
-    
+    var win = $(window);
     win.on('scroll', function() {
       scrollInit();
     });
@@ -136,3 +107,58 @@
   });
   
 }());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

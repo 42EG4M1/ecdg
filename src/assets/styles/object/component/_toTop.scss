@@ -6,6 +6,9 @@
   position: fixed;
   bottom: 80px;
   right: 80px;
+  transition: $base-transition;
+  visibility: hidden;
+  opacity: 0;
   a {
     display: block;
     width: 40px;
@@ -24,7 +27,10 @@
   }
 }
 
-
+.is-active .to-top {
+  visibility: visible;
+  opacity: 1;
+}
 
 
 
