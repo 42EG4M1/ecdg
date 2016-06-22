@@ -1,0 +1,29 @@
+// clearfix
+
+
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+}
+// @include clearfix;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

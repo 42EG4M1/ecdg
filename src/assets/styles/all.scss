@@ -3,7 +3,21 @@
 
 // slid files
 @import "config";
-@import "mixin";
+
+
+// config - settings
+@import "config/settings/_setting";
+@import "config/settings/_color";
+@import "config/settings/_fontSet";
+@import "config/settings/_easing";
+@import "config/settings/_mediaQuery";
+
+
+// config - mixins
+@import "config/mixins/_clearfix";
+@import "config/mixins/_position";
+@import "config/mixins/_ellipsis";
+@import "config/mixins/_placeholder";
 
 
 // foundation
@@ -24,6 +38,7 @@
 @import "object/component/_search";
 @import "object/component/_pager";
 @import "object/component/_toTop";
+@import "object/component/_noScript";
 
 
 // object - p
@@ -34,7 +49,28 @@
 
 
 // object - u
-//@import "object/utility/_hoge";
+@import "object/utility/_visible";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

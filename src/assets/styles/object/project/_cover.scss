@@ -3,12 +3,25 @@
 
 
 .p-cover {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 40px;
-  line-height: 40px;
   margin: $base-margin auto;
+  &__hold {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $max-width;
+    height: 40px;
+    line-height: 40px;
+    .is-fixed & {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 9;
+    }
+  }
   &__ttl {
     order: 2;
     flex: 1 1 30%;

@@ -9,13 +9,64 @@
   
   
   
-
   
   
   
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  function coverFixed() {
+    var $win = $(window),
+        elm = document.getElementById('js-cover');
+    if (elm === null) {
+      return false;
+    }
+    $(elm).each(function() {
+      var position = $(this).offset().top,
+          winScrollTop = $win.scrollTop();
+      if (winScrollTop > position) {
+        $(this).addClass('is-fixed');
+      } else if (winScrollTop < position) {
+        $(this).removeClass('is-fixed');
+      }
+    });
+  }
+  
+  
+  function modalOpen() {
+    var $open = $('#is-open'),
+        $close = $('#is-close'),
+        $modal = $('#js-modal');
+    $close.on('click', function() {
+      $modal.removeClass('is-visible');
+    });
+    $open.on('click', function() {
+      $modal.addClass('is-visible');
+    });
+  }
   
   
   function toTop() {
@@ -28,14 +79,6 @@
       return false;
     });
   }
-  
-  
-  
-  function init() {
-    toTop();
-  }
-  
-  
   
   
   $.fn.inViews = function(inviewCase) {
@@ -64,11 +107,32 @@
   };
   
   
+  function scrollInViews() {
+    
+  }
+  
+  
+  function init() {
+    toTop();
+    modalOpen();
+  }
+  
+  
+  function scrollInit() {
+    coverFixed();
+  }
   
   
   $(function () {
-    init();
+    var winW = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        win = $(window),
+        winH = win.height();
     
+    win.on('scroll', function() {
+      scrollInit();
+    });
+        
+    init();
   });
   
 }());
