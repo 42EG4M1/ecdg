@@ -1,0 +1,113 @@
+// page
+
+
+
+
+.p-page {
+  &__inner {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  &__ttl {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding-left: 2px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-family: $font-family-q-sans;
+    font-weight: 700;
+    letter-spacing: 10px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      right: -15px;
+      width: 10px;
+      height: 1px;
+      background: $accent-color;
+    }
+    &:after {
+      content: "";
+      display: block;
+    }
+  }
+  &__block {
+    margin-bottom: 80px;
+    p {
+      margin-bottom: 20px;
+      a {
+        border-bottom: 1px solid $link-color;
+        transition: $base-transition;
+      }
+    }
+  }
+  &__float {
+    @include clearfix;
+    img {
+      float: left;
+      width: 240px;
+      height: 240px;
+      margin-right: 20px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
