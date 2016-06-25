@@ -1,7 +1,8 @@
 // pager
 
 
-.c-pager {
+.p-pager {
+  margin-top: 0;
   margin-bottom: $base-margin;
   &__inner {
     display: flex;

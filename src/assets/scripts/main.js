@@ -2,7 +2,6 @@
 //  "use strict";
   
   
-  
   function coverFixed() {
     var $win = $(window),
         elm = document.getElementById('js-cover');
@@ -17,6 +16,13 @@
       } else if (winScrollTop < position) {
         $(this).removeClass('is-fixed');
       }
+    });
+  }
+  
+  
+  function clearContens(elm, speed) {
+    elm.on('click', function () {
+      $(this).parent().fadeOut(speed);
     });
   }
   
@@ -36,7 +42,7 @@
   
   function toTop() {
     $('a[href^="#"]').on('click', function() {
-      var speed = 300,
+      var speed = 800,
           href = $(this).attr('href'),
           target = $(href === '#' || href === '' ? 'html' : href),
           position = target.offset().top;
@@ -88,6 +94,7 @@
   function init() {
     toTop();
     modalOpen();
+    clearContens($('#js-ieBtn'), 800);
   }
   
   

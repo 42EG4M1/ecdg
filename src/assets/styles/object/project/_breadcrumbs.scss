@@ -1,0 +1,76 @@
+// breadcrumbs
+
+
+
+
+.p-breadcrumbs {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  right: 0;
+  height: auto;
+  margin: 0 auto;
+  &__inner {
+    display: flex;
+    p {
+      position: relative;
+      margin-right: 40px;
+      &:not(:first-child):before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 1px);
+        left: -30px;
+        width: 20px;
+        height: 1px;
+        background: $accent-color;
+      }
+      a {
+        transition: $base-transition;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

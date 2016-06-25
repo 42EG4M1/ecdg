@@ -19,17 +19,17 @@
 
 <body>
 <script>/* ga */</script>
-<noscript class="no-script" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
+<noscript class="p-noScript" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
 <!--[if lt IE 10]>
-<div class="ie">
-  <div class="ie__hold">
+<div class="p-ie">
+  <div class="p-ie__hold">
     <h3><span>Color Me Shop</span> Design Gallery</h3>
     <h4>カラーミーショップで制作されたネットショップの事例集。</h4>
     <p>恐れ入りますが、ご利用のブラウザ(インターネット閲覧の為のソフト)は古いバージョンのため、<br />本Webサイトではサポートしておりません。</p>
     <p>古いバージョンのブラウザでは、正常に表示されない箇所が出てくるため非表示としております。</p>
     <p>本サイトを閲覧するには、<a href="http://browsehappy.com">最新のブラウザをインストール</a>してからご覧ください。</p>
   </div>
-  <p class="btn--ie" id="js-ieBtn">この表示を削除する</p>
+  <p class="p-ie__btn" id="js-ieBtn">この表示を削除する</p>
 </div>
 <![endif]-->
 <svg class="svg-defs">
@@ -198,7 +198,7 @@
     </ul>
   </div>
   <div class="p-modal__btn">
-    <div class="btn--close" id="is-close"></div>
+    <div class="c-btn--close" id="is-close"></div>
   </div>
 </div>
 
@@ -275,8 +275,8 @@
   
     <div class="p-cover__inner--menu">
       <div class="p-cover__menu">
-        <div class="p-cover__menu-btn btn--menu" id="is-open">
-          <span class="btn--menu-t"></span><span class="btn--menu-m"></span><span class="btn--menu-b"></span>
+        <div class="p-cover__menu-btn c-btn--menu" id="is-open">
+          <span class="c-btn--menu-t"></span><span class="c-btn--menu-m"></span><span class="c-btn--menu-b"></span>
         </div>
         <div class="p-cover__menu-search c-search">
           <form action="/" method="get" class="c-search__inner">
@@ -298,6 +298,15 @@
   
   </div>
 </section>
+
+
+<!-- breadcrumbs
+<section class="main__inner p-breadcrumbs">
+  <div class="p-breadcrumbs__inner">
+    <p><a href="/">HOME</a></p><p>カテゴリー</p>
+  </div>
+</section>
+-->
 
 
 <section class="main__inner p-post">
@@ -1303,16 +1312,16 @@
 </section>
 
 
-<aside class="main__inner c-pager">
-  <div class="c-pager__inner">
-    <a class="prev c-pager__num" href="/">PREV</a>
-    <span class='c-pager__num current'>1</span>
-    <a class='c-pager__num' href='/'>2</a>
-    <a class='c-pager__num' href='/'>3</a>
-    <a class='c-pager__num' href='/'>4</a>
-    <span class="c-pager__num dots">&hellip;</span>
-    <a class='c-pager__num' href='/'>6</a>
-    <a class="next c-pager__num" href="/">NEXT</a>
+<aside class="main__inner p-pager">
+  <div class="p-pager__inner">
+    <a class="prev p-pager__num" href="/">PREV</a>
+    <span class='p-pager__num current'>1</span>
+    <a class='p-pager__num' href='/'>2</a>
+    <a class='p-pager__num' href='/'>3</a>
+    <a class='p-pager__num' href='/'>4</a>
+    <span class="p-pager__num dots">&hellip;</span>
+    <a class='p-pager__num' href='/'>6</a>
+    <a class="next p-pager__num" href="/">NEXT</a>
   </div>
 </aside>
 
@@ -1337,7 +1346,7 @@
 </footer>
 
 
-<div class="to-top" id="js-toTop"><a href="#"><svg class="c-icon arrowUp"><use xlink:href="#arrowUpIcon"/></svg></a></div>
+<div class="c-toTop" id="js-toTop"><a href="#"><svg class="c-icon arrowUp"><use xlink:href="#arrowUpIcon"/></svg></a></div>
 
 
 </div>

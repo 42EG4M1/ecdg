@@ -6,7 +6,7 @@
 
 
 // menu btn
-.btn--menu {
+.c-btn--menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,7 +39,7 @@
 
 
 // modal close
-.btn--close {
+.c-btn--close {
   position: relative;
   width: 100%;
   height: 100%;
@@ -71,18 +71,6 @@
     transform: rotate(45deg);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

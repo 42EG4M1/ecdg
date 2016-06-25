@@ -2,7 +2,7 @@
 
 
 
-.to-top {
+.c-toTop {
   position: fixed;
   bottom: 80px;
   right: 80px;
@@ -27,7 +27,7 @@
   }
 }
 
-.is-active .to-top {
+.is-active .c-toTop {
   visibility: visible;
   opacity: 1;
 }
