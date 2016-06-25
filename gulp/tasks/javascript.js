@@ -6,6 +6,7 @@ const $      = require('gulp-load-plugins')();
 gulp.task('js', ['uglify'], () => {
   return gulp.src([
     'node_modules/jquery/dist/jquery.min.js',
+    'src/assets/scripts/libraries/jquery.pjax.min.js',
     config.dest + 'app.min.js'
   ])
     .pipe($.concat('app.min.js'))
