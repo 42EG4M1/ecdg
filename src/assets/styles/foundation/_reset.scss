@@ -70,21 +70,35 @@ table {
   border-spacing: 0;
 }
 
+em,strong {
+  font-weight: bold;
+}
+
 input, textarea, select {
   font-family: inherit;
   vertical-align: middle;
 }
 
+select,
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="search"],
+input[type="datetime"],
+input[type="image"],
+input[type="password"],
+input[type="submit"] {
+  display: block;
+  border: none;
+  border-radius: none;
+  box-shadow: none;
+}
+
 input[type="submit"] {
   cursor: pointer;
-  border-radius: 0;
 }
-
-em,strong {
-  font-weight: bold;
-}
-
-
 
 
 
