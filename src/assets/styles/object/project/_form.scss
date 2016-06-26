@@ -1,0 +1,104 @@
+// form
+
+
+// 間隔(top)
+$base-margin: 40px;
+
+
+
+.p-form {
+  max-width: 500px;
+  .wpcf7 {
+    margin-top: 50px;
+  }
+  &__box {
+    margin-top: $base-margin;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__ttl {
+    margin-bottom: 8px;
+    font-size: 11px;
+  }
+  &__input {
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  &__textarea {
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+  &__checkbox {
+    margin-top: 40px;
+    vertical-align: middle;
+    font-size: 11px;
+    color: $link-color;
+    input,
+    label {
+      cursor: pointer;
+    }
+  }
+  &__submit {
+    margin-top: 50px;
+    input {
+      box-sizing: border-box;
+      width: 160px;
+      height: 40px;
+      margin: 0 auto;
+      color: $link-color;
+      border: 1px solid $line-color;
+      background: none;
+      transition: $base-transition;
+      &:hover {
+        color: #fff;
+        background: $accent-color;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
