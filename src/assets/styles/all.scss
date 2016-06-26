@@ -8,7 +8,6 @@
 @import "config/settings/_easing";
 @import "config/settings/_mediaQuery";
 
-
 // config - mixins
 @import "config/mixins/_clearfix";
 @import "config/mixins/_position";
@@ -16,9 +15,16 @@
 @import "config/mixins/_placeholder";
 
 
+
+
 // foundation
+@import "foundation/_fonts";
 @import "foundation/_reset";
 @import "foundation/_base";
+@import "foundation/_noscript";
+@import "foundation/_ie";
+
+
 
 
 // layout
@@ -27,19 +33,15 @@
 @import "layout/_main";
 
 
+
+
 // object - c
-@import "object/component/_menu";
 @import "object/component/_share";
 @import "object/component/_button";
-@import "object/component/_ads";
 @import "object/component/_icon";
-@import "object/component/_search";
 @import "object/component/_toTop";
 
-
 // object - p
-@import "object/project/_noScript";
-@import "object/project/_ie";
 @import "object/project/_modal";
 @import "object/project/_cover";
 @import "object/project/_post";
@@ -47,8 +49,10 @@
 @import "object/project/_profile";
 @import "object/project/_pagination";
 @import "object/project/_breadcrumbs";
+@import "object/project/_menu";
+@import "object/project/_search";
+@import "object/project/_ads";
 @import "object/project/_aff";
-
 
 // object - u
 @import "object/utility/_visible";
