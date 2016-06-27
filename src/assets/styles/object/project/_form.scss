@@ -1,9 +1,6 @@
 // form
 
 
-// 間隔(top)
-$base-margin: 40px;
-
 
 
 .p-form {
@@ -12,7 +9,7 @@ $base-margin: 40px;
     margin-top: 50px;
   }
   &__box {
-    margin-top: $base-margin;
+    margin-top: 40px;
     &:first-child {
       margin-top: 0;
     }

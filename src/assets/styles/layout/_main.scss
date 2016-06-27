@@ -9,9 +9,9 @@
   background: $background-body-color;
   &__inner {
     width: 100%;
-    max-width: $max-width;
+    max-width: $width-max;
     height: 100%;
-    margin: $main-margin auto 0;
+    margin: $margin-main auto 0;
   }
 }
 

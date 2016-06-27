@@ -1,9 +1,13 @@
 // pager
 
 
+
+
 .p-pagination {
-  margin-top: 0;
-  margin-bottom: $base-margin;
+  margin-bottom: $margin-base;
+  .p-card + & {
+    margin-top: 0;
+  }
   &__inner {
     display: flex;
     justify-content: center;
@@ -87,8 +91,6 @@
     }
   }
 }
-
-
 
 
 

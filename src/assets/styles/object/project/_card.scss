@@ -10,7 +10,7 @@ $post-width: calc(20.3125% - 30px);// 18.75%+(30px/1920px)
   &__item {
 //    display: flex; 最下部のflexitemを揃える場合
     width: $post-width;
-    margin: 0 0 $main-margin 30px;
+    margin: 0 0 $margin-main 30px;
     &:nth-of-type(n+1):not(:nth-of-type(n+21)) {
       order: 1;
     }
@@ -31,7 +31,7 @@ $post-width: calc(20.3125% - 30px);// 18.75%+(30px/1920px)
     &--no3 {
       width: 100%;
       max-width: 100%;
-      margin-bottom: $main-margin;
+      margin-bottom: $margin-main;
     }
     &--no1 {
       order: 2;
