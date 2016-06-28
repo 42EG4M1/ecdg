@@ -66,6 +66,18 @@
              c-0.6,0.6-1.5,1-2.5,1H83c-0.9,0-1.7-0.3-2.3-0.9l-9-9c-1.4-1.4-1.4-3.6,0-5l39.1-39.1c1.4-1.4,3.6-1.4,5,0l12.6,12.6
              C129.7,112.1,129.7,114.4,128.3,115.8z"/>
   </symbol>
+  <symbol id="hatenaIcon" viewBox="0 0 200 200">
+    <path d="M85.9,91.8c2.2-1.3,3.3-3.6,3.3-6.8c0-3.3-1-5.6-3.1-7C84,76.7,80,76,74.1,76H69v18h4.8
+             C79.6,94,83.7,93.1,85.9,91.8z"/>
+    <path d="M89.6,111.3c-2.1-1.5-6.1-2.3-11.9-2.3H69v19h8.3c5.6,0,9.6-0.6,12-2c2.4-1.4,3.5-3.8,3.5-7.1
+             C92.8,115.3,91.8,112.7,89.6,111.3z"/>
+    <path d="M170.4,0H99.8H29.2C13,0,0,13.5,0,29.7v70.6v70.6C0,187.2,13,200,29.2,200h70.6h70.6
+             c16.2,0,29.6-12.8,29.6-29.1v-70.6V29.7C200,13.5,186.6,0,170.4,0z M129,56h21v59h-21V56z M112.5,131.4c-2,3.5-4.8,6.3-8.4,8.2
+             c-3,1.6-6.6,2.7-11,3.4c-4.4,0.7-11.5,1-21.5,1H47V57h23.8c9.9,0,16.7,0.1,20.7,0.8c3.9,0.6,7.3,1.6,10.1,3.2
+             c3.2,1.8,5.7,4.1,7.4,7.1c1.7,3,2.5,6.5,2.5,10.4c0,5-1.3,8.9-3.8,11.8c-2.5,2.9-6.6,5.1-12.1,6.7c6.2,0.5,11.1,2.7,14.5,6.6
+             c3.5,3.9,5.2,9.1,5.2,15.6C115.4,123.7,114.4,127.8,112.5,131.4z M139.5,144.5c-6.5,0-11.8-5.3-11.8-11.8c0-6.5,5.3-11.8,11.8-11.8
+             c6.5,0,11.8,5.3,11.8,11.8C151.3,139.2,146,144.5,139.5,144.5z"/>
+  </symbol>
   <symbol id="searchIcon" viewBox="0 0 200 200">
     <path d="M200,191.2l-53.6-53.6c12.6-14.6,20.2-33.5,20.2-54.3c0-46-37.3-83.3-83.3-83.3S0,37.3,0,83.3
              s37.3,83.3,83.3,83.3c20.8,0,39.7-7.6,54.3-20.2l53.6,53.6L200,191.2z M13.3,83.3c0-38.7,31.3-70,70-70s70,31.3,70,70
@@ -195,30 +207,40 @@
   <div class="p-cover__hold">
   
     <h2 class="p-cover__ttl">カラーミーショップで制作されたネットショップの事例集。</h2>
-  
+
     <div class="p-cover__menu p-menu">
       <div class="p-menu__inner">
+        
         <div class="p-menu__btn c-btn--menu" id="is-open">
           <span class="c-btn--menu-t"></span><span class="c-btn--menu-m"></span><span class="c-btn--menu-b"></span>
         </div>
-        <div class="p-menu__srh p-search">
+        
+        <div class="p-menu__item p-search">
           <form action="/" method="get" class="p-search__inner">
             <input type="search" id="s" name="s" class="p-search__submit" value="">
             <p class="p-search__icon"><svg class="c-icon search"><use xlink:href="#searchIcon"/></svg></p>
           </form>
         </div>
+        
+<!--
+        <div class="p-menu__item c-share">
+          <p class="c-share__icon"><svg class="c-icon share"><use xlink:href="#shareIcon"/></svg></p>
+        </div>
+-->
+        
       </div>
     </div>
   
-    <div class="p-cover__share c-share">
-      <div class="c-share__inner">
-        <p class="c-share__txt"><a href="">カラーミーショップ<svg class="c-icon link"><use xlink:href="#linkIcon"/></svg></a></p>
-        <p class="c-share__svg"><a href=""><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a></p>
-        <p class="c-share__svg"><a href=""><svg class="c-icon fb"><use xlink:href="#facebookIcon"/></svg></a></p>
-        <p class="c-share__svg"><a href=""><svg class="c-icon feedly"><use xlink:href="#feedlyIcon"/></svg></a></p>
+    <div class="p-cover__sns c-sns">
+      <div class="c-sns__inner">
+        <p class="c-sns__txt"><a href="">カラーミーショップ<svg class="c-icon link"><use xlink:href="#linkIcon"/></svg></a></p>
+        <p class="c-sns__svg"><a href=""><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a></p>
+        <p class="c-sns__svg"><a href=""><svg class="c-icon fb"><use xlink:href="#facebookIcon"/></svg></a></p>
+        <p class="c-sns__svg"><a href=""><svg class="c-icon hatena"><use xlink:href="#hatenaIcon"/></svg></a></p>
+        <p class="c-sns__svg"><a href=""><svg class="c-icon feedly"><use xlink:href="#feedlyIcon"/></svg></a></p>
       </div>
     </div>
-  
+    
   </div>
 </section>
 
@@ -231,7 +253,7 @@
       <p>COLOR ME SHOP DESIGN GALLERY は、カラーミーショップで制作されたECサイト（オンラインショップ）だけを集めたニッチなWebサイトギャラリーです。カラーミーショップのカート機能を利用して制作されたデザイン性の高いECサイトを中心に、カスタマイズやデザインの参考となるようなハイクオリティなサイトを厳選し掲載しています。</p>
       <p>掲載するサイトには、カラーミーショップの<em>カート機能</em>を利用しているサイトを前提としており、「どこでもカラーミー」の機能や「カラーミーショップ API」を利用したもの、プラチナプランによる通常プランとは異なる仕様のものも含まれています。</p>
       <p>サイトの掲載希望や推薦も随時募集していますので、<a href="contact.html">コンタクト</a>よりお気軽にご連絡ください（全て掲載されるとは限りません）。</p>
-<!--      <p><a href="" class="u-margin__r--10"><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a><a href="" class="u-margin__r--10"><svg class="c-icon fb"><use xlink:href="#facebookpageIcon"/></svg></a><a href=""><svg class="c-icon gh"><use xlink:href="#githubIcon"/></svg></a></p>-->
+      <p><a href="" class="u-margin__r--10"><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a><a href="" class="u-margin__r--10"><svg class="c-icon fb"><use xlink:href="#facebookpageIcon"/></svg></a><a href=""><svg class="c-icon gh"><use xlink:href="#githubIcon"/></svg></a></p>
     </div>
   </div>
   
