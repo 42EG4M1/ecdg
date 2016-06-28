@@ -5,9 +5,9 @@
 
 
 .p-page {
+  width: 100%;
+  max-width: $width-page;
   &__inner {
-    width: 100%;
-    max-width: $width-page;
     margin: 0 auto 120px;
     &:last-child {
       margin: 0 auto;
