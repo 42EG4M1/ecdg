@@ -8,7 +8,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba($background-body-color, .9);
+  background: rgba($color-background-body, .9);
   z-index: 13;
   &__hold {
     width: 100%;
@@ -32,7 +32,7 @@
     p {
       margin-bottom: 20px;
       a {
-        border-bottom: 1px solid $line-color;
+        border-bottom: 1px solid $color-line;
         transition: $base-transition;
       }
     }
@@ -44,12 +44,12 @@
     margin: 64px auto 0;
     font-size: 11px;
     text-align: center;
-    border: 1px solid $line-color;
+    border: 1px solid $color-line;
     transition: $base-transition;
     cursor: pointer;
     &:hover {
       color: #fff;
-      background: $accent-color;
+      background: $color-accent;
     }
   }
 }

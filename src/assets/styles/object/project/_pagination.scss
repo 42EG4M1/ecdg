@@ -24,7 +24,7 @@
         right: calc(50% - 10px);
         width: 0;
         height: 1px;
-        background: $line-color;
+        background: $color-line;
         transition: width .3s ease;
       }
       &:hover:before {
@@ -50,7 +50,7 @@
         content: "";
         width: 5px;
         height: 5px;
-        border: 1px solid $line-color;
+        border: 1px solid $color-line;
         transform: rotate(45deg);
         transition: all .2s ease;
         @include vertical-center;
@@ -86,7 +86,7 @@
         left: calc(50% - 10px);
         width: 20px;
         height: 1px;
-        background: $line-color;
+        background: $color-line;
       }
     }
   }

@@ -4,7 +4,7 @@
 
 .p-aff {
   width: 100%;
-  background: $background-body-color;
+  background: $color-background-body;
   &__inner {
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@
     width: 120px;
     height: 90px;
     margin: 0 10px;
-    background: $background-main-color;
+    background: $color-background-main;
   }
 }
 

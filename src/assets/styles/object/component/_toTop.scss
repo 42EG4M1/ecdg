@@ -15,14 +15,14 @@
     height: 40px;
     line-height: 40px;
     text-align: center;
-    background: $accent-color;
+    background: $color-accent;
     transition: $base-transition;
     .c-icon.arrowUp {
       fill: #fff;
       height: 8px;
     }
     &:hover {
-      background: $block-hover-color;
+      background: $color-block-hover;
     }
   }
 }

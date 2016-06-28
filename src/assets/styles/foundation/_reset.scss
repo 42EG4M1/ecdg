@@ -28,8 +28,8 @@ body {
   font-size: $font-size;
   font-family: $font-family;
   text-align: left;
-  color: $text-main-color;
-  background: $background-main-color;
+  color: $color-text-main;
+  background: $color-background-main;
 }
 
 ol, ul {
@@ -47,9 +47,9 @@ img {
 a {
   text-decoration: none;
 //	transition: $base-transition;
-  color: $link-color;
+  color: $color-link;
   &:hover {
-    color: $hover-color;
+    color: $color-hover;
   }
   &:focus {
     outline: none;

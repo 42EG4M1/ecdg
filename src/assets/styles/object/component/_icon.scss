@@ -10,12 +10,12 @@
 .c-icon {
   max-width: 20px;
   height: 16px;
-  fill: $link-color;
+  fill: $color-link;
   vertical-align: middle;
   transition: $base-transition;
   transform: translateY(-2px);
   a:hover & {
-    fill: $hover-color;
+    fill: $color-hover;
   }
 }
 

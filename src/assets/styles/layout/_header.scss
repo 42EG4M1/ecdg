@@ -9,7 +9,7 @@
   height: 40px;
   line-height: 40px;
   padding: 0 40px;
-  background: $background-main-color;
+  background: $color-background-main;
   &__ttl {
     width: 50%;
     font-family: $font-family-lato;
@@ -18,10 +18,10 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     a {
-      color: $logo-color;
+      color: $color-logo;
       transition: $base-transition;
       &:hover {
-        color: $logo-hover-color;
+        color: $color-logo-hover;
       }
     }
     span {
@@ -41,14 +41,14 @@
         }
         a {
           display: block;
-          color: $text-main-color;
+          color: $color-text-main;
           text-transform: uppercase;
           font-family: $font-family-q-sans;
           font-size: 11px;
           letter-spacing: 1px;
           transition: $base-transition;
           &:hover {
-            color: $hover-color;
+            color: $color-hover;
           }
         }
       }
@@ -61,7 +61,7 @@
     top: 0;
     width: 40px;
     height: 100%;
-    background: $background-main-color;
+    background: $color-background-main;
     z-index: 1;
   }
   &:before {

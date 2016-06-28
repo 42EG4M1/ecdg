@@ -31,7 +31,7 @@
       right: -15px;
       width: 10px;
       height: 1px;
-      background: $accent-color;
+      background: $color-accent;
     }
     &:after {
       content: "";
@@ -49,7 +49,6 @@
         margin-bottom: 0;
       }
       a {
-//        border-bottom: 1px solid $link-color;
         transition: $base-transition;
       }
     }

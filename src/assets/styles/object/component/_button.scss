@@ -16,13 +16,13 @@
   &-b {
     width: 100%;
     height: 2px;
-    background: $link-color;
+    background: $color-link;
     transition: $base-transition;
   }
   &:hover &-t,
   &:hover &-m,
   &:hover &-b {
-    background: $hover-color;
+    background: $color-hover;
   }
   &:hover &-m {
     width: 75%;
