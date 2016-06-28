@@ -52,6 +52,50 @@
   }
   
   
+  function sideFixed() {
+    var $win = $(window);
+    $("#js-articleHeader").each(function() {
+      var marginTop = 50,
+          $next = $(this).next(),
+          nextHeight = $next.height(),
+          $parent = $(this).parent(),
+          parentTop = $parent.offset().top,
+          parentHeight = $parent.height(),
+          targetScrollValue = parentTop - marginTop,
+          winScrollTop = $win.scrollTop(),
+          thisHeight = $(this).height(),
+          thisLeft = $(this).offset().left,
+          obj = {};
+      if (thisHeight > nextHeight) {
+        $parent.css({height: thisHeight + 'px'});
+        return false;
+      }
+      if (winScrollTop > targetScrollValue) {
+        if (winScrollTop > (parentTop + parentHeight) - (thisHeight + marginTop)) {
+          obj = {
+            position: "absolute",
+            top: parentHeight - thisHeight,
+            left: 0
+          };
+        } else {
+          obj = {
+            position: "fixed",
+            top: marginTop + 'px',
+            left: thisLeft
+          };
+        }
+      } else {
+        obj = {
+          position: "absolute",
+          top: 0,
+          left: 0
+        };
+      }
+      $(this).css(obj);
+    });
+  }
+  
+  
   $.fn.inViews = function(inviewCase) {
     var win = $(window),
         views = {},
@@ -101,6 +145,7 @@
   function scrollInit() {
     coverFixed();
     scrollInViews();
+    sideFixed();
   }
   
   

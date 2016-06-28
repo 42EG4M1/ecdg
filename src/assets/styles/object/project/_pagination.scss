@@ -101,6 +101,119 @@
 
 
 
+// article
+.p-pagination--article {
+  box-sizing: border-box;
+  max-width: $width-article;
+  padding: 0 280px;
+  margin-bottom: $margin-base;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  &__prev,
+  &__next {
+    position: relative;
+    a {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      transition: $transition-base;
+      &:before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border: 1px solid $color-line;
+        transform: rotate(45deg);
+        transition: all .2s ease;
+        @include vertical-center;
+      }
+    }
+  }
+  &__prev {
+    a {
+      &:before {
+        left: 3px;
+        border-top: none;
+        border-right: none;
+      }
+      &:hover:before {
+        left: 0;
+      }
+    }
+  }
+  &__next {
+    a {
+      &:before {
+        right: 3px;
+        border-left: none;
+        border-bottom: none;
+      }
+      &:hover:before {
+        right: 0;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

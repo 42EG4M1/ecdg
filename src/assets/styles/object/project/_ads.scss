@@ -6,13 +6,30 @@
 
 .p-ads {
   &__inner {
+    width: 100%;
+    max-width: 728px;
+    height: 90px;//本番では100%にする
+    margin: 0 auto;
     p {
+      height: 100%;
+      text-align: center;
+      background: #fff;
+    }
+  }
+  &--article {
+    width: 100%;
+    padding-bottom: $margin-main;
+    background: $color-background-body;
+    &__inner {
       width: 100%;
       max-width: 728px;
-      height: 90px;//100%
+      height: 90px;//本番では100％にする
       margin: 0 auto;
-      text-align: center;
-      background: $color-background-main;
+      p {
+        height: 100%;
+        text-align: center;
+        background: #fff;
+      }
     }
   }
 }
