@@ -33,7 +33,7 @@
       margin-bottom: 20px;
       a {
         border-bottom: 1px solid $color-line;
-        transition: $base-transition;
+        transition: $transition-base;
       }
     }
   }
@@ -45,7 +45,7 @@
     font-size: 11px;
     text-align: center;
     border: 1px solid $color-line;
-    transition: $base-transition;
+    transition: $transition-base;
     cursor: pointer;
     &:hover {
       color: #fff;

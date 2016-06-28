@@ -55,7 +55,7 @@
       color: $color-link;
       border: 1px solid $color-line;
       background: none;
-      transition: $base-transition;
+      transition: $transition-base;
       &:hover {
         color: #fff;
         background: $color-accent;

@@ -6,7 +6,7 @@
   position: fixed;
   bottom: 80px;
   right: 80px;
-  transition: $base-transition;
+  transition: $transition-base;
   visibility: hidden;
   opacity: 0;
   a {
@@ -16,7 +16,7 @@
     line-height: 40px;
     text-align: center;
     background: $color-accent;
-    transition: $base-transition;
+    transition: $transition-base;
     .c-icon.arrowUp {
       fill: #fff;
       height: 8px;

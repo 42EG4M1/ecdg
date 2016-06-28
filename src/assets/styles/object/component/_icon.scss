@@ -12,7 +12,7 @@
   height: 16px;
   fill: $color-link;
   vertical-align: middle;
-  transition: $base-transition;
+  transition: $transition-base;
   transform: translateY(-2px);
   a:hover & {
     fill: $color-hover;

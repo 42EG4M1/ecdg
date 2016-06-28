@@ -19,7 +19,7 @@
     letter-spacing: 2px;
     a {
       color: $color-logo;
-      transition: $base-transition;
+      transition: $transition-base;
       &:hover {
         color: $color-logo-hover;
       }
@@ -46,7 +46,7 @@
           font-family: $font-family-q-sans;
           font-size: 11px;
           letter-spacing: 1px;
-          transition: $base-transition;
+          transition: $transition-base;
           &:hover {
             color: $color-hover;
           }

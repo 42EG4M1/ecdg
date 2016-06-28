@@ -15,7 +15,7 @@
     a:not(.next):not(.prev) {
       position: relative;
       display: block;
-      transition: $base-transition;
+      transition: $transition-base;
       overflow: hidden;
       &:before {
         content: "";
@@ -45,7 +45,7 @@
       position: relative;
       width: auto;
       padding: 0 20px;
-      transition: $base-transition;
+      transition: $transition-base;
       &:before {
         content: "";
         width: 5px;

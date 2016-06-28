@@ -46,8 +46,8 @@ img {
 
 a {
   text-decoration: none;
-//	transition: $base-transition;
   color: $color-link;
+//	transition: $transition-base;
   &:hover {
     color: $color-hover;
   }
