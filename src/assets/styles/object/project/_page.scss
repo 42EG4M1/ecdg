@@ -67,6 +67,62 @@
 
 
 
+// 404
+.p-page--404 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 330px);
+  min-height: 568px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  z-index: 1;
+  &:before {
+    content: "404";
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    line-height: 1;
+    padding-left: 20px;
+    text-align: center;
+    font-size: 500px;
+    font-family: $font-family-lato;
+    color: rgba(#fff,.5);
+    letter-spacing: 20px;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+  &__inner {
+    text-align: center;
+  }
+  &__ttl {
+    margin-bottom: 40px;
+    font-family: $font-family-lato;
+    font-size: 15px;
+    font-weight: 300;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+  }
+  &__block {
+  }
+  &__txt {
+    margin-bottom: 10px;
+  }
+  &__btn {
+    width: 120px;
+    height: 32px;
+    line-height: 30px;
+    margin: 40px auto 0;
+  }
+}
+
+
 
 
 
