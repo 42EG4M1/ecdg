@@ -4,6 +4,7 @@
 
 
 
+// how to use: @media #{$mq600}
 // ChromeScrollBarWidth 15px - 1px = 14px
 
 $mq400: "screen and (max-width: 400px)";
@@ -24,9 +25,8 @@ $mq2134: "screen and (max-width: 2134px)";
 $mq1440min: "screen and (min-width: 1440px)";
 $mq2000min: "screen and (min-width: 2000px)";
 $mq899minh: "screen and (max-height: 899px)";
-// how to use: @media #{$mq600} 
 
-
+$meq568maxHeight: "screen and (max-height: 568px)";// iphone5 height
 
 
 
