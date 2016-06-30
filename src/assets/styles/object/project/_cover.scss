@@ -9,37 +9,39 @@
   height: 40px;
   margin: $margin-base auto 0;
   &__hold {
+    .is-fixed & {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-sizing: border-box;
+      width: 100%;
+      margin: auto;
+      padding: 0 100px;
+      z-index: 9;
+    }
+  }
+  &__inner {
     display: flex;
     justify-content: space-between;
     width: 100%;
     max-width: $width-max;
     height: 40px;
     line-height: 40px;
-    .is-fixed & {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      z-index: 9;
-    }
+    margin: 0 auto;
   }
   &__ttl {
     order: 2;
-    flex: 1 1 30%;
-    font-size: 12px;
+    flex: 1 1 40%;
     text-align: center;
-    &--sin {
-      
-    }
   }
   &__menu {
     order: 1;
-    flex: 1 1 35%;
+    flex: 1 1 30%;
   }
   &__sns {
     order: 3;
-    flex: 1 1 35%;
+    flex: 1 1 30%;
     text-align: right;
   }
 }
@@ -47,30 +49,83 @@
 
 
 
+// media query
+@media #{$mq1440} {
+.p-cover {
+  &__hold {
+    .is-fixed & {
+      padding: 0 80px;
+    }
+  }
+}
+}
 
+@media #{$mq1000} {
+.p-cover {
+  height: 90px;
+  margin: $margin-base-tab auto 0;
+  &__hold {
+    .is-fixed & {
+      padding: 0 80px;
+      background: $color-background-main;
+    }
+  }
+  &__inner {
+    flex-wrap: wrap;
+  }
+  &__ttl {
+    position: relative;
+    order: 3;
+    flex: 1 1 100%;
+    margin-top: 10px;
+    transition: $transition-base;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      width: 40px;
+      height: 1px;
+      margin: auto;
+      background: $color-accent;
+    }
+    .is-fixed & {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  &__menu,
+  &__sns {
+    order: 1;
+    flex: 1 1 50%;
+  }
+}
+}
 
+@media #{$mq768} {
+.p-cover {
+  &__hold {
+    .is-fixed & {
+      padding: 0 30px;
+    }
+  }
+}
+}
 
-
-
-//@media #{$mq1440} {
-//.p-cover__dd {
-//  max-width: 1440px;
-//  background: #fff;
-//  border: 1px solid $color-line;
-//  z-index: 1;
-//  &-list {
-//    flex: 0 1 120px;
-//    text-align: center;
-//  }
-//}
-//}
-
-
-
-
-
-
-
+@media #{$mq400} {
+.p-cover {
+  margin: $margin-base-sp auto 0;
+  &__hold {
+    .is-fixed & {
+      padding: 0 10px;
+    }
+  }
+  &__ttl {
+    font-size: 11px;
+  }
+}
+}
 
 
 

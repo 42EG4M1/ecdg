@@ -151,10 +151,13 @@
   
   $(function () {
     var win = $(window);
-    win.on('scroll', function() {
-      scrollInit();
+    win.on({
+      'load': scrollInit(),
+      'scroll': function () {
+        scrollInit()
+      }
     });
-        
+    
     init();
   });
   

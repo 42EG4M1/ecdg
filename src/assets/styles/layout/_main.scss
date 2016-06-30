@@ -21,6 +21,34 @@
 
 
 
+// media query
+@media #{$mq1440} {
+.main {
+  padding: 0 80px;
+}
+}
+
+@media #{$mq1000} {
+.main {
+  &__inner {
+    margin: $margin-main-tab auto 0;
+  }
+}
+}
+
+@media #{$mq768} {
+.main {
+  padding: 0 30px;
+}
+}
+
+@media #{$mq400} {
+.main {
+  padding: 0 20px;
+}
+}
+
+
 
 
 

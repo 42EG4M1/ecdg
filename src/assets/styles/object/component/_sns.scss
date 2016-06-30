@@ -7,10 +7,15 @@
 .c-sns {
   &__inner {
     display: flex;
+    position: relative;
     justify-content: flex-end;
+    &--visible {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
   &__txt {
-    margin-right: 20px;
+    margin-right: 16px;
     a {
       display: block;
       font-size: 11px;
@@ -23,10 +28,52 @@
   }
   &__svg {
     margin-left: 16px;
+    &--hidden {
+      display: none;
+      cursor: pointer;
+      .c-icon.share {
+        transition: $transition-base;
+        &:hover {
+          fill: $color-hover;
+        }
+      }
+    }
   }
 }
 
 
+
+
+// media query
+@media #{$mq1280} {
+.c-sns {
+  &__inner--visible {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    .c-form--checked:checked ~ & {
+      display: flex;
+      .is-fixed & {
+        background: $color-background-main;
+      }
+    }
+  }
+  &__svg {
+    &--hidden {
+      display: block;
+    }
+  }
+}
+}
+
+@media #{$mq400} {
+.c-sns {
+  &__txt {
+    display: none;
+  }
+}
+}
 
 
 
