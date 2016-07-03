@@ -10,12 +10,6 @@ $post-margin-left: 1.5625%;// 30px / 1920px * 100
 .p-card {
   display: flex;
   flex-wrap: wrap;
-  
-  
-  overflow: hidden;
-  
-  
-  
   &__item {
 //    display: flex; 最下部のflexitemを揃える場合
     width: $post-width;
@@ -164,6 +158,96 @@ $post-margin-left: 1.5625%;// 30px / 1920px * 100
 
 
 
+
+// media query
+@media #{$mq1920} {
+.p-card {
+  &__item {
+    width: 23.828125%;
+    &:nth-of-type(5n+1) {
+      margin-left: $post-margin-left;
+    }
+    &:nth-of-type(4n+1) {
+      margin-left: 0;
+    }
+  }
+}
+}
+
+@media #{$mq1280} {
+.p-card {
+  &__item {
+    width: 48.828125%;
+    margin: 0 0 $margin-main 2.34375%;
+    &:nth-of-type(5n+1) {
+      margin-left: 2.34375%;
+    }
+    &:nth-of-type(4n+1) {
+      margin-left: 2.34375%;
+    }
+    &:nth-of-type(2n+1) {
+      margin-left: 0;
+    }
+  }
+}
+}
+
+@media #{$mq768} {
+.p-card {
+  &__item {
+    width: 48.046875%;
+    margin: 0 0 $margin-main-tab 3.90625%;
+    &:nth-of-type(5n+1) {
+      margin-left: 3.90625%;
+    }
+    &:nth-of-type(4n+1) {
+      margin-left: 3.90625%;
+    }
+    &:nth-of-type(2n+1) {
+      margin-left: 0;
+    }
+    &--no1,
+    &--no2,
+    &--no3 {
+      margin-bottom: $margin-main-tab;
+    }
+  }
+  &__ttl {
+    margin-top: 10px;
+    font-size: 11px;
+  }
+  &__meta {
+    margin-top: 5px;
+  }
+}
+}
+
+@media #{$mq400} {
+.p-card {
+  &__item {
+    width: 48%;
+    margin: 0 0 $margin-main-tab 4%;
+    &:nth-of-type(5n+1) {
+      margin-left: 4%;
+    }
+    &:nth-of-type(4n+1) {
+      margin-left: 4%;
+    }
+    &:nth-of-type(2n+1) {
+      margin-left: 0;
+    }
+  }
+  &__ttl {
+    @include ellipsis;
+  }
+  &__like {
+    display: none;
+  }
+  &__taxonomy {
+    display: none;
+  }
+}
+}
 
 
 
