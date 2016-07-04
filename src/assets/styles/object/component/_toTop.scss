@@ -11,6 +11,7 @@
   transition: $transition-base;
   visibility: hidden;
   opacity: 0;
+  z-index: 2;
   a {
     display: block;
     width: 40px;
@@ -33,6 +34,57 @@
   visibility: visible;
   opacity: 1;
 }
+
+
+
+
+// media query
+@media #{$mq768} {
+.c-toTop {
+  bottom: 30px;
+  right: 30px;
+}
+}
+
+@media #{$mq400} {
+.c-toTop {
+  bottom: 0;
+  right: 10px;
+  a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: $color-background-main;
+    .c-icon.arrowUp {
+      fill: $color-line;
+    }
+    &:hover {
+      background: $color-background-main;
+    }
+  }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

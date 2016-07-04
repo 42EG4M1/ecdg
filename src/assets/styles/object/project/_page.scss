@@ -9,9 +9,6 @@
   max-width: $width-page;
   &__inner {
     margin: 0 auto 120px;
-    &:last-child {
-      margin: 0 auto;
-    }
   }
   &__ttl {
     position: relative;
@@ -67,6 +64,26 @@
 
 
 
+// media query
+@media #{$mq768} {
+.p-page {
+  &__inner {
+    margin: 0 auto 80px;
+  }
+  &__ttl {
+    display: block;
+    text-align: center;
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}
+}
+
+
+
+
 // 404
 .p-page--404 {
   position: relative;
@@ -74,7 +91,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 330px);
+  height: calc(100vh - 338px);
   min-height: 568px;
   margin: 0 auto;
   padding: 0;
@@ -125,8 +142,40 @@
 
 
 
+// media query
+@media #{$mq1280} {
+.p-page--404 {
+  &:before {
+    font-size: 400px;
+  }
+}
+}
 
+@media #{$mq1024} {
+.p-page--404 {
+  height: calc(100vh - 466px);
+  &:before {
+    font-size: 300px;
+  }
+}
+}
 
+@media #{$mq768} {
+.p-page--404 {
+  &:before {
+    font-size: 200px;
+  }
+}
+}
+
+@media #{$mq500} {
+.p-page--404 {
+  height: calc(100vh - 576px);
+  &:before {
+    font-size: 110px;
+  }
+}
+}
 
 
 

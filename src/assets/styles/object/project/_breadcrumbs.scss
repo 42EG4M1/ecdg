@@ -5,17 +5,16 @@
 
 
 .p-breadcrumbs {
-  position: absolute;
-  top: 180px;
-  left: 0;
-  right: 0;
-  height: auto;
-  margin: 0 auto;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 40px;
   &__inner {
     display: flex;
     p {
       position: relative;
       margin-right: 40px;
+      font-size: 11px;
       &:not(:first-child):before {
         content: "";
         position: absolute;
@@ -31,6 +30,8 @@
     }
   }
 }
+
+
 
 
 

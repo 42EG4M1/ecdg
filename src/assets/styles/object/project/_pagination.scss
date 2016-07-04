@@ -58,6 +58,7 @@
       }
     }
     &.prev {
+      margin-left: 0;
       &:before {
         left: 3px;
         border-top: none;
@@ -68,6 +69,7 @@
       }
     }
     &.next {
+      margin-right: 0;
       &:before {
         right: 3px;
         border-left: none;
@@ -96,7 +98,20 @@
 
 
 
-
+// media query
+@media #{$mq768} {
+.p-pagination {
+  &__num {
+    margin: 0;
+    &.prev {
+      padding: 0 10px 0 15px;
+    }
+    &.next {
+      padding: 0 15px 0 10px;
+    }
+  }
+}
+}
 
 
 

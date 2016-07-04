@@ -9,10 +9,10 @@
   background: $color-background-body;
   &__inner {
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
-    max-width: 1440px;
+    max-width: 850px;
     height: 100%;
     margin: 0 auto;
     padding-bottom: $margin-base;
@@ -26,6 +26,37 @@
 }
 
 
+
+
+// media query
+@media #{$mq1024} {
+.p-aff {
+  &__inner {
+    max-width: 420px;
+  }
+  &__item {
+    &:nth-child(n+4) {
+      margin-top: 20px;
+    }
+  }
+}
+}
+
+@media #{$mq500} {
+.p-aff {
+  &__inner {
+    max-width: 280px;
+  }
+  &__item {
+    &:nth-child(n+4) {
+      margin-top: 0;
+    }
+    &:nth-child(n+3) {
+      margin-top: 20px;
+    }
+  }
+}
+}
 
 
 
