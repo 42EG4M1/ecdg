@@ -15,7 +15,7 @@
     max-width: $width-max;
     height: 100%;
     margin: $margin-main auto 0;
-    .p-breadcrumbs ~ & {
+    .p-breadcrumbs + & {
       margin: 10px auto 0;
     }
   }

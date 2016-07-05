@@ -21,7 +21,8 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video, main {
   background: transparent;
 }
 
-article, aside, details, figcaption, figure, footer, header, menu, nav, section, main {
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section, main, summary {
   display: block;
   margin: 0;
 }
@@ -59,13 +60,16 @@ a {
   }
 }
 
+template {
+  display: none;
+}
+
 blockquote, q {
   quotes: none;
 }
 
 blockquote:before, blockquote:after, q:before, q:after {
   content: '';
-  content: none;
 }
 
 table {
@@ -73,12 +77,13 @@ table {
   border-spacing: 0;
 }
 
-em,strong {
+em, strong {
   font-weight: bold;
 }
 
-input, textarea, select {
+input, textarea, select, button, optgroup {
   font-family: inherit;
+  color: inherit;
   vertical-align: middle;
 }
 
