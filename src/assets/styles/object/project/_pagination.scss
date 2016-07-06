@@ -120,15 +120,16 @@
   box-sizing: border-box;
   max-width: $width-article;
   padding: 0 280px;
-  margin-bottom: $margin-base;
+  margin-top: 40px;
+  margin-bottom: $margin-main;
   &__inner {
     display: flex;
     justify-content: space-between;
-    text-align: center;
   }
   &__prev,
   &__next {
     position: relative;
+    width: 50%;
     a {
       display: block;
       height: 40px;
@@ -159,6 +160,8 @@
     }
   }
   &__next {
+    margin-left: 50%;
+    text-align: right;
     a {
       &:before {
         right: 3px;
@@ -170,8 +173,22 @@
       }
     }
   }
+  &__prev + &__next {
+    margin-left: 0;
+  }
 }
 
+
+
+
+// media query
+@media #{$mq1280} {
+.p-pagination--article {
+  max-width: 900px;
+  margin-bottom: $margin-main-tab;
+  padding: 0;
+}
+}
 
 
 

@@ -11,13 +11,13 @@
     width: 100%;
     max-width: $width-article;
     margin: 0 auto;
-    padding: 0 280px;
+    padding: 0 276px;
   }
   &__header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 246px;
   }
   &__body {
     width: 100%;
@@ -126,6 +126,33 @@
 }
 
 
+
+
+// media query
+@media #{$mq1280} {
+.p-article {
+  &__hold {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    padding: 0;
+  }
+  &__header {
+    order: 1;
+    position: static !important;
+    width: calc(100% - 20px);
+    margin: 40px 0 0 20px;
+  }
+}
+}
+
+@media #{$mq400} {
+.p-article {
+  &__header {
+    margin: 20px 0 0 20px;
+  }
+}
+}
 
 
 
