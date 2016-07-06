@@ -5,10 +5,8 @@
 
 
 .p-pagination {
-  margin-bottom: $margin-base;
-  .p-card + & {
-    margin-top: 0;
-  }
+  margin-top: 0;
+  margin-bottom: $margin-main;
   &__inner {
     display: flex;
     justify-content: center;
@@ -101,6 +99,7 @@
 // media query
 @media #{$mq768} {
 .p-pagination {
+  margin-bottom: $margin-main-tab;
   &__num {
     margin: 0;
     &.prev {

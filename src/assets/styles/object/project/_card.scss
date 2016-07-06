@@ -8,8 +8,10 @@ $post-width: 18.75%;// 1920px - 30px * 4 / 5 / 1920px * 100
 $post-margin-left: 1.5625%;// 30px / 1920px * 100
 
 .p-card {
-  display: flex;
-  flex-wrap: wrap;
+  &__hold {
+    display: flex;
+    flex-wrap: wrap;
+  }
   &__item {
 //    display: flex; 最下部のflexitemを揃える場合
     width: $post-width;

@@ -5,11 +5,14 @@
 
 
 .p-article {
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: $width-article;
-  padding: 0 280px;
+  &__hold {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $width-article;
+    margin: 0 auto;
+    padding: 0 280px;
+  }
   &__header {
     position: absolute;
     top: 0;

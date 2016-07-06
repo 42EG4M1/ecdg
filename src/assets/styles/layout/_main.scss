@@ -31,17 +31,12 @@
 }
 }
 
-@media #{$mq1000} {
-.main {
-  &__inner {
-    margin: $margin-main-tab auto 0;
-  }
-}
-}
-
 @media #{$mq768} {
 .main {
   padding: 0 30px;
+  &__inner {
+    margin: $margin-main-tab auto 0;
+  }
 }
 }
 
