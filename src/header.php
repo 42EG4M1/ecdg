@@ -1,37 +1,75 @@
+<?php 
+/**
+ *
+ * header
+ *
+**/
+?>
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <title>Contact - カラーミーショップデザインギャラリー | カラーミーショップで制作されたネットショップの事例集</title>
-  
-  <!-- css -->
-  <link rel="stylesheet" href="../dist/assets/styles/all.min.css" media="all">
+  <meta name="description" content="<?php my_description(); ?>">
+  <meta name="keywords" content="カラーミーショップ, カラーミー, ネットショップ, オンラインショップ, EC, ギャラリー">
   
   <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/manifest.json">
+  <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="ECdesign">
+  <meta name="application-name" content="ECdesign">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
   
   <!-- ogp -->
-  
+  <meta property="fb:admins" content="100006838625868">
+  <meta property="og:title" content="<?php $title = wp_get_document_title(); echo $title; ?>">
+  <meta property="og:type" content="<?php if(is_front_page()){ echo 'website';}elseif(is_home()){ echo 'blog';}else{ echo 'article';} ?>">
+  <meta property="og:url" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">
+<!--
+  <meta property="og:image" content="<php
+    if (is_single() && wp_get_attachment_url(get_post_thumbnail_id()) != ''){
+      echo wp_get_attachment_url(get_post_thumbnail_id());
+    } elseif(is_single() && get_post_type() !== 'news' && get_post_type() !== 'collections' && get_post_type() !== 'stockists' && get_post_type() !== 'media') {
+      echo get_bloginfo('template_url').'/assets/images/blog/sj-blog-eyecatch-default.jpg';
+    } else {
+      echo get_bloginfo('template_url').'/assets/images/common/sj-eyecatch-default.jpg';
+    }
+  ?>">
+-->
+  <meta property="og:site_name" content="カラーミーショップデザインギャラリー">
+  <meta property="og:description" content="<?php my_description(); ?>">
 
-<meta name="robots" content="noindex,nofollow">
+<?php wp_head(); ?>
 </head>
 
 <body>
 <script>/* ga */</script>
-<noscript class="p-noScript" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
+<noscript class="noscript" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
 <!--[if lt IE 10]>
-<div class="p-ie">
-  <div class="p-ie__hold">
+<div class="ie">
+  <div class="ie__hold">
     <h3><span>Color Me Shop</span> Design Gallery</h3>
     <h4>カラーミーショップで制作されたネットショップの事例集。</h4>
     <p>恐れ入りますが、ご利用のブラウザ(インターネット閲覧の為のソフト)は古いバージョンのため、<br />本Webサイトではサポートしておりません。</p>
     <p>古いバージョンのブラウザでは、正常に表示されない箇所が出てくるため非表示としております。</p>
     <p>本サイトを閲覧するには、<a href="http://browsehappy.com">最新のブラウザをインストール</a>してからご覧ください。</p>
   </div>
-  <p class="p-ie__btn" id="js-ieBtn">この表示を削除する</p>
+  <p class="ie__btn" id="js-ieBtn">この表示を削除する</p>
 </div>
 <![endif]-->
 <svg class="svg-defs">
@@ -80,16 +118,16 @@
              c3.5,3.9,5.2,9.1,5.2,15.6C115.4,123.7,114.4,127.8,112.5,131.4z M139.5,144.5c-6.5,0-11.8-5.3-11.8-11.8c0-6.5,5.3-11.8,11.8-11.8
              c6.5,0,11.8,5.3,11.8,11.8C151.3,139.2,146,144.5,139.5,144.5z"/>
   </symbol>
-  <symbol id="searchIcon" viewBox="0 0 200 200">
-    <path d="M200,191.2l-53.6-53.6c12.6-14.6,20.2-33.5,20.2-54.3c0-46-37.3-83.3-83.3-83.3S0,37.3,0,83.3
-             s37.3,83.3,83.3,83.3c20.8,0,39.7-7.6,54.3-20.2l53.6,53.6L200,191.2z M13.3,83.3c0-38.7,31.3-70,70-70s70,31.3,70,70
-             c0,19.3-7.8,36.8-20.5,49.5l0,0c-12.7,12.7-30.2,20.5-49.5,20.5C44.7,153.3,13.3,122,13.3,83.3z"/>
-  </symbol>
   <symbol id="shareIcon" viewBox="0 0 200 200">
     <path d="M170,140c-9.3,0-17.6,4.3-23.1,11l-87.9-43.9c0.6-2.3,0.9-4.6,0.9-7.1c0-2.5-0.4-4.8-0.9-7.1L146.9,49
              c5.5,6.7,13.7,11,23.1,11c16.6,0,30-13.4,30-30c0-16.6-13.4-30-30-30s-30,13.4-30,30c0,2.5,0.4,4.8,0.9,7.1L53.1,81
              C47.6,74.3,39.3,70,30,70C13.4,70,0,83.4,0,100c0,16.6,13.4,30,30,30c9.3,0,17.6-4.3,23.1-11l87.9,43.9c-0.6,2.3-0.9,4.6-0.9,7.1
              c0,16.6,13.4,30,30,30s30-13.4,30-30C200,153.4,186.6,140,170,140z"/>
+  </symbol>
+  <symbol id="searchIcon" viewBox="0 0 200 200">
+    <path d="M200,191.2l-53.6-53.6c12.6-14.6,20.2-33.5,20.2-54.3c0-46-37.3-83.3-83.3-83.3S0,37.3,0,83.3
+             s37.3,83.3,83.3,83.3c20.8,0,39.7-7.6,54.3-20.2l53.6,53.6L200,191.2z M13.3,83.3c0-38.7,31.3-70,70-70s70,31.3,70,70
+             c0,19.3-7.8,36.8-20.5,49.5l0,0c-12.7,12.7-30.2,20.5-49.5,20.5C44.7,153.3,13.3,122,13.3,83.3z"/>
   </symbol>
   <symbol id="heartIcon" viewBox="0 0 511.6 438.5">
 	<path d="M475.4,35.4C451.2,11.8,417.8,0,375.2,0c-11.8,0-23.8,2-36.1,6.1c-12.3,4.1-23.7,9.6-34.3,16.6
@@ -126,15 +164,14 @@
 
 
 <header class="header">
-  <h1 class="header__ttl"><a href="./"><span>Color Me Shop</span> Design Gallery</a></h1>
+  <h1 class="header__ttl"><a href="<?php echo home_url('/'); ?>"><span>Color Me Shop</span> Design Gallery</a></h1>
   <nav class="header__nav">
     <ul class="header__nav-lists">
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About</a></li>
+      <li<?php if(is_page('contact')){echo ' class="cur"';} ?>><a href="<?php echo home_url(); ?>/contact/">Contact</a></li>
+      <li<?php if(is_page('about')){echo ' class="cur"';} ?>><a href="<?php echo home_url(); ?>/about/">About</a></li>
     </ul>
   </nav>
 </header>
-
 
 <main class="main" id="js-load">
 
@@ -152,7 +189,7 @@
             <span class="c-btn--menu-t"></span><span class="c-btn--menu-m"></span><span class="c-btn--menu-b"></span>
           </div>
           <div class="p-menu__item p-search">
-            <form action="/" method="get" class="p-search__inner">
+            <form action="<?php echo home_url('/'); ?>" method="get" class="p-search__inner">
               <input type="search" id="s" name="s" class="p-search__submit" value="">
               <p class="p-search__icon"><svg class="c-icon search"><use xlink:href="#searchIcon"/></svg></p>
             </form>
@@ -162,7 +199,7 @@
   
       <div class="p-cover__sns c-sns">
         <div class="c-sns__inner">
-          <p class="c-sns__txt"><a href="">カラーミーショップ<svg class="c-icon link"><use xlink:href="#linkIcon"/></svg></a></p>
+          <p class="c-sns__txt"><a href="http://px.a8.net/svt/ejp?a8mat=2BJERR+6CMH2Q+348+HWXLE" target="_blank">カラーミーショップ<svg class="c-icon link"><use xlink:href="#linkIcon"/></svg></a><img border="0" width="1" height="1" src="http://www10.a8.net/0.gif?a8mat=2BJERR+6CMH2Q+348+HWXLE" alt=""></p>
           <input type="checkbox" class="c-form--checked" id="checked">
           <label class="c-sns__svg--hidden" for="checked"><svg class="c-icon share"><use xlink:href="#shareIcon"/></svg></label>
           <div class="c-sns__inner--visible">
@@ -177,178 +214,3 @@
     </div>
   </div>
 </section>
-
-
-<section class="main__inner p-page">
-  <div class="p-page__hold u-width__max500 u-margin__b--120">
-    
-    <h3 class="p-page__ttl">Contact</h3>
-    
-    <div class="p-page__block">
-      <p>当サイトへのお問い合わせは下記のフォームよりご連絡ください。</p>
-    </div>
-    
-    <div class="p-page__block p-form">
-      <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="ja" dir="ltr">
-        <form method="post" class="wpcf7-form" novalidate="novalidate">
-          <div class="p-form__box">
-            <h4 class="p-form__ttl">お名前 *</h4>
-            <div class="p-form__input"><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="" /></span></div>
-          </div>
-          <div class="p-form__box">
-            <h4 class="p-form__ttl">メールアドレス *</h4>
-            <div class="p-form__input"><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="" /></span></div>
-          </div>
-          <div class="p-form__box">
-            <h4 class="p-form__ttl">件名</h4>
-            <div class="p-form__input"><span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="" /></span></div>
-          </div>
-          <div class="p-form__box">
-            <h4 class="p-form__ttl">お問い合わせ内容 *</h4>
-            <div class="p-form__textarea"><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder=""></textarea></span></div>
-          </div>
-          <div class="p-form__checkbox">
-            <span class="wpcf7-form-control-wrap acceptance-707"><input type="checkbox" name="acceptance-707" value="1" class="wpcf7-form-control wpcf7-acceptance" id="lb-checkbox" aria-invalid="false" /></span>
-            <label class="p-form__checkbox" for="lb-checkbox">スパム防止のため、左のボックスをクリックしてチェックを入れてください。</label>
-          </div>
-          <div class="p-form__submit">
-            <input type="submit" value="送　信" class="wpcf7-form-control wpcf7-submit" />
-          </div>
-        </form>
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-</main>
-
-
-<aside class="p-aff">
-  <div class="p-aff__inner">
-    <div class="p-aff__item"></div>
-    <div class="p-aff__item"></div>
-    <div class="p-aff__item"></div>
-    <div class="p-aff__item"></div>
-    <div class="p-aff__item"></div>
-    <div class="p-aff__item"></div>
-  </div>
-</aside>
-
-
-<footer class="footer">
-  <p class="footer__copy">&copy; <span>Color Me Shop</span> Design Gallery</p>
-</footer>
-
-
-</div>
-
-<div class="p-modal" id="js-modal">
-  <div class="p-modal__inner">
-    <h2 class="p-modal__ttl">サービス</h2>
-    <ul class="p-modal__lists">
-      <li class="p-modal__list"><a href="archive.html">アート・美術・絵画<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="archive.html">おもちゃ・ゲーム・ホビー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="archive.html">家具・インテリア・雑貨<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">家電・電子機器・アクセサリ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">子供服・ベビー用品<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">食料品・飲料<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">書籍・CD・DVD・レコード<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">日用品・生活雑貨・キッチン用品<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">ファション・アクセサリー<span>(1)</span></a></li> 
-      <li class="p-modal__list"><a href="/">文房具・オフィス用品<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ペット・ペット用品<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">その他<span>(12)</span></a></li>
-    </ul>
-  </div>
-  <div class="p-modal__inner">
-    <h2 class="p-modal__ttl">カラー</h2>
-    <ul class="p-modal__lists">
-      <li class="p-modal__list"><a href="/">イエロー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">イメージ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">オフホワイト<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">オレンジ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">カラフル<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">グリーン<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">グレー<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">テクスチャ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ネイビー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ピンク<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ブラック<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">ブルー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ホワイト<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">モノクロ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ラベンダー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">レッド<span>(12)</span></a></li>
-    </ul>
-  </div>
-  <div class="p-modal__inner">
-    <h2 class="p-modal__ttl">タグ</h2>
-    <ul class="p-modal__lists">
-      <li class="p-modal__list"><a href="/">イエロー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">イメージ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">オフホワイト<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">オレンジ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">カラフル<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">グリーン<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">グレー<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">テクスチャ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ネイビー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ピンク<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ブラック<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">ブルー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ホワイト<span>(1)</span></a></li>
-      <li class="p-modal__list"><a href="/">モノクロ<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">ラベンダー<span>(12)</span></a></li>
-      <li class="p-modal__list"><a href="/">レッド<span>(12)</span></a></li>
-    </ul>
-  </div>
-  <div class="p-modal__btn">
-    <div class="c-btn--close" id="is-close"></div>
-  </div>
-</div>
-
-<div class="c-toTop" id="js-toTop">
-  <a href="#"><svg class="c-icon arrowUp"><use xlink:href="#arrowUpIcon"/></svg></a>
-</div>
-
-<!-- js -->
-<script charset="utf-8" src="../dist/assets/scripts/app.min.js"></script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
