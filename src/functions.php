@@ -17,7 +17,7 @@ function ecdg_setup() {
 
   // use eyecatch
   add_theme_support( 'post-thumbnails' );
-  add_image_size( 'my-eye-catch', 1000, 560, true );
+  //add_image_size( 'my-eye-catch', 1000, 560, true );
 
   // auto title
   add_theme_support( 'title-tag' );
@@ -51,6 +51,53 @@ function ecdg_setup() {
 }
 add_action( 'after_setup_theme', 'ecdg_setup' );
 
+
+
+
+/**
+ *
+ * 画像ドリミング位置変更
+ *
+**/
+function test_resize_dimensions( $first, $orig_w, $orig_h, $dest_w, $dest_h, $crop ){
+  if( false ) return $first;
+ 
+  if ( $crop ) {
+    $aspect_ratio = $orig_w / $orig_h;
+    $new_w = min($dest_w, $orig_w);
+    $new_h = min($dest_h, $orig_h);
+  
+    if ( !$new_w ) {
+      $new_w = intval($new_h * $aspect_ratio);
+    }
+ 
+    if ( !$new_h ) {
+      $new_h = intval($new_w / $aspect_ratio);
+    }
+ 
+    $size_ratio = max($new_w / $orig_w, $new_h / $orig_h);
+    $crop_w = round($new_w / $size_ratio);
+    $crop_h = round($new_h / $size_ratio);
+
+    $s_x = ($orig_w - $crop_w) / 2;
+    $s_y = 0;
+    
+  } else {
+    
+    $crop_w = $orig_w;
+    $crop_h = $orig_h;
+ 
+    $s_x = ($orig_w - $crop_w) / 2;
+    $s_y = 0;
+ 
+    list( $new_w, $new_h ) = wp_constrain_dimensions( $orig_w, $orig_h, $dest_w, $dest_h );
+  }
+  
+  if ( $new_w >= $orig_w && $new_h >= $orig_h ) return false;
+  
+  return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
+}
+add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
 
 
 
