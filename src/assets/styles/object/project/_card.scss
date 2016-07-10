@@ -47,6 +47,12 @@ $post-margin-left: 1.5625%;// 30px / 1920px * 100
     &--no3 {
       order: 6;
     }
+    &--none {
+      width: 100%;
+      margin-bottom: $margin-main;
+      color: $color-accent-2;
+      font-weight: bold;
+    }
   }
   &__inner {
 //    flex: 1 1 100%; 最下部のflexitemを揃える場合
@@ -144,6 +150,7 @@ $post-margin-left: 1.5625%;// 30px / 1920px * 100
     }
     span {
       position: relative;
+      display: inline-block;
       margin-right: 20px;
       &:not(:last-child):after {
         content: "/";

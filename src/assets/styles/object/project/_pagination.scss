@@ -33,62 +33,63 @@
       }
     }
   }
-  &__num {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    margin: 0 10px;
-    text-align: center;
-    &.prev,
-    &.next {
-      position: relative;
-      width: auto;
-      padding: 0 20px;
-      transition: $transition-base;
-      &:before {
-        content: "";
-        width: 5px;
-        height: 5px;
-        border: 1px solid $color-line;
-        transform: rotate(45deg);
-        transition: all .2s ease;
-        @include vertical-center;
-      }
+}
+
+.page-numbers {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 10px;
+  text-align: center;
+  &.prev,
+  &.next {
+    position: relative;
+    width: auto;
+    padding: 0 20px;
+    transition: $transition-base;
+    &:before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border: 1px solid $color-line;
+      transform: rotate(45deg);
+      transition: all .2s ease;
+      @include vertical-center;
     }
-    &.prev {
-      margin-left: 0;
-      &:before {
-        left: 3px;
-        border-top: none;
-        border-right: none;
-      }
-      &:hover:before {
-        left: 0;
-      }
+  }
+  &.prev {
+    margin-left: 0;
+    &:before {
+      left: 3px;
+      border-top: none;
+      border-right: none;
     }
-    &.next {
-      margin-right: 0;
-      &:before {
-        right: 3px;
-        border-left: none;
-        border-bottom: none;
-      }
-      &:hover:before {
-        right: 0;
-      }
+    &:hover:before {
+      left: 0;
     }
-    &.current {
-      position: relative;
-      font-weight: bold;
-      &:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: calc(50% - 10px);
-        width: 20px;
-        height: 1px;
-        background: $color-line;
-      }
+  }
+  &.next {
+    margin-right: 0;
+    &:before {
+      right: 3px;
+      border-left: none;
+      border-bottom: none;
+    }
+    &:hover:before {
+      right: 0;
+    }
+  }
+  &.current {
+    position: relative;
+    font-weight: bold;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 10px);
+      width: 20px;
+      height: 1px;
+      background: $color-line;
     }
   }
 }
@@ -100,14 +101,14 @@
 @media #{$mq768} {
 .p-pagination {
   margin-bottom: $margin-main-tab;
-  &__num {
-    margin: 0;
-    &.prev {
-      padding: 0 10px 0 15px;
-    }
-    &.next {
-      padding: 0 15px 0 10px;
-    }
+}
+.page-numbers {
+  margin: 0;
+  &.prev {
+    padding: 0 10px 0 15px;
+  }
+  &.next {
+    padding: 0 15px 0 10px;
   }
 }
 }
