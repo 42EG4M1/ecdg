@@ -9,7 +9,7 @@ gulp.task('sass', () => {
     .pipe($.plumber())
     .pipe($.sass())
     .pipe($.pleeease({
-      minifier: false, //true or false
+      minifier: true, //true or false
       out: 'all.min.css'
     }))
     .pipe(gulp.dest(config.dest))
