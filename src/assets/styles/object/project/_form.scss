@@ -64,6 +64,55 @@
 
 
 
+// form error
+.wpcf7 {
+  span.wpcf7-not-valid-tip {
+    width: 100%;
+    margin-top: 5px;
+    font-size: 10px !important;
+    color: $color-accent-2 !important;
+  }
+  div.wpcf7-response-output {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 20px auto 0 !important;
+    color: $color-text-main;
+    background: $color-accent;
+    font-size: 11px !important;
+  }
+  div.wpcf7-response-output.wpcf7-mail-sent-ok {
+    background: none !important;
+    border: 1px solid $color-accent !important;
+  }
+  div.wpcf7-response-output.wpcf7-validation-errors,
+  div.wpcf7-response-output.wpcf7-mail-sent-ng,
+  div.wpcf7-response-output.wpcf7-spam-blocked {
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    border: none !important;
+    background: $color-accent-2;
+  }
+  .wpcf7-form-control-wrap + br {
+    display: none;
+  }
+}
+
+
+
+
+// media query
+@media #{$mq400} {
+.wpcf7 {
+  div.wpcf7-response-output.wpcf7-validation-errors,
+  div.wpcf7-response-output.wpcf7-mail-sent-ng,
+  div.wpcf7-response-output.wpcf7-spam-blocked {
+    padding: 5px;
+    text-align: left;
+    font-size: 10px;
+  }
+}
+}
 
 
 
