@@ -17,21 +17,12 @@ function ecdg_setup() {
 
   // use eyecatch
   add_theme_support( 'post-thumbnails' );
-  //add_image_size( 'my-eye-catch', 1000, 560, true );
 
   // auto title
   add_theme_support( 'title-tag' );
   
   // default jquery clear
   wp_deregister_script( 'jquery' );
-  
-  // enqueue
-  if ( !is_admin() ) {
-    // add style
-    wp_enqueue_style( 'all-min', get_template_directory_uri() . '/assets/styles/all.min.css', array(), wp_get_theme()->get( 'Version' ) );
-    // add script
-    wp_enqueue_script( 'app-min', get_template_directory_uri() . '/assets/scripts/app.min.js', array(), wp_get_theme()->get( 'Version' ), true );
-  }
   
   // clear wp_head
   remove_action( 'wp_head', 'rsd_link' );
@@ -56,45 +47,34 @@ add_action( 'after_setup_theme', 'ecdg_setup' );
 
 /**
  *
- * 画像ドリミング位置変更
+ * trim position chenge in thumbnails
  *
 **/
-function test_resize_dimensions( $first, $orig_w, $orig_h, $dest_w, $dest_h, $crop ){
+function test_resize_dimensions( $first, $orig_w, $orig_h, $dest_w, $dest_h, $crop ) {
   if( false ) return $first;
- 
   if ( $crop ) {
     $aspect_ratio = $orig_w / $orig_h;
     $new_w = min($dest_w, $orig_w);
     $new_h = min($dest_h, $orig_h);
-  
     if ( !$new_w ) {
       $new_w = intval($new_h * $aspect_ratio);
     }
- 
     if ( !$new_h ) {
       $new_h = intval($new_w / $aspect_ratio);
     }
- 
     $size_ratio = max($new_w / $orig_w, $new_h / $orig_h);
     $crop_w = round($new_w / $size_ratio);
     $crop_h = round($new_h / $size_ratio);
-
     $s_x = ($orig_w - $crop_w) / 2;
     $s_y = 0;
-    
   } else {
-    
     $crop_w = $orig_w;
     $crop_h = $orig_h;
- 
     $s_x = ($orig_w - $crop_w) / 2;
     $s_y = 0;
- 
     list( $new_w, $new_h ) = wp_constrain_dimensions( $orig_w, $orig_h, $dest_w, $dest_h );
   }
-  
   if ( $new_w >= $orig_w && $new_h >= $orig_h ) return false;
-  
   return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
 }
 add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
@@ -104,107 +84,31 @@ add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
 
 /**
  *
- * ディスクリプション
+ * description
  *
 **/
-function my_description(){
+function my_description() {
   global $post;
-  $sub_desc = ' - カラーミーショップで制作されたネットショップの事例集';
-  $content_summary = strip_tags($post->post_content);
-  $content_summary = str_replace("\n", "", $content_summary);
-  $content_summary = str_replace("\r", "", $content_summary);
-  $content_summary = mb_substr($content_summary, 0, 160). "...";
-  if (is_front_page()) {
-    echo bloginfo('description');
-  } elseif ((get_post_type() === 'news')) {
-    if (is_single()) {
-      echo $content_summary;
-    } else {
-      echo 'ファッションブランド「SHOKI JOETAKI」のニュース一覧ページです。ブランドに関するインフォメーションを掲載しています。' . $sub_desc;
-    }
-  } elseif ((get_post_type() === 'collections')) {
-    if (is_single()) {
-      echo 'SHOKI JOETAKI ';
-      echo the_title() . ' コレクションの全アイテムを掲載しています。' . $sub_desc;
-    } else {
-      echo 'ファッションブランド「SHOKI JOETAKI」のコレクション一覧ページです。各シーズンごとにコレクションをご覧いただけます。' . $sub_desc;
-    }
-  } elseif ((get_post_type() === 'media')) {
-    echo 'ファッションブランド「SHOKI JOETAKI」のメディア掲載情報一覧ページです。' . $sub_desc;
-  } elseif ((get_post_type() === 'stockists')) {
-    echo 'ファッションブランド「SHOKI JOETAKI」の取り扱い店舗一覧ページです。' . $sub_desc;
-  } elseif (is_single()) {
-    echo $content_summary;
-  } elseif (is_page('about')) {
-    echo 'ファッションブランド「SHOKI JOETAKI」のアバウトページです。' . $sub_desc;
-  } elseif (is_page('contact')) {
-    echo 'ファッションブランド「SHOKI JOETAKI」のコンタクトページです。ブランドに関するお問合せはこちらのページからどうぞ。' . $sub_desc;
-  } elseif (is_home()) {
-    echo 'ファッションブランド「SHOKI JOETAKI」のオフィシャルブログ。ブランドやファッションに関する日々の雑感。' . $sub_desc;
-  } elseif (is_category() || is_tag() || is_date() || is_author()) {
-    $title = wp_get_document_title();
-    $title = str_replace(" &#8211; SHOKI JOETAKI OFFICIAL", "", $title);
-    echo $title . ' のブログ記事一覧ページです。ファッションブランド「SHOKI JOETAKI」のオフィシャルブログ。' . $sub_desc;
-  } else {
-    echo bloginfo('description');
-  }
-}
-
-
-
-/**
- *
- * パンくずリスト
- *
-**/
-function my_bread(){
-  global $post;
+  
+  $desc = 'カラーミーショップデザインギャラリーは、カラーミーショップで制作されたECサイト（オンラインショップ）だけを集めたニッチなWebサイトギャラリーです。デザイン性の高いサイトを中心に、カスタマイズやデザインの参考となるようなハイクオリティなサイトを掲載しています。';
+  $sub_desc = ' &#8211; カラーミーショップデザインギャラリー';
   $title = wp_get_document_title();
-  $title = str_replace(" &#8211; ", "", $title);
-  define("SEPA","<span class='quo'>&rsaquo;</span>");// セパレーター
-  if (is_home()) {
-    echo '<span>Blog Top</span>';
-  } elseif (is_category()) {
-    echo '<a href="' . home_url() . '/blog/">Blog Top</a>' . SEPA;
-    $cat = get_category(get_cat_ID(single_cat_title('', false)));
-    // 親カテゴリがある場合
-    if ($cat->parent) {
-      $cate_pare = get_category_parents(get_cat_ID(single_cat_title('',false)),true,SEPA);
-      // get_category_parentsが自カテゴリも生成するので除去
-      for($i=0;$i<2;$i++){
-        $cate_pare = substr($cate_pare, 0, strrpos($cate_pare, SEPA));
-      }
-      echo $cate_pare . SEPA;// 親カテゴリー
-    } else {
-      echo '<span>';
-      single_cat_title();
-      echo ' の記事一覧</span>';
-    }
-  } elseif (is_single()) {
-    echo '<a href="' . home_url() . '/blog/">Blog Top</a>' . SEPA;
-    while(have_posts()) {
-      the_post();
-      $cat = get_the_category();
-      $cat = $cat[0];
-      echo get_category_parents($cat->cat_ID, true, SEPA);// カテゴリー
-      echo '<span>';
-      the_title();// 記事タイトル
-      echo '</span>';
-    }
-  } elseif (is_tag()) {
-    echo '<a href="' . home_url() . '/blog/">Blog Top</a>' . SEPA . '<span>';
-    single_tag_title();
-    echo ' の記事一覧</span>';
-  } elseif (is_date()) {
-    echo '<a href="' . home_url() . '/blog/">Blog Top</a>' . SEPA . '<span>' . $title . ' の記事一覧</span>';
-  } elseif (is_search()) {
-    echo '<a href="' . home_url() . '/blog/">Blog Top</a>' . SEPA . '<span>「 ';
-    the_search_query();
-    echo ' 」の検索結果一覧</span>';
-  } elseif (is_author()) {
-    echo '<a href="' . home_url() . '/blog/">Blog Top</a>' . SEPA . '<span>投稿者 : ' . $title . ' の記事一覧</span>';
-  } elseif (is_404()) {
-    echo '<a href="' . home_url() . '/blog/">Blog Top</a>' . SEPA . '<span>404</span>';
+  $title = str_replace( $sub_desc, "", $title );
+  
+  if ( is_home() ) {
+    echo $desc;
+  } elseif ( is_single() ) {
+    echo '「 ' . $title . ' 」の紹介ページ - ' . $desc;
+  } elseif ( is_page() ) {
+    echo 'カラーミーショップデザインギャラリーの ' . $title . ' ページ - ' . $desc;
+  } elseif ( is_category() || is_tag() || is_tax() ) {
+    echo '「 ' . $title . ' 」に関連するネットショップの一覧ページ - ' . $desc;
+  } elseif ( is_date() || is_author() ) {
+    echo '「 ' . $title . ' 」の投稿一覧ページ - ' . $desc;
+  } elseif ( is_search() ) {
+    echo '「 ' . $title . ' 」ページ - ' . $desc;
+  } else {
+    echo $desc;
   }
 }
 
@@ -213,13 +117,13 @@ function my_bread(){
 
 /**
  *
- * rssでアイキャッチ表示
+ * rss in eyecatch
  *
 **/
 function rss_post_thumbnail($content) {
   global $post;
-  if(has_post_thumbnail($post->ID)) {
-    $content = '<div>' . get_the_post_thumbnail($post->ID,'my-eye-catch') . '</div>' . $content;
+  if ( has_post_thumbnail($post->ID) ) {
+    $content = '<div>' . get_the_post_thumbnail($post->ID,'thumbnail') . '</div>' . $content;
   }
   return $content;
 }
@@ -229,32 +133,39 @@ add_filter( 'the_content_feed', 'rss_post_thumbnail' );
 
 
 
-
+/**
+ *
+ * remove Contact Form 7 enqueues
+ *
+**/
+function remove_contact_form_enqueues() {
+  if ( is_page( 'contact' ) === false ) {
+    wp_dequeue_style( 'contact-form-7' );
+    wp_dequeue_script( 'contact-form-7' );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'remove_contact_form_enqueues' );
 
 
 
 
 /**
  *
- * ページャー
+ * pagination
  *
 **/
-function my_paginate(){
+function my_pagination() {
   global $wp_query, $paged;
-
   $p_base = get_pagenum_link(1);
   $p_format = 'page/%#%';
-
-  // ?の有無確認、有る場合は場所を特定
-  if($word = strpos($p_base, '?')){
-    // ?がある場合（検索結果）
+  
+  if ( $word = strpos($p_base, '?') ) {
     $p_base = get_option(home).(substr(get_option(home), -1 ,1) === '/' ? '' : '/')
       .'%_%'.substr($p_base, $word);
-  } else{
-    // ?が無い場合（カテゴリ、タグ等）
+  } else {
     $p_base .= (substr($p_base, -1 ,1) === '/' ? '' : '/') .'%_%';
   }
-
+  
   echo paginate_links(array(
     'base' => $p_base,
     'format' => $p_format,
@@ -270,55 +181,209 @@ function my_paginate(){
 
 
 
+/**
+ *
+ * quick tag
+ *
+**/
+function my_add_quicktags() {
+  if (wp_script_is('quicktags')) {
+?>
+<script type="text/javascript">
+  QTags.addButton('qt-http', 'http入力', 'http:///', '', false);
+</script>
+<?php
+  }
+}
+add_action( 'admin_print_footer_scripts', 'my_add_quicktags' );
+
+  
+
+
+
+/**
+ *
+ * submenu  category -> service
+ *
+**/
+function change_post_label() {
+  //global $menu;
+  global $submenu;
+
+  // var_dump($menu);
+  // var_dump($submenu);
+
+  $submenu['edit.php'][15][0] = 'サービス';
+}
+add_action( 'admin_menu', 'change_post_label' );
 
 
 
 
+/**
+ *
+ * category -> service
+ *
+**/
+function re_register_post_category_taxonomy() {
+  global $wp_rewrite;
+  
+  $labels = array(
+    'name'                  => 'サービス',
+    'singular_name'         => 'サービス',
+    'search_items'          => 'サービスを検索',
+    'all_items'             => 'サービス一覧',
+    'parent_item'           => '親',
+    'parent_item_colon'     => '親',
+    'edit_item'             => 'サービスの編集',
+    'view_item'             => 'サービスを表示',
+    'update_item'           => '更新',
+    'add_new_item'          => '新規サービスを追加',
+    'new_item_name'         => '新規サービス名',
+    'not_found'             => '項目がありません',
+    'no_terms'              => 'なし',
+    'items_list_navigation' => 'リストナビゲーション',
+    'items_list'            => 'リスト',
+    'menu_name'             => 'サービス',
+    'name_admin_bar'        => 'service'
+  );
+  
+  register_taxonomy(
+    'category',
+    'post',
+    array(
+      'hierarchical'      => true,
+      'query_var'         => 'service',
+      'public'            => true,
+      'show_ui'           => true,
+      'show_admin_column' => true,
+      '_builtin'          => true,
+      'labels'            => $labels
+    )
+  );
+}
+add_action( 'init', 're_register_post_category_taxonomy' );
 
 
 
 
+/**
+ *
+ * tag hierarchical
+ *
+**/
+function re_register_post_tag_taxonomy() {
+  global $wp_rewrite;
+  
+  $labels = array(
+    'name'                  => 'タグ',
+    'singular_name'         => 'タグ',
+    'search_items'          => 'タグを検索',
+    'all_items'             => 'タグ一覧',
+    'parent_item'           => '親',
+    'parent_item_colon'     => '親',
+    'edit_item'             => 'タグの編集',
+    'view_item'             => 'タグを表示',
+    'update_item'           => '更新',
+    'add_new_item'          => '新規タグを追加',
+    'new_item_name'         => '新規タグ名',
+    'not_found'             => '項目がありません',
+    'no_terms'              => 'なし',
+    'items_list_navigation' => 'リストナビゲーション',
+    'items_list'            => 'リスト',
+    'menu_name'             => 'タグ',
+    'name_admin_bar'        => 'tag'
+  );
+  
+  register_taxonomy(
+    'post_tag',
+    'post',
+    array(
+      'hierarchical'      => true,
+      'query_var'         => 'tag',
+      'public'            => true,
+      'show_ui'           => true,
+      'show_admin_column' => true,
+      '_builtin'          => true,
+      'labels'            => $labels
+    )
+  );
+}
+add_action( 'init', 're_register_post_tag_taxonomy' );
 
 
 
 
+/**
+ *
+ * custom taxonomies
+ *
+**/
+function create_post_type() {
+  
+  $labels = array(
+    'name'                  => 'カラー',
+    'singular_name'         => 'カラー',
+    'search_items'          => 'カラーを検索',
+    'all_items'             => 'カラー一覧',
+    'parent_item'           => '親',
+    'parent_item_colon'     => '親',
+    'edit_item'             => 'カラーの編集',
+    'view_item'             => 'カラーを表示',
+    'update_item'           => '更新',
+    'add_new_item'          => '新規カラーを追加',
+    'new_item_name'         => '新しいカラーの名前',
+    'not_found'             => '項目がありません',
+    'no_terms'              => 'なし',
+    'items_list_navigation' => 'リストナビゲーション',
+    'items_list'            => 'リスト',
+    'menu_name'             => 'カラー',
+    'name_admin_bar'        => 'color'
+  );
+  
+  register_taxonomy(
+    'color',
+    'post',
+    array(
+      'hierarchical'      => true,
+      'query_var'         => 'color',
+      'public'            => true,
+      'show_ui'           => true,
+      'sort'              => true,
+      'show_admin_column' => true,
+      'labels'            => $labels
+    )
+  );
+}
+add_action( 'init', 'create_post_type' );
 
 
 
 
+/**
+ *
+ * admin page - footer coment remove
+ *
+**/
+function custom_admin_footer() {}
+add_filter( 'admin_footer_text', 'custom_admin_footer' );
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**
+ *
+ * maintenance
+ *
+**/
+//*
+function wpr_maintenance_mode() {
+  if ( !current_user_can( 'read' ) || !is_user_logged_in()) { // 購読者権限以上 + ユーザーログイン
+    wp_die('<h2>ただいまメンテナンス中です</h2><p>公開までいましばらくお待ちください。</p>');
+  }
+}
+add_action( 'get_header', 'wpr_maintenance_mode' );
+//*/
 
 
 

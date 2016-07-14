@@ -8,10 +8,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<?php /* <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#<php if ( is_home() ) { echo ' website: http://ogp.me/ns/website#'; } else { echo ' article: http://ogp.me/ns/article#'; } ?>"> */ ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?php my_description(); ?>">
   <meta name="keywords" content="カラーミーショップ, カラーミー, ネットショップ, オンラインショップ, EC, ギャラリー">
+  
+  <!-- styles -->
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/styles/all.min.css?ver=<?php echo wp_get_theme()->get( 'Version' ); ?>" media="all">
   
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-57x57.png">
@@ -38,21 +42,21 @@
   <!-- ogp -->
   <meta property="fb:admins" content="100006838625868">
   <meta property="og:title" content="<?php $title = wp_get_document_title(); echo $title; ?>">
-  <meta property="og:type" content="<?php if(is_front_page()){ echo 'website';}elseif(is_home()){ echo 'blog';}else{ echo 'article';} ?>">
+  <meta property="og:type" content="<?php if( is_home() ) { echo 'website'; } else { echo 'article'; } ?>">
   <meta property="og:url" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">
-<!--
-  <meta property="og:image" content="<php
-    if (is_single() && wp_get_attachment_url(get_post_thumbnail_id()) != ''){
+  <meta property="og:image" content="<?php
+    if ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) != '' ) {
       echo wp_get_attachment_url(get_post_thumbnail_id());
-    } elseif(is_single() && get_post_type() !== 'news' && get_post_type() !== 'collections' && get_post_type() !== 'stockists' && get_post_type() !== 'media') {
-      echo get_bloginfo('template_url').'/assets/images/blog/sj-blog-eyecatch-default.jpg';
+    } elseif ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) == '' ) {
+      echo get_bloginfo('template_url').'/assets/images/ecdg-no-images.jpg';
     } else {
-      echo get_bloginfo('template_url').'/assets/images/common/sj-eyecatch-default.jpg';
+      echo get_bloginfo('template_url').'/assets/images/ecdg-default.jpg';
     }
   ?>">
--->
   <meta property="og:site_name" content="カラーミーショップデザインギャラリー">
   <meta property="og:description" content="<?php my_description(); ?>">
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <?php wp_head(); ?>
 </head>
@@ -164,14 +168,15 @@
 
 
 <header class="header">
-  <h1 class="header__ttl"><a href="<?php echo home_url('/'); ?>"><span>Color Me Shop</span> Design Gallery</a></h1>
+  <h1 class="header__ttl"><a href="<?php echo esc_url(home_url('/')); ?>"><span>Color Me Shop</span> Design Gallery</a></h1>
   <nav class="header__nav">
     <ul class="header__nav-lists">
-      <li<?php if(is_page('contact')){echo ' class="cur"';} ?>><a href="<?php echo home_url(); ?>/contact/">Contact</a></li>
-      <li<?php if(is_page('about')){echo ' class="cur"';} ?>><a href="<?php echo home_url(); ?>/about/">About</a></li>
+      <li<?php if ( is_page('contact') ) { echo ' class="cur"'; } ?>><a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact</a></li>
+      <li<?php if ( is_page('about') ) { echo ' class="cur"'; } ?>><a href="<?php echo esc_url(home_url('/about/')); ?>">About</a></li>
     </ul>
   </nav>
 </header>
+
 
 <main class="main" id="js-load">
 
@@ -189,7 +194,7 @@
             <span class="c-btn--menu-t"></span><span class="c-btn--menu-m"></span><span class="c-btn--menu-b"></span>
           </div>
           <div class="p-menu__item p-search">
-            <form action="<?php echo home_url('/'); ?>" method="get" class="p-search__inner">
+            <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="p-search__inner">
               <input type="search" id="s" name="s" class="p-search__submit" value="">
               <p class="p-search__icon"><svg class="c-icon search"><use xlink:href="#searchIcon"/></svg></p>
             </form>
@@ -203,10 +208,10 @@
           <input type="checkbox" class="c-form--checked" id="checked">
           <label class="c-sns__svg--hidden" for="checked"><svg class="c-icon share"><use xlink:href="#shareIcon"/></svg></label>
           <div class="c-sns__inner--visible">
-            <p class="c-sns__svg"><a href=""><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a></p>
-            <p class="c-sns__svg"><a href=""><svg class="c-icon fb"><use xlink:href="#facebookIcon"/></svg></a></p>
-            <p class="c-sns__svg"><a href=""><svg class="c-icon hatena"><use xlink:href="#hatenaIcon"/></svg></a></p>
-            <p class="c-sns__svg"><a href=""><svg class="c-icon feedly"><use xlink:href="#feedlyIcon"/></svg></a></p>
+            <p class="c-sns__svg"><a href="https://twitter.com/intent/tweet?original_referer=<?php $str = esc_url(home_url('/')); $search = array(':','/'); $replace = array('%3A','%2F'); $home = str_replace($search, $replace, $str); echo $home . '&text=カラーミーショップで制作されたネットショップの事例集 - COLOR ME SHOP DESIGN GALLERY' . '&url=' . $home . '&via=ecdesigngallery'; ?>" onclick="window.open(this.href, 'twetterWindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a></p>
+            <p class="c-sns__svg"><a href="https://www.facebook.com/sharer.php?src=bm&amp;u=<?php $str = esc_url(home_url('/')); $search = array(':','/'); $replace = array('%3A','%2F'); $home = str_replace($search, $replace, $str); echo $home; ?>&amp;t=カラーミーショップで制作されたネットショップの事例集 - COLOR ME SHOP DESIGN GALLERY" onclick="window.open(this.href, 'facebookWindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon fb"><use xlink:href="#facebookIcon"/></svg></a></p>
+            <p class="c-sns__svg"><a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_url(home_url('/')); ?>&title=カラーミーショップで制作されたネットショップの事例集 - COLOR ME SHOP DESIGN GALLERY" onclick="window.open(this.href, 'hatenaWindow', 'width=510, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon hatena"><use xlink:href="#hatenaIcon"/></svg></a></p>
+            <p class="c-sns__svg"><a href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fecdesigngallery.com%2Ffeed%2F' target="_blank" title="Follow"><svg class="c-icon feedly"><use xlink:href="#feedlyIcon"/></svg></a></p>
           </div>
         </div>
       </div>
