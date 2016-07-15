@@ -47,6 +47,16 @@ add_action( 'after_setup_theme', 'ecdg_setup' );
 
 /**
  *
+ * remove srcset
+ *
+**/
+add_filter( 'wp_calculate_image_srcset', '__return_false' );
+
+
+
+
+/**
+ *
  * trim position chenge in thumbnails
  *
 **/
@@ -120,10 +130,10 @@ function my_description() {
  * rss in eyecatch
  *
 **/
-function rss_post_thumbnail($content) {
+function rss_post_thumbnail( $content ) {
   global $post;
-  if ( has_post_thumbnail($post->ID) ) {
-    $content = '<div>' . get_the_post_thumbnail($post->ID,'thumbnail') . '</div>' . $content;
+  if ( has_post_thumbnail( $post->ID ) ) {
+    $content = '<div>' . get_the_post_thumbnail( $post->ID,'thumbnail' ) . '</div>' . $content;
   }
   return $content;
 }
