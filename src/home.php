@@ -18,9 +18,9 @@ get_header(); ?>
         <figure class="p-card__thumb">
           <a href="<?php echo post_custom('URL'); ?>" target="_blank">
 <?php if ( has_post_thumbnail() ): ?>
-            <img class="lazy" data-original="<?php $id = get_post_thumbnail_id(); $url = wp_get_attachment_image_src($id, 'thumbnail'); echo $url[0]; ?>" alt="">
+            <img class="lazy" data-original="<?php $id = get_post_thumbnail_id(); $url = wp_get_attachment_image_src($id, 'thumbnail'); echo $url[0]; ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/ecdg-loading.gif" alt="">
 <?php else: ?>
-            <img class="lazy" data-original="<?php echo get_template_directory_uri(); ?>/assets/images/ecdg-no-images.jpg" alt="">
+            <img class="lazy" data-original="<?php echo get_template_directory_uri(); ?>/assets/images/ecdg-no-images.jpg" src="<?php echo get_template_directory_uri(); ?>/assets/images/ecdg-loading.gif" alt="">
 <?php endif; ?>
           </a>
         </figure>
