@@ -33,6 +33,7 @@
     height: 40px;
     text-align: center;
     transition: all .3s ease;
+    cursor: pointer;
     z-index: 3;
   }
   &:hover &__inner &__submit,
@@ -41,7 +42,7 @@
     background: #fff;
   }
   &:hover &__icon,
-  &__submit:focus + &__icon {
+  &__submit:focus ~ &__icon {
     position: absolute;
     left: 240px;
     z-index: 1;

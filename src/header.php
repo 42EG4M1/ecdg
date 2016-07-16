@@ -196,7 +196,8 @@
           <div class="p-menu__item p-search">
             <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="p-search__inner">
               <input type="search" id="s" name="s" class="p-search__submit" value="">
-              <p class="p-search__icon"><svg class="c-icon search"><use xlink:href="#searchIcon"/></svg></p>
+              <input type="submit" class="is-none" id="search-submit">
+              <label class="p-search__icon" for="search-submit"><svg class="c-icon search"><use xlink:href="#searchIcon"/></svg></label>
             </form>
           </div>
         </div>

@@ -207,6 +207,21 @@ function my_add_quicktags() {
 }
 add_action( 'admin_print_footer_scripts', 'my_add_quicktags' );
 
+
+
+
+/**
+ *
+ * search
+ *
+**/
+function my_search_filter($query) {
+  if ( !$query->is_admin && $query->is_search ) {
+    $query->set( 'post_type', 'post' );
+  }
+  return $query;
+}
+add_filter( 'pre_get_posts', 'my_search_filter' );
   
 
 
