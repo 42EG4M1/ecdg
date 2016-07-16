@@ -44,19 +44,9 @@
   <meta property="og:title" content="<?php $title = wp_get_document_title(); echo $title; ?>">
   <meta property="og:type" content="<?php if( is_home() ) { echo 'website'; } else { echo 'article'; } ?>">
   <meta property="og:url" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">
-  <meta property="og:image" content="<?php
-    if ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) != '' ) {
-      echo wp_get_attachment_url(get_post_thumbnail_id());
-    } elseif ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) == '' ) {
-      echo get_bloginfo('template_url').'/assets/images/ecdg-no-images.jpg';
-    } else {
-      echo get_bloginfo('template_url').'/assets/images/ecdg-default.jpg';
-    }
-  ?>">
+  <meta property="og:image" content="<?php if ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) != '' ) { echo wp_get_attachment_url(get_post_thumbnail_id()); } elseif ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) == '' ) { echo get_bloginfo('template_url').'/assets/images/ecdg-no-images.jpg'; } else { echo get_bloginfo('template_url').'/assets/images/ecdg-default.jpg';} ?>">
   <meta property="og:site_name" content="カラーミーショップデザインギャラリー">
   <meta property="og:description" content="<?php my_description(); ?>">
-  
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <?php wp_head(); ?>
 </head>
@@ -210,7 +200,7 @@
           <label class="c-sns__svg--hidden" for="checked"><svg class="c-icon share"><use xlink:href="#shareIcon"/></svg></label>
           <div class="c-sns__inner--visible">
             <p class="c-sns__svg"><a href="https://twitter.com/intent/tweet?original_referer=<?php $str = esc_url(home_url('/')); $search = array(':','/'); $replace = array('%3A','%2F'); $home = str_replace($search, $replace, $str); echo $home . '&text=カラーミーショップで制作されたネットショップの事例集 - COLOR ME SHOP DESIGN GALLERY' . '&url=' . $home; ?>" onclick="window.open(this.href, 'twetterWindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a></p>
-            <p class="c-sns__svg"><a href="https://www.facebook.com/sharer.php?src=bm&amp;u=<?php $str = esc_url(home_url('/')); $search = array(':','/'); $replace = array('%3A','%2F'); $home = str_replace($search, $replace, $str); echo $home; ?>&amp;t=カラーミーショップで制作されたネットショップの事例集 - COLOR ME SHOP DESIGN GALLERY" onclick="window.open(this.href, 'facebookWindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon fb"><use xlink:href="#facebookIcon"/></svg></a></p>
+            <p class="c-sns__svg"><a href="https://www.facebook.com/sharer.php?src=bm&amp;u=<?php $str = esc_url(home_url('/')); $search = array(':','/'); $replace = array('%3A','%2F'); $home = str_replace($search, $replace, $str); echo $home . '&amp;t=カラーミーショップで制作されたネットショップの事例集 - COLOR ME SHOP DESIGN GALLERY'; ?>" onclick="window.open(this.href, 'facebookWindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon fb"><use xlink:href="#facebookIcon"/></svg></a></p>
             <p class="c-sns__svg"><a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo esc_url(home_url('/')); ?>&title=カラーミーショップで制作されたネットショップの事例集 - COLOR ME SHOP DESIGN GALLERY" onclick="window.open(this.href, 'hatenaWindow', 'width=510, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon hatena"><use xlink:href="#hatenaIcon"/></svg></a></p>
             <p class="c-sns__svg"><a href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fecdesigngallery.com%2Ffeed%2F' target="_blank" title="Follow"><svg class="c-icon feedly"><use xlink:href="#feedlyIcon"/></svg></a></p>
           </div>
