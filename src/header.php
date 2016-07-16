@@ -52,7 +52,16 @@
 </head>
 
 <body>
-<script>/* ga */</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48544050-2', 'ecdesigngallery.com');
+  ga('send', 'pageview');
+
+</script>
 <noscript class="noscript" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
 <!--[if lt IE 10]>
 <div class="ie">
@@ -186,8 +195,7 @@
           <div class="p-menu__item p-search">
             <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="p-search__inner">
               <input type="search" id="s" name="s" class="p-search__submit" value="">
-              <input type="submit" class="is-none" id="search-submit">
-              <label class="p-search__icon" for="search-submit"><svg class="c-icon search"><use xlink:href="#searchIcon"/></svg></label>
+              <p class="p-search__icon"><svg class="c-icon search"><use xlink:href="#searchIcon"/></svg></p>
             </form>
           </div>
         </div>

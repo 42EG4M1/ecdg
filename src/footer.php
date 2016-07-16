@@ -108,7 +108,7 @@ foreach ( $categories as $category ) {
 </div>
 
 
-<!-- js -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script charset="utf-8" src="<?php echo get_template_directory_uri(); ?>/assets/scripts/app.min.js?ver=<?php echo wp_get_theme()->get( 'Version' ); ?>"></script>
 <?php wp_footer(); ?>
 

@@ -18,7 +18,7 @@ get_header(); ?>
     
     <div class="p-page__block p-form">
 
-<?php echo do_shortcode('[contact-form-7 id="4" title="コンタクトフォーム 1"]'); ?>
+<?php echo do_shortcode('[contact-form-7 id="104" title="コンタクトフォーム 1"]'); ?>
       
     </div>
     
