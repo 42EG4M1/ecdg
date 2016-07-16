@@ -118,10 +118,33 @@
       }
     }
   }
-  &__more {
+  &__url {
     font-size: 10px;
     a {
       transition: $transition-base;
+    }
+  }
+  &__share {
+    display: flex;
+    margin-top: 20px;
+    &-item {
+      margin-right: 10px;
+    }
+    .c-icon {
+      height: 13px;
+      transform: translateY(0px);
+      &.tw {
+        fill: $color-twitter;
+      }
+      &.fb {
+        fill: $color-facebook;
+      }
+    }
+    a {
+      transition: opacity .5s ease;
+    }
+    a:hover .c-icon {
+      opacity: .6;
     }
   }
 }

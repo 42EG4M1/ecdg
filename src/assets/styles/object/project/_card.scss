@@ -127,17 +127,27 @@ $post-margin-left: 1.5625%;// 30px / 1920px * 100
       color: $color-accent-2;
     }
   }
-  &__like {
-    font-size: 10px;
-    color: #ccc;
-    cursor: pointer;
-    .c-icon.heart {
-      height: 11px;
-      fill: #ccc;
-      transform: translateY(-1px);
+  &__share {
+    display: flex;
+    align-items: center;
+    &-item {
+      margin-right: 4px;
     }
-    &:hover .c-icon.heart {
-      fill: $color-accent-2;
+    .c-icon {
+      height: 13px;
+      transform: translateY(0px);
+      &.tw {
+        fill: $color-twitter;
+      }
+      &.fb {
+        fill: $color-facebook;
+      }
+    }
+    a {
+      transition: opacity .5s ease;
+    }
+    a:hover .c-icon {
+      opacity: .6;
     }
   }
   &__taxonomy {
