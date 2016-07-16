@@ -13,28 +13,28 @@
 <aside class="p-aff">
   <div class="p-aff__inner">
     <div class="p-aff__item">
-      <a href="http://px.a8.net/svt/ejp?a8mat=2NMEYJ+893BN6+JD8+6I1XD" target="_blank">
-        <img border="0" width="300" height="250" alt="" src="http://www21.a8.net/svt/bgt?aid=160609339499&wid=001&eno=01&mid=s00000002510001092000&mc=1">
+      <a href="http://px.a8.net/svt/ejp?a8mat=2NMEYJ+893CEY+JD8+6IWSH" target="_blank">
+        <img border="0" width="250" height="250" alt="" src="http://www25.a8.net/svt/bgt?aid=160609339499&wid=002&eno=01&mid=s00000002510001096000&mc=1">
       </a>
-      <img border="0" width="1" height="1" src="http://www14.a8.net/0.gif?a8mat=2NMEYJ+893BN6+JD8+6I1XD" alt="">
+      <img border="0" width="1" height="1" src="http://www14.a8.net/0.gif?a8mat=2NMEYJ+893CEY+JD8+6IWSH" alt="">
     </div>
     <div class="p-aff__item">
-      <a href="http://px.a8.net/svt/ejp?a8mat=2NMEYJ+8ZVUMY+3CZK+601S1" target="_blank">
-        <img border="0" width="300" height="250" alt="" src="http://www25.a8.net/svt/bgt?aid=160609339544&wid=002&eno=01&mid=s00000015680001008000&mc=1">
+      <a href="http://px.a8.net/svt/ejp?a8mat=2NMEYJ+A1ZLCQ+KK0+6RWV5" target="_blank">
+        <img border="0" width="250" height="250" alt="" src="http://www23.a8.net/svt/bgt?aid=160609339608&wid=002&eno=01&mid=s00000002664001138000&mc=1">
       </a>
-      <img border="0" width="1" height="1" src="http://www14.a8.net/0.gif?a8mat=2NMEYJ+8ZVUMY+3CZK+601S1" alt="">
+      <img border="0" width="1" height="1" src="http://www17.a8.net/0.gif?a8mat=2NMEYJ+A1ZLCQ+KK0+6RWV5" alt="">
     </div>
     <div class="p-aff__item">
-      <a href="http://px.a8.net/svt/ejp?a8mat=2NMEYJ+A1ZLCQ+KK0+6SCAP" target="_blank">
-        <img border="0" width="300" height="250" alt="" src="http://www22.a8.net/svt/bgt?aid=160609339608&wid=002&eno=01&mid=s00000002664001140000&mc=1">
+      <a href="http://px.a8.net/svt/ejp?a8mat=2NOMSX+13ANH6+348+6FP1T" target="_blank">
+        <img border="0" width="250" height="250" alt="" src="http://www29.a8.net/svt/bgt?aid=160712817066&wid=002&eno=01&mid=s00000000404001081000&mc=1">
       </a>
-      <img border="0" width="1" height="1" src="http://www12.a8.net/0.gif?a8mat=2NMEYJ+A1ZLCQ+KK0+6SCAP" alt="">
+      <img border="0" width="1" height="1" src="http://www15.a8.net/0.gif?a8mat=2NOMSX+13ANH6+348+6FP1T" alt="">
     </div>
     <div class="p-aff__item">
-      <a href="http://px.a8.net/svt/ejp?a8mat=2BJERR+6CMH2Q+348+I9D4H" target="_blank">
-        <img border="0" width="300" height="250" alt="" src="http://www25.a8.net/svt/bgt?aid=140313735384&wid=001&eno=01&mid=s00000000404003067000&mc=1">
+      <a href="http://px.a8.net/svt/ejp?a8mat=2BJERR+6CMH2Q+348+IQXU9" target="_blank">
+        <img border="0" width="250" height="250" alt="" src="http://www25.a8.net/svt/bgt?aid=140313735384&wid=001&eno=01&mid=s00000000404003149000&mc=1">
       </a>
-      <img border="0" width="1" height="1" src="http://www13.a8.net/0.gif?a8mat=2BJERR+6CMH2Q+348+I9D4H" alt="">
+      <img border="0" width="1" height="1" src="http://www19.a8.net/0.gif?a8mat=2BJERR+6CMH2Q+348+IQXU9" alt="">
     </div>
   </div>
 </aside>

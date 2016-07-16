@@ -12,14 +12,14 @@
     align-items: center;
     box-sizing: border-box;
     width: 100%;
-    max-width: 1420px;
+    max-width: 1080px;
     height: 100%;
     margin: 0 auto;
     padding: 0 80px 40px;
   }
   &__item {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     max-height: 250px;
     margin-left: 20px;
     &:first-child {
@@ -36,7 +36,7 @@
 .p-aff {
   &__inner {
     flex-wrap: wrap;
-    max-width: 620px;
+    max-width: 520px;
     padding: 0 0 40px;
   }
   &__item {
