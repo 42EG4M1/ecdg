@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * front page
+ * home
  *
 **/
 get_header(); ?>
@@ -27,10 +27,10 @@ get_header(); ?>
         <div class="p-card__meta">
           <div class="p-card__meta-inner">
             <p class="p-card__date"><?php $days = 7; $today = date_i18n('U'); $entry = get_the_time('U'); $elapsed = date('U',($today - $entry)) / 86400; if( $days > $elapsed ){ echo '<span>NEW</span>'; } ?><?php echo get_post_time('Y.m.d'); ?></p>
-            <!--<p class="p-card__like">123<svg class="c-icon heart"><use xlink:href="#heartIcon"/></svg></p>-->
+<!-- <p class="p-card__like">123<svg class="c-icon heart"><use xlink:href="#heartIcon"/></svg></p>-->
           </div>
         </div>
-        <p class="p-card__taxonomy"><span><?php the_category( ' ' ); ?></span><?php the_terms( $post->ID, 'color', '<span>', '</span><span>', '</span>' ); ?><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
+        <p class="p-card__taxonomy"><span><?php the_category( ' ' ); ?></span><?php /* the_terms( $post->ID, 'color', '<span>', '</span><span>', '</span>' ); ?><?php the_tags( '<span>', '</span><span>', '</span>' ); */ ?></p>
       </article>
     </div>
 

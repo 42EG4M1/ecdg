@@ -66,6 +66,7 @@ $post-margin-left: 1.5625%;// 30px / 1920px * 100
     margin-top: 16px;
 //    margin: 16px 0; 最下部のflexitemを揃える場合
     font-size: 13px;
+    @include ellipsis;
     a {
       color: $color-text-main;
       transition: $transition-base;
@@ -143,7 +144,7 @@ $post-margin-left: 1.5625%;// 30px / 1920px * 100
     order: 4;
     margin-top: 3px;
     padding-top: 3px;
-    font-size: 11px;
+    font-size: 10px;
     border-top: 1px solid lighten($color-line, 40%);
     a {
       transition: $transition-base;
