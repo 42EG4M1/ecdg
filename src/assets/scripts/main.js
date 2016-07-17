@@ -156,6 +156,7 @@
   function init() {
     toTop();
     modalOpen();
+    tapAddClass();
     clearContens($('#js-ieBtn'), 800);
     $('img.lazy').lazyload({
       threshold: 200,
@@ -169,7 +170,6 @@
     coverFixed();
     scrollInViews();
     sideFixed();
-    tapAddClass();
   }
   
   
