@@ -33,16 +33,18 @@
     height: 40px;
     text-align: center;
     transition: all .3s ease;
-    cursor: pointer;
+    cursor: default;
     z-index: 3;
   }
   &:hover &__inner &__submit,
+  &.is-search-open &__inner &__submit,
   &__submit:focus {
     width: 240px;
     background: #fff;
   }
   &:hover &__icon,
-  &__submit:focus ~ &__icon {
+  &.is-search-open &__icon,
+  &__submit:focus + &__icon {
     position: absolute;
     left: 240px;
     z-index: 1;
@@ -52,11 +54,11 @@
 
 
 
-
 // media query
 @media #{$mq400} {
 .p-search {
   &:hover &__inner &__submit,
+  &.is-search-open &__inner &__submit,
   &__submit:focus {
     width: 150px;
     .is-fixed & {
@@ -64,6 +66,7 @@
     }
   }
   &:hover &__icon,
+  &.is-search-open &__icon,
   &__submit:focus + &__icon {
     left: 150px;
   }

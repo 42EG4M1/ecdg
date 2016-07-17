@@ -301,7 +301,8 @@ function re_register_post_category_taxonomy() {
       'show_ui'           => true,
       'show_admin_column' => true,
       '_builtin'          => true,
-      'labels'            => $labels
+      'labels'            => $labels,
+      'rewrite'           => array( 'slug' => 'service' )
     )
   );
 }
@@ -348,7 +349,8 @@ function re_register_post_tag_taxonomy() {
       'show_ui'           => true,
       'show_admin_column' => true,
       '_builtin'          => true,
-      'labels'            => $labels
+      'labels'            => $labels,
+      'rewrite'           => array( 'slug' => 'tag' )
     )
   );
 }
