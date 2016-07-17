@@ -135,6 +135,24 @@
   }
   
   
+  
+  function tapAddClass() {
+    var $search = $('#js-search'),
+        $main = $('#js-main');
+    $search.on('click', function(e) {
+      $(this).addClass('is-search-open');
+      e.stopPropagation();
+    });
+    
+    if ($('.is-search-open').length !== null) {
+      $main.on('click', function() {
+        $search.removeClass('is-search-open');
+      });
+    }
+  }
+  
+  
+  
   function init() {
     toTop();
     modalOpen();
@@ -151,6 +169,7 @@
     coverFixed();
     scrollInViews();
     sideFixed();
+    tapAddClass();
   }
   
   

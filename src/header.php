@@ -8,7 +8,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<?php /* <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#<php if ( is_home() ) { echo ' website: http://ogp.me/ns/website#'; } else { echo ' article: http://ogp.me/ns/article#'; } ?>"> */ ?>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?php my_description(); ?>">
@@ -44,7 +43,7 @@
   <meta property="og:title" content="<?php $title = wp_get_document_title(); echo $title; ?>">
   <meta property="og:type" content="<?php if( is_home() ) { echo 'website'; } else { echo 'article'; } ?>">
   <meta property="og:url" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>">
-  <meta property="og:image" content="<?php if ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) != '' ) { echo wp_get_attachment_url(get_post_thumbnail_id()); } elseif ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) == '' ) { echo get_bloginfo('template_url').'/assets/images/ecdg-no-images.jpg'; } else { echo get_bloginfo('template_url').'/assets/images/ecdg-default.jpg';} ?>">
+  <meta property="og:image" content="<?php if ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) != '' ) { echo wp_get_attachment_url(get_post_thumbnail_id()); } elseif ( is_single() && wp_get_attachment_url(get_post_thumbnail_id()) == '' ) { echo get_bloginfo('template_url').'/assets/images/ecdg-no-images.jpg'; } else { echo get_bloginfo('template_url').'/assets/images/ecdg-eyecatch-default.png';} ?>">
   <meta property="og:site_name" content="カラーミーショップデザインギャラリー">
   <meta property="og:description" content="<?php my_description(); ?>">
 
@@ -132,13 +131,6 @@
              s37.3,83.3,83.3,83.3c20.8,0,39.7-7.6,54.3-20.2l53.6,53.6L200,191.2z M13.3,83.3c0-38.7,31.3-70,70-70s70,31.3,70,70
              c0,19.3-7.8,36.8-20.5,49.5l0,0c-12.7,12.7-30.2,20.5-49.5,20.5C44.7,153.3,13.3,122,13.3,83.3z"/>
   </symbol>
-  <symbol id="heartIcon" viewBox="0 0 511.6 438.5">
-	<path d="M475.4,35.4C451.2,11.8,417.8,0,375.2,0c-11.8,0-23.8,2-36.1,6.1c-12.3,4.1-23.7,9.6-34.3,16.6
-             c-10.6,6.9-19.6,13.5-27.3,19.6c-7.6,6.1-14.8,12.6-21.7,19.4c-6.9-6.8-14.1-13.3-21.7-19.4c-7.6-6.1-16.7-12.6-27.3-19.6
-             c-10.6-7-22-12.5-34.3-16.6C160.3,2,148.3,0,136.5,0c-42.6,0-76,11.8-100.2,35.4C12.1,59,0,91.7,0,133.6c0,12.8,2.2,25.9,6.7,39.4
-             c4.5,13.5,9.6,25,15.3,34.5c5.7,9.5,12.2,18.8,19.4,27.8c7.2,9,12.5,15.3,15.8,18.7c3.3,3.4,5.9,5.9,7.9,7.4l178.2,171.9
-             c3.4,3.4,7.6,5.1,12.6,5.1c4.9,0,9.1-1.7,12.6-5.1l177.9-171.3c43.6-43.6,65.4-86.4,65.4-128.5C511.6,91.7,499.5,59,475.4,35.4z"/>
-  </symbol>
   <symbol id="linkIcon" viewBox="0 0 511.6 438.5">
     <path d="M392.9,255.8h-18.3c-2.7,0-4.9,0.9-6.6,2.6c-1.7,1.7-2.6,3.9-2.6,6.6v91.4c0,12.6-4.5,23.3-13.4,32.3
              c-8.9,8.9-19.7,13.4-32.3,13.4H82.2c-12.6,0-23.3-4.5-32.3-13.4c-8.9-8.9-13.4-19.7-13.4-32.3V118.8c0-12.6,4.5-23.3,13.4-32.3
@@ -177,7 +169,7 @@
 </header>
 
 
-<main class="main" id="js-load">
+<main class="main" id="js-main">
 
 
 <section class="main__inner p-cover" id="js-cover">
@@ -192,7 +184,7 @@
           <div class="p-menu__btn c-btn--menu" id="is-open">
             <span class="c-btn--menu-t"></span><span class="c-btn--menu-m"></span><span class="c-btn--menu-b"></span>
           </div>
-          <div class="p-menu__item p-search">
+          <div class="p-menu__item p-search" id="js-search">
             <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="p-search__inner">
               <input type="search" id="s" name="s" class="p-search__submit" value="">
               <p class="p-search__icon"><svg class="c-icon search"><use xlink:href="#searchIcon"/></svg></p>
