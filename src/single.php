@@ -41,14 +41,7 @@ get_header(); ?>
 
 <aside class="main__inner p-ads--article">
   <div class="p-ads--article__inner">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-0944111943952651"
-         data-ad-slot="3234704806"
-         data-ad-format="auto"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+<?php get_template_part( 'inc/adsense' ); ?>
   </div>
 </aside>
 

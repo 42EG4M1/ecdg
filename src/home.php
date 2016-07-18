@@ -44,46 +44,25 @@ get_header(); ?>
     </div>
 <?php endif; ?>
 
-<?php if ( $count >= 0 ) : ?>    
+<?php if ( $count >= 0 ) : ?>
     <aside class="p-card__item--no1 p-ads">
       <div class="p-ads__inner">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-0944111943952651"
-             data-ad-slot="3234704806"
-             data-ad-format="auto"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+<?php get_template_part( 'inc/adsense' ); ?>
       </div>
     </aside>
-<?php endif; if ( $count > 20 ) : ?>  
+<?php endif; if ( $count > 20 ) : ?>
     <aside class="p-card__item--no2 p-ads">
       <div class="p-ads__inner">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-0944111943952651"
-             data-ad-slot="3234704806"
-             data-ad-format="auto"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+<?php get_template_part( 'inc/adsense' ); ?>
       </div>
     </aside>
 <?php endif; if ( $count > 40 ) : ?>
     <aside class="p-card__item--no3 p-ads">
       <div class="p-ads__inner">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-0944111943952651"
-             data-ad-slot="3234704806"
-             data-ad-format="auto"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+<?php get_template_part( 'inc/adsense' ); ?>
       </div>
     </aside>
-<?php endif;?>
+<?php endif; ?>
 
   </div>
 </section>

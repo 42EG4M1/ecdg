@@ -35,9 +35,9 @@ module.exports = {
   
   
   copy: {
-    src   : './src/*.+(html|css|php|png)',
+    src   : './src/**/*.+(html|css|php|png)',
     dest  : './dist/',
-    watch : './src/*.+(html|css|php|png)'
+    watch : './src/**/*.+(html|css|php|png)'
   }
   
   
