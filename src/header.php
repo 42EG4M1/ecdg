@@ -26,17 +26,10 @@
 </head>
 
 <body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<?php get_template_part( 'inc/ga' ); ?>
 
-  ga('create', 'UA-48544050-2', 'ecdesigngallery.com');
-  ga('send', 'pageview');
-
-</script>
 <noscript class="noscript" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
+
 <!--[if lt IE 10]>
 <div class="ie">
   <div class="ie__hold">
@@ -49,6 +42,7 @@
   <p class="ie__btn" id="js-ieBtn">この表示を削除する</p>
 </div>
 <![endif]-->
+
 <svg class="svg-defs">
   <symbol id="twitterIcon" viewBox="0 0 246.1 200">
     <path d="M246.1,23.7c-9.1,4-18.8,6.7-29,8c10.4-6.2,18.4-16.1,22.2-27.9c-9.8,5.8-20.6,10-32.1,12.3
