@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  *
  * header
@@ -12,21 +12,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?php my_description(); ?>">
   <meta name="keywords" content="カラーミーショップ, カラーミー, ネットショップ, オンラインショップ, EC, ギャラリー">
-  
+
   <!-- styles -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/styles/all.min.css?ver=<?php echo wp_get_theme()->get( 'Version' ); ?>" media="all">
-  
+
   <!-- favicon -->
 <?php get_template_part( 'inc/favicon' ); ?>
-  
+
   <!-- ogp -->
-<?php get_template_part( 'inc/ogp' ); ?>
+<?php get_template_part( 'inc/ogp/ogp' ); ?>
 
 <?php wp_head(); ?>
 </head>
 
 <body>
-<?php get_template_part( 'inc/ga' ); ?>
+<?php get_template_part( 'inc/ga/ga' ); ?>
 
 <noscript class="noscript" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
 
@@ -142,10 +142,10 @@
 
 
 <section class="main__inner p-cover" id="js-cover">
-  
+
   <div class="p-cover__hold">
     <div class="p-cover__inner">
-  
+
       <h2 class="p-cover__ttl">カラーミーショップで制作されたネットショップ事例集</h2>
 
       <div class="p-cover__menu p-menu">
@@ -161,7 +161,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="p-cover__sns c-sns">
         <div class="c-sns__inner">
           <p class="c-sns__txt"><a href="http://px.a8.net/svt/ejp?a8mat=2BJERR+6CMH2Q+348+HWXLE" target="_blank">カラーミーショップ<svg class="c-icon link"><use xlink:href="#linkIcon"/></svg></a><img border="0" width="1" height="1" src="http://www10.a8.net/0.gif?a8mat=2BJERR+6CMH2Q+348+HWXLE" alt=""></p>
@@ -175,7 +175,7 @@
           </div>
         </div>
       </div>
-    
+
     </div>
   </div>
 </section>

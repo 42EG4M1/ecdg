@@ -47,19 +47,19 @@ get_header(); ?>
 <?php if ( $count >= 0 ) : ?>
     <aside class="p-card__item--no1 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense' ); ?>
+<?php get_template_part( 'inc/adsense/adsense' ); ?>
       </div>
     </aside>
 <?php endif; if ( $count > 20 ) : ?>
     <aside class="p-card__item--no2 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense' ); ?>
+<?php get_template_part( 'inc/adsense/adsense' ); ?>
       </div>
     </aside>
 <?php endif; if ( $count > 40 ) : ?>
     <aside class="p-card__item--no3 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense' ); ?>
+<?php get_template_part( 'inc/adsense/adsense' ); ?>
       </div>
     </aside>
 <?php endif; ?>
@@ -71,7 +71,8 @@ get_header(); ?>
 <?php $max_page = $wp_query->max_num_pages; if( $max_page != 1 ) : ?>
 <aside class="main__inner p-pagination" id="js-pagination">
   <div class="p-pagination__inner">
-    <?php my_pagination(); ?>
+<?php my_pagination(); ?>
+
   </div>
 </aside>
 <?php endif; ?>

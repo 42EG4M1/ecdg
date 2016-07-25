@@ -41,7 +41,7 @@ get_header(); ?>
 
 <aside class="main__inner p-ads--article">
   <div class="p-ads--article__inner">
-<?php get_template_part( 'inc/adsense' ); ?>
+<?php get_template_part( 'inc/adsense/adsense' ); ?>
   </div>
 </aside>
 

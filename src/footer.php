@@ -5,12 +5,26 @@
  *
 **/
 ?>
-
-
 </main>
 
+
 <?php if ( !is_page() ) : ?>
-<?php get_template_part( 'inc/affiliate' ); ?>
+<aside class="p-aff">
+  <div class="p-aff__inner">
+    <div class="p-aff__item">
+<?php get_template_part( 'inc/affiliate/1' ); ?>
+    </div>
+    <div class="p-aff__item">
+<?php get_template_part( 'inc/affiliate/2' ); ?>
+    </div>
+    <div class="p-aff__item">
+<?php get_template_part( 'inc/affiliate/3' ); ?>
+    </div>
+    <div class="p-aff__item">
+<?php get_template_part( 'inc/affiliate/4' ); ?>
+    </div>
+  </div>
+</aside>
 <?php endif; ?>
 
 

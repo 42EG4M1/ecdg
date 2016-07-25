@@ -16,7 +16,7 @@ get_header(); ?>
 
 <section class="main__inner p-card">
   <div class="p-card__hold">
-    
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); $count++; ?>
 
     <div class="p-card__item">
@@ -54,19 +54,19 @@ get_header(); ?>
 <?php if ( $count >= 0 ) : ?>
     <aside class="p-card__item--no1 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense' ); ?>
+<?php get_template_part( 'inc/adsense/adsense' ); ?>
       </div>
     </aside>
 <?php endif; if ( $count > 20 ) : ?>
     <aside class="p-card__item--no2 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense' ); ?>
+<?php get_template_part( 'inc/adsense/adsense' ); ?>
       </div>
     </aside>
 <?php endif; if ( $count > 40 ) : ?>
     <aside class="p-card__item--no3 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense' ); ?>
+<?php get_template_part( 'inc/adsense/adsense' ); ?>
       </div>
     </aside>
 <?php endif; ?>
