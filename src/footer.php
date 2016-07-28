@@ -10,20 +10,10 @@
 
 <?php if ( !is_page() ) : ?>
 <aside class="p-aff">
-  <div class="p-aff__inner">
-    <div class="p-aff__item">
-<?php get_template_part( 'inc/affiliate/1' ); ?>
-    </div>
-    <div class="p-aff__item">
-<?php get_template_part( 'inc/affiliate/2' ); ?>
-    </div>
-    <div class="p-aff__item">
-<?php get_template_part( 'inc/affiliate/3' ); ?>
-    </div>
-    <div class="p-aff__item">
-<?php get_template_part( 'inc/affiliate/4' ); ?>
-    </div>
-  </div>
+<?php if(is_active_sidebar('widget_footer_aff')) : ?>
+<?php dynamic_sidebar('widget_footer_aff'); ?>
+<?php endif; ?>
+
 </aside>
 <?php endif; ?>
 
