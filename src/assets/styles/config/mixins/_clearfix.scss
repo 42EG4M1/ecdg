@@ -1,9 +1,6 @@
 // clearfix
 
 
-
-
-
 @mixin clearfix {
   &:after {
     content: "";
@@ -12,20 +9,3 @@
   }
 }
 // @include clearfix;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

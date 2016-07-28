@@ -1,9 +1,6 @@
 // visible
 
 
-
-
-
 .is-hidden > * {
   transition: all .5s ease;
   visibility: hidden;
@@ -14,18 +11,3 @@
 .is-none {
   display: none !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

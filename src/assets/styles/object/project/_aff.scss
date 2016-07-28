@@ -5,7 +5,7 @@
   width: 100%;
   background: $color-background-body;
   &__inner,
-  .textwidget {//wpで出力されるclass
+  .textwidget {//wpのwidgetで出力されるclass
     display: flex;
     align-items: center;
     box-sizing: border-box;
