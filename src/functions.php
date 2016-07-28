@@ -20,10 +20,10 @@ function ecdg_setup() {
 
   // auto title
   add_theme_support( 'title-tag' );
-  
+
   // default jquery clear
   wp_deregister_script( 'jquery' );
-  
+
   // clear wp_head
   remove_action( 'wp_head', 'rsd_link' );
   remove_action( 'wp_head', 'wlwmanifest_link' );
@@ -52,6 +52,26 @@ add_action( 'after_setup_theme', 'ecdg_setup' );
 **/
 add_filter( 'wp_calculate_image_srcset', '__return_false' );
 
+
+
+
+/**
+ *
+ * widget
+ *
+**/
+function my_widgets_init() {
+	register_sidebar( array(
+		'name'          => 'footer aff',
+		'id'            => 'widget_footer_aff',
+		'description'   => 'アフィリエイト用ウィジェット',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	));
+}
+add_action( 'widgets_init', 'my_widgets_init' );
 
 
 
@@ -99,12 +119,12 @@ add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
 **/
 function my_description() {
   global $post;
-  
+
   $desc = 'カラーミーショップデザインギャラリーは、カラーミーショップで制作されたECサイト（オンラインショップ）だけを集めたニッチなWebサイトギャラリーです。デザイン性の高いサイトを中心に、カスタマイズやデザインの参考となるようなハイクオリティなサイトを掲載しています。';
   $sub_desc = ' &#8211; カラーミーショップデザインギャラリー';
   $title = wp_get_document_title();
   $title = str_replace( $sub_desc, "", $title );
-  
+
   if ( is_home() ) {
     echo $desc;
   } elseif ( is_single() ) {
@@ -168,14 +188,14 @@ function my_pagination() {
   global $wp_query, $paged;
   $p_base = get_pagenum_link(1);
   $p_format = 'page/%#%';
-  
+
   if ( $word = strpos($p_base, '?') ) {
     $p_base = get_option(home).(substr(get_option(home), -1 ,1) === '/' ? '' : '/')
       .'%_%'.substr($p_base, $word);
   } else {
     $p_base .= (substr($p_base, -1 ,1) === '/' ? '' : '/') .'%_%';
   }
-  
+
   echo paginate_links(array(
     'base' => $p_base,
     'format' => $p_format,
@@ -184,7 +204,7 @@ function my_pagination() {
     'current' => ($paged ? $paged : 1),
     'prev_text' => 'PREV',
     'next_text' => 'NEXT'
-  )); 
+  ));
 }
 
 
@@ -270,7 +290,7 @@ add_action( 'admin_menu', 'change_post_label' );
 **/
 function re_register_post_category_taxonomy() {
   global $wp_rewrite;
-  
+
   $labels = array(
     'name'                  => 'サービス',
     'singular_name'         => 'サービス',
@@ -290,7 +310,7 @@ function re_register_post_category_taxonomy() {
     'menu_name'             => 'サービス',
     'name_admin_bar'        => 'service'
   );
-  
+
   register_taxonomy(
     'category',
     'post',
@@ -318,7 +338,7 @@ add_action( 'init', 're_register_post_category_taxonomy' );
 **/
 function re_register_post_tag_taxonomy() {
   global $wp_rewrite;
-  
+
   $labels = array(
     'name'                  => 'タグ',
     'singular_name'         => 'タグ',
@@ -338,7 +358,7 @@ function re_register_post_tag_taxonomy() {
     'menu_name'             => 'タグ',
     'name_admin_bar'        => 'tag'
   );
-  
+
   register_taxonomy(
     'post_tag',
     'post',
@@ -365,7 +385,7 @@ add_action( 'init', 're_register_post_tag_taxonomy' );
  *
 **/
 function create_post_type() {
-  
+
   $labels = array(
     'name'                  => 'カラー',
     'singular_name'         => 'カラー',
@@ -385,7 +405,7 @@ function create_post_type() {
     'menu_name'             => 'カラー',
     'name_admin_bar'        => 'color'
   );
-  
+
   register_taxonomy(
     'color',
     'post',

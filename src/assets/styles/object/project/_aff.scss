@@ -1,13 +1,11 @@
 // aff
 
 
-
-
-
 .p-aff {
   width: 100%;
   background: $color-background-body;
-  &__inner {
+  &__inner,
+  .textwidget {//wpで出力されるclass
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -68,28 +66,3 @@
   }
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
