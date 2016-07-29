@@ -6,6 +6,7 @@
   height: 40px;
   margin: $margin-base auto 0;
   &__hold {
+    transform: translate3d(0, 0, 0);
     .is-fixed & {
       position: fixed;
       top: 0;
