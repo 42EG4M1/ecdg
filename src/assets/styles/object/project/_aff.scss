@@ -32,7 +32,8 @@
 // media query
 @media #{$mq1000} {
 .p-aff {
-  &__inner {
+  &__inner,
+  .textwidget {//wpのwidgetで出力されるclass
     flex-wrap: wrap;
     max-width: 520px;
     padding: 0 0 40px;
@@ -51,7 +52,8 @@
 
 @media #{$mq768} {
 .p-aff {
-  &__inner {
+  &__inner,
+  .textwidget {//wpのwidgetで出力されるclass
     padding: 0 30px 40px;
   }
   &__item {
