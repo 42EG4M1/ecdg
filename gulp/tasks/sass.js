@@ -6,8 +6,7 @@ const $           = require('gulp-load-plugins')();
 
 gulp.task('sass', () => {
   return gulp.src(config.src)
-    .pipe($.plumber())
-    .pipe($.sass())
+    .pipe($.sass().on('error', $.sass.logError))
     .pipe($.pleeease({
       minifier: true, //true or false
       out: 'all.min.css'
