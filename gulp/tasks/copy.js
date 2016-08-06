@@ -5,7 +5,7 @@ const $           = require('gulp-load-plugins')();
 
 
 gulp.task('copy', () => {
-  return gulp.src(config.src)
+  return gulp.src(config.src, {base: 'src'})
   .pipe($.changed(config.dest))
   .pipe(gulp.dest(config.dest))
   .pipe(browserSync.reload({
