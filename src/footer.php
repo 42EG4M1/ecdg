@@ -9,13 +9,12 @@
 
 
 <?php if ( !is_page() ) : ?>
+<?php if ( is_active_sidebar('widget_footer_aff') ) : ?>
 <aside class="p-aff">
-<?php if(is_active_sidebar('widget_footer_aff')) : ?>
 <?php dynamic_sidebar('widget_footer_aff'); ?>
-<?php endif; ?>
 
 </aside>
-<?php endif; ?>
+<?php endif; endif; ?>
 
 
 <footer class="footer">

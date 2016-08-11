@@ -12,14 +12,20 @@
     }
   }
   &__txt {
+    position: relative;
     margin-right: 16px;
     a {
       display: inline-block;
       font-size: 11px;
       transition: $transition-base;
-      .c-icon {
-        height: 12px;
-        margin-left: 3px;
+      + img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        + .c-icon {
+          height: 12px;
+          margin-left: 3px;
+        }
       }
     }
   }
