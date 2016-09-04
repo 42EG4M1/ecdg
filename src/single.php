@@ -16,7 +16,7 @@ get_header(); ?>
         <p class="p-article__date"><?php $days = 7; $today = date_i18n('U'); $entry = get_the_time('U'); $elapsed = date('U',($today - $entry)) / 86400; if( $days > $elapsed ){ echo '<span>NEW</span>'; } ?><?php echo get_post_time('Y.m.d'); ?></p>
 <?php if ( !is_attachment() ): ?>
         <ul class="p-article__taxonomy">
-          <li><?php the_category( ' ' ); ?></li><?php the_terms( $post->ID, 'color', '<li>', '</li><li>', '</li>' ); ?><?php the_tags( '<li>', '</li><li>', '</li>' ); ?>
+          <li><?php the_category( '</li><li>' ); ?></li><?php the_terms( $post->ID, 'color', '<li>', '</li><li>', '</li>' ); ?><?php the_tags( '<li>', '</li><li>', '</li>' ); ?>
         </ul>
         <p class="p-article__url">URL : <a href="<?php echo post_custom('URL'); ?>" target="_blank"><?php echo post_custom('URL'); ?></a></p>
         <div class="p-article__share">

@@ -41,7 +41,7 @@ get_header(); ?>
             </div>
           </div>
         </div>
-        <p class="p-card__taxonomy"><span><?php the_category( ' ' ); ?></span><?php the_terms( $post->ID, 'color', '<span>', '</span><span>', '</span>' ); ?><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
+        <p class="p-card__taxonomy"><span><?php the_category( '</span><span>' ); ?></span><?php the_terms( $post->ID, 'color', '<span>', '</span><span>', '</span>' ); ?><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
       </article>
     </div>
 
