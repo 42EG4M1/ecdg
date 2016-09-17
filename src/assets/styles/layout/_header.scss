@@ -39,6 +39,9 @@
         &:first-child {
           margin-left: 0;
         }
+        &.cur a {
+          font-weight: 700;
+        }
         a {
           display: block;
           color: $color-text-main;
