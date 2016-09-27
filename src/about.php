@@ -16,6 +16,7 @@ get_header(); ?>
         <p>COLOR ME SHOP DESIGN GALLERY は、<a href="http://px.a8.net/svt/ejp?a8mat=2BJERR+6CMH2Q+348+HWXLE" target="_blank">カラーミーショップ</a><img border="0" width="1" height="1" src="http://www10.a8.net/0.gif?a8mat=2BJERR+6CMH2Q+348+HWXLE" alt="">で制作されたECサイト（オンラインショップ）だけを集めたニッチなWebサイトギャラリーです。カラーミーショップのカート機能を利用して制作されたデザイン性の高いECサイトを中心に、カスタマイズやデザインの参考となるようなハイクオリティなサイトを厳選し掲載しています。</p>
         <p>掲載するサイトには、カラーミーショップの<em>カート機能</em>を利用しているサイトを前提としており、「どこでもカラーミー」の機能や「カラーミーショップ API」を利用したもの、プラチナプランによる通常プランとは異なる仕様のものなども含まれています。</p>
         <p>サイトの掲載希望や推薦も随時募集していますので、<a href="<?php echo esc_url(home_url('/contact/')); ?>">コンタクト</a>よりお気軽にご連絡ください（全て掲載されるとは限りません）。</p>
+        <p><a href="https://twitter.com/ecdesigngallery" target="_blank">Twitter</a></p>
       </div>
     </div>
 

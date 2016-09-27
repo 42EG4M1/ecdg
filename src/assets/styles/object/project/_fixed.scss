@@ -1,0 +1,33 @@
+// fixed
+
+
+.p-fixed {
+  position: fixed;
+  bottom: 80px;
+  left: 80px;
+  z-index: 2;
+  a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 10px;
+    transition: $transition-base;
+  }
+}
+
+
+// media query
+@media #{$mq768} {
+.p-fixed {
+  bottom: 40px;
+  left: 20px;
+}
+}
+
+@media #{$mq400} {
+.p-fixed {
+  position: absolute;
+}
+}

@@ -17,6 +17,11 @@
 <?php endif; endif; ?>
 
 
+<div class="p-fixed">
+  <a href="https://twitter.com/ecdesigngallery" target="_blank">Twitter</a>
+</div>
+
+
 <footer class="footer">
   <p class="footer__copy">&copy; <span>Color Me Shop</span> Design Gallery</p>
 </footer>
