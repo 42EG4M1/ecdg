@@ -38,6 +38,9 @@
     label {
       cursor: pointer;
     }
+    &--hidden {
+      display: none;
+    }
   }
   &__submit {
     margin-top: 50px;
@@ -53,6 +56,12 @@
       &:hover {
         color: #fff;
         background: $color-accent;
+      }
+      &:disabled {
+        color: rgba($color-link, .3);
+        border-color: rgba($color-link, .3);
+        background: none;
+        cursor: default;
       }
     }
   }
