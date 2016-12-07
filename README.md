@@ -6,9 +6,15 @@
 
 # ecdesigngallery
 
-WordPress theme  
+WordPress theme.  
+This theme is set up for use with VCCW.  
+
 
 [http://ecdesigngallery.com/](http://ecdesigngallery.com/)
+
+## Clone
+    $ cd ~/app/ecdesigngallery.com/public_html/wp/wp-content/themes
+    $ git clone git@github.com:42EG4M1/ecdg.git dev-ecdg
 
 ## Install npm packages
     $ npm i
@@ -16,5 +22,21 @@ WordPress theme
 ## Build
     $ npm run gulp
 
-After the build generated dist directory, its move to the WordPress themes directory.  
-(and change directory name. dist => ecdg)
+The dist directory is destored at the same level as the working directory.  
+
+    ├─ dev-ecdg (working directory)
+    │   ├─ gulp
+    │   │   ├─ tasks
+    │   │   ...
+    │   ├─ src
+    │   │   ├─ assets
+    │   │   ...
+    │   ├─ .git
+    │   ├─ .gitignore
+    │   ├─ package.json
+    │   ├─ gulpfile.js
+    │   ├─ README.md
+    │   ...
+    ├─ ____ecdg (dest directory)___
+    ...
+
