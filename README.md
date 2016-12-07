@@ -10,6 +10,9 @@ WordPress theme
 
 [http://ecdesigngallery.com/](http://ecdesigngallery.com/)
 
+## Install npm packages
+    $ npm i
+
 ## Build
     $ npm run gulp
 
