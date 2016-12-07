@@ -37,6 +37,6 @@ The dist directory is destored at the same level as the working directory.
     │   ├─ gulpfile.js
     │   ├─ README.md
     │   ...
-    ├─ ____ecdg (dest directory)___
+    ├─ ecdg (dest directory)
     ...
 
