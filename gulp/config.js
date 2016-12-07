@@ -1,7 +1,9 @@
+const dist = '../ecdg/';
+
 const dir = {
   src  : './src/assets/',
-  dest : './dist/assets/'
-}
+  dest : dist + 'assets/'
+};
 
 
 module.exports = {
@@ -9,7 +11,7 @@ module.exports = {
 
   root: {
     src   : './src/',
-    dest  : './dist/'
+    dest  : dist
   },
 
 
@@ -36,9 +38,9 @@ module.exports = {
 
   copy: {
     src   : ['./src/*.+(html|php|css|png)', './src/inc/**/*.+(html|php)'],//['./src/**/*.+(html|css|php|png)', '!./src/assets/**'],
-    dest  : './dist/',
+    dest  : dist,
     watch : ['./src/*.+(html|php|css|png)', './src/inc/**/*.+(html|php)']//['./src/**/*.+(html|css|php|png)', '!./src/assets/**']
   }
-  
+
 
 };
