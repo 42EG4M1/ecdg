@@ -3,7 +3,7 @@
  *
  * header
  *
-**/
+ */
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -26,7 +26,7 @@
 </head>
 
 <body>
-<?php get_template_part( 'inc/ga/ga' ); ?>
+<?php dynamic_sidebar( 'widget_analytics' ); ?>
 
 <noscript class="noscript" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
 
