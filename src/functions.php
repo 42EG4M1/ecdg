@@ -3,7 +3,7 @@
  *
  * functions
  *
-**/
+ */
 
 
 
@@ -12,7 +12,7 @@
  *
  * setup
  *
-**/
+ */
 function ecdg_setup() {
 
   // use eyecatch
@@ -49,7 +49,7 @@ add_action( 'after_setup_theme', 'ecdg_setup' );
  *
  * remove srcset
  *
-**/
+ */
 add_filter( 'wp_calculate_image_srcset', '__return_false' );
 
 
@@ -59,19 +59,74 @@ add_filter( 'wp_calculate_image_srcset', '__return_false' );
  *
  * widget
  *
-**/
+ */
 function my_widgets_init() {
 	register_sidebar( array(
-		'name'          => 'footer aff',
+		'name'          => 'アフィリエイト',
 		'id'            => 'widget_footer_aff',
-		'description'   => 'アフィリエイト用ウィジェット',
+		'description'   => 'アフィリエイト用（「HTMLコード」のみ対応）',
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '',
 		'after_title'   => '',
-	));
+  ));
+  register_sidebar( array(
+  	'name'          => 'アドセンス',
+  	'id'            => 'widget_adsense',
+  	'description'   => 'アドセンス用（「HTMLコード」のみ対応）',
+  	'before_widget' => '',
+		'after_widget'  => '',
+  	'before_title'  => '',
+  	'after_title'   => '',
+  ));
+  register_sidebar( array(
+  	'name'          => 'アナリティクス',
+  	'id'            => 'widget_analytics',
+  	'description'   => 'アナリティクス用（「HTMLコード」のみ対応）',
+  	'before_widget' => '',
+		'after_widget'  => '',
+  	'before_title'  => '',
+  	'after_title'   => '',
+  ));
 }
 add_action( 'widgets_init', 'my_widgets_init' );
+
+
+
+
+/**
+ *
+ * widget html
+ *
+ */
+class MyWidgetItemAdd extends WP_Widget {
+	function MyWidgetItemAdd() {
+    parent::WP_Widget(false, $name = 'HTMLコード');
+  }
+  function widget($args, $instance) {
+    extract( $args );
+    $body = apply_filters( 'widget_body', $instance['body'] );
+    ?>
+<?php echo $body; ?>
+    <?php
+  }
+  function update($new_instance, $old_instance) {
+    $instance = $old_instance;
+    $instance['body'] = trim($new_instance['body']);
+    return $instance;
+  }
+  function form($instance) {
+    $body = esc_attr($instance['body']);
+    ?>
+    <p>
+      <label for="<?php echo $this->get_field_id('body'); ?>"><?php _e('コード:'); ?></label>
+      <textarea class="widefat" rows="16" colls="20" id="<?php echo $this->get_field_id('body'); ?>" name="<?php echo $this->get_field_name('body'); ?>"><?php echo $body; ?></textarea>
+    </p>
+    <?php
+  }
+}
+add_action('widgets_init', create_function('', 'return register_widget("MyWidgetItemAdd");'));
+
 
 
 
@@ -79,7 +134,7 @@ add_action( 'widgets_init', 'my_widgets_init' );
  *
  * trim position chenge in thumbnails
  *
-**/
+ */
 function test_resize_dimensions( $first, $orig_w, $orig_h, $dest_w, $dest_h, $crop ) {
   if( false ) return $first;
   if ( $crop ) {
@@ -116,7 +171,7 @@ add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
  *
  * description
  *
-**/
+ */
 function my_description() {
   global $post;
 
@@ -149,7 +204,7 @@ function my_description() {
  *
  * rss in eyecatch
  *
-**/
+ */
 function rss_post_thumbnail( $content ) {
   global $post;
   if ( has_post_thumbnail( $post->ID ) ) {
@@ -167,7 +222,7 @@ add_filter( 'the_content_feed', 'rss_post_thumbnail' );
  *
  * remove Contact Form 7 enqueues
  *
-**/
+ */
 function remove_contact_form_enqueues() {
   if ( is_page( 'contact' ) === false ) {
     wp_dequeue_style( 'contact-form-7' );
@@ -183,7 +238,7 @@ add_action( 'wp_enqueue_scripts', 'remove_contact_form_enqueues' );
  *
  * pagination
  *
-**/
+ */
 function my_pagination() {
   global $wp_query, $paged;
   $p_base = get_pagenum_link(1);
@@ -215,7 +270,7 @@ function my_pagination() {
  *
  * quick tag
  *
-**/
+ */
 function my_add_quicktags() {
   if (wp_script_is('quicktags')) {
 ?>
@@ -234,7 +289,7 @@ add_action( 'admin_print_footer_scripts', 'my_add_quicktags' );
  *
  * search
  *
-**/
+ */
 function my_search_filter($query) {
   if ( !$query->is_admin && $query->is_search ) {
     $query->set( 'post_type', 'post' );
@@ -250,7 +305,7 @@ add_filter( 'pre_get_posts', 'my_search_filter' );
  *
  * plugin wp ulike
  *
-**/
+ */
 function wp_ulike_new_format_number( $value, $num, $plus ) {
   if ( $num >= 1000 && get_option( 'wp_ulike_format_number' ) == '1' ) {
     $value = round($num/1000, 2) . 'K';
@@ -268,7 +323,7 @@ add_filter( 'wp_ulike_format_number', 'wp_ulike_new_format_number', 10, 3 );
  *
  * submenu  category -> service
  *
-**/
+ */
 function change_post_label() {
   //global $menu;
   global $submenu;
@@ -287,7 +342,7 @@ add_action( 'admin_menu', 'change_post_label' );
  *
  * category -> service
  *
-**/
+ */
 function re_register_post_category_taxonomy() {
   global $wp_rewrite;
 
@@ -335,7 +390,7 @@ add_action( 'init', 're_register_post_category_taxonomy' );
  *
  * tag hierarchical
  *
-**/
+ */
 function re_register_post_tag_taxonomy() {
   global $wp_rewrite;
 
@@ -383,7 +438,7 @@ add_action( 'init', 're_register_post_tag_taxonomy' );
  *
  * custom taxonomies
  *
-**/
+ */
 function create_post_type() {
 
   $labels = array(
@@ -429,7 +484,7 @@ add_action( 'init', 'create_post_type' );
  *
  * admin page - footer coment remove
  *
-**/
+ */
 function custom_admin_footer() {}
 add_filter( 'admin_footer_text', 'custom_admin_footer' );
 
@@ -440,7 +495,7 @@ add_filter( 'admin_footer_text', 'custom_admin_footer' );
  *
  * maintenance
  *
-**/
+ */
 /*
 function wpr_maintenance_mode() {
   if ( !current_user_can( 'read' ) || !is_user_logged_in()) { // 購読者権限以上 + ユーザーログイン
