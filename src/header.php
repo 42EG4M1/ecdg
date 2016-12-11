@@ -20,7 +20,7 @@
 <?php get_template_part( 'inc/favicon' ); ?>
 
   <!-- ogp -->
-<?php get_template_part( 'inc/ogp/ogp' ); ?>
+<?php get_template_part( 'inc/ogp' ); ?>
 
 <?php wp_head(); ?>
 </head>
