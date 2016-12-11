@@ -3,7 +3,7 @@
  *
  * footer
  *
-**/
+ */
 ?>
 </main>
 
@@ -11,8 +11,10 @@
 <?php if ( !is_page() ) : ?>
 <?php if ( is_active_sidebar('widget_footer_aff') ) : ?>
 <aside class="p-aff">
-<?php dynamic_sidebar('widget_footer_aff'); ?>
+  <div class="p-aff__inner">
+    <?php dynamic_sidebar('widget_footer_aff'); ?>
 
+  </div>
 </aside>
 <?php endif; endif; ?>
 

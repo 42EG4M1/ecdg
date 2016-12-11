@@ -2,21 +2,9 @@
 
 このディレクトリには、以下の隠しディレクトリが存在する。
 
-    adsense/
-    affiliate/
-    ga/
     ogp/
 
 上記ディレクトリには、それぞれ以下のファイルが包含されている。
-
-    adsense/adsense.php
-
-    affiliate/1.php
-    affiliate/2.php
-    affiliate/3.php
-    affiliate/4.php
-
-    ga/ga.php
 
     ogp/ogp.php
 
