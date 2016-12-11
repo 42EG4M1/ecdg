@@ -10,7 +10,7 @@ get_header(); ?>
 <section class="main__inner p-card">
   <div class="p-card__hold">
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); $count++; ?>
+<?php $count = 0; if ( have_posts() ) : while ( have_posts() ) : the_post(); $count++; ?>
 
     <div class="p-card__item">
       <article class="p-card__inner">
