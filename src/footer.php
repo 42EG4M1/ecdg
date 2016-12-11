@@ -12,7 +12,7 @@
 <?php if ( is_active_sidebar('widget_footer_aff') ) : ?>
 <aside class="p-aff">
   <div class="p-aff__inner">
-    <?php dynamic_sidebar('widget_footer_aff'); ?>
+<?php dynamic_sidebar('widget_footer_aff'); ?>
 
   </div>
 </aside>
