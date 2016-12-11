@@ -3,7 +3,7 @@
  *
  * index
  *
-**/
+ */
 get_header(); ?>
 
 
@@ -51,24 +51,29 @@ get_header(); ?>
     </div>
 <?php endif; ?>
 
+<?php if ( is_active_sidebar('widget_adsense') ) : ?>
 <?php if ( $count >= 0 ) : ?>
     <aside class="p-card__item--no1 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense/adsense' ); ?>
+        <?php dynamic_sidebar( 'widget_adsense' ); ?>
+
       </div>
     </aside>
 <?php endif; if ( $count > 20 ) : ?>
     <aside class="p-card__item--no2 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense/adsense' ); ?>
+        <?php dynamic_sidebar( 'widget_adsense' ); ?>
+
       </div>
     </aside>
 <?php endif; if ( $count > 40 ) : ?>
     <aside class="p-card__item--no3 p-ads">
       <div class="p-ads__inner">
-<?php get_template_part( 'inc/adsense/adsense' ); ?>
+        <?php dynamic_sidebar( 'widget_adsense' ); ?>
+
       </div>
     </aside>
+<?php endif; ?>
 <?php endif; ?>
 
   </div>

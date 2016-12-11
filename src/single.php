@@ -3,7 +3,7 @@
  *
  * single
  *
-**/
+ */
 get_header(); ?>
 
 
@@ -41,7 +41,8 @@ get_header(); ?>
 
 <aside class="main__inner p-ads--article">
   <div class="p-ads--article__inner">
-<?php get_template_part( 'inc/adsense/adsense' ); ?>
+    <?php dynamic_sidebar( 'widget_adsense' ); ?>
+
   </div>
 </aside>
 
