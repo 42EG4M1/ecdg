@@ -9,10 +9,9 @@
 
 
 /**
- *
  * setup
- *
  */
+if ( ! function_exists( 'ecdg_setup' ) ) :
 function ecdg_setup() {
 
   // use eyecatch
@@ -21,44 +20,63 @@ function ecdg_setup() {
   // auto title
   add_theme_support( 'title-tag' );
 
-  // default jquery clear
-  wp_deregister_script( 'jquery' );
+  // feed
+  add_theme_support( 'automatic-feed-links' );
+  add_filter( 'feed_links_show_comments_feed', '__return_false' ); // remove comments feed
 
   // clear wp_head
-  remove_action( 'wp_head', 'rsd_link' );
-  remove_action( 'wp_head', 'wlwmanifest_link' );
-  remove_action( 'wp_head', 'wp_generator' );
-  remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-  remove_action( 'wp_head', 'feed_links_extra', 3 );
-  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-  remove_action( 'wp_head', 'rest_output_link_wp_head' );
-  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+  remove_action( 'wp_head', 'rsd_link' );                      // rsd
+  remove_action( 'wp_head', 'wlwmanifest_link' );              // Windows Live Writer
+  remove_action( 'wp_head', 'wp_generator' );                  // version
+  remove_action( 'wp_head', 'wp_shortlink_wp_head' );          // shortlink
+  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' ); // oEmbed
+  remove_action( 'wp_head', 'wp_oembed_add_host_js' );         // oEmbed
+
+  // emoji
+  remove_action( 'wp_head',             'print_emoji_detection_script', 7 );
   remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-  remove_action( 'wp_print_styles', 'print_emoji_styles' );
-  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_action( 'wp_print_styles',     'print_emoji_styles' );
+  remove_action( 'admin_print_styles',  'print_emoji_styles' );
+
+  // Disable REST API
+  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
   remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+  remove_action( 'wp_head', 'rest_output_link_wp_head' );
+  remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
+  add_filter( 'rest_enabled', '__return_false' );
+
+
+  // remove srcset
+  add_filter( 'wp_calculate_image_srcset', '__return_false' );
 
 }
+endif;
 add_action( 'after_setup_theme', 'ecdg_setup' );
 
 
 
 
 /**
- *
- * remove srcset
- *
+ * script and style
  */
-add_filter( 'wp_calculate_image_srcset', '__return_false' );
+function my_enqueue() {
+
+  // only contact page enqueues
+  if ( is_page( 'contact' ) === false ) {
+    wp_dequeue_style( 'contact-form-7' );
+    wp_dequeue_script( 'contact-form-7' );
+    wp_deregister_script( 'jquery' );
+  }
+
+}
+add_action( 'wp_enqueue_scripts', 'my_enqueue' );
 
 
 
 
 /**
- *
  * widget
- *
  */
 function my_widgets_init() {
 	register_sidebar( array(
@@ -95,27 +113,22 @@ add_action( 'widgets_init', 'my_widgets_init' );
 
 
 /**
- *
  * widget html
- *
  */
 class MyWidgetItemAdd extends WP_Widget {
-	function MyWidgetItemAdd() {
-    parent::WP_Widget(false, $name = 'HTMLコード');
-  }
-  function widget($args, $instance) {
+  function __construct() {
+		parent::__construct(false, $name = 'HTMLコード');
+	}
+
+  public function widget($args, $instance) {
     extract( $args );
     $body = apply_filters( 'widget_body', $instance['body'] );
     ?>
 <?php echo $body; ?>
     <?php
   }
-  function update($new_instance, $old_instance) {
-    $instance = $old_instance;
-    $instance['body'] = trim($new_instance['body']);
-    return $instance;
-  }
-  function form($instance) {
+
+  public function form($instance) {
     $body = esc_attr($instance['body']);
     ?>
     <p>
@@ -124,6 +137,13 @@ class MyWidgetItemAdd extends WP_Widget {
     </p>
     <?php
   }
+
+  public function update($new_instance, $old_instance) {
+    $instance = $old_instance;
+    $instance['body'] = trim($new_instance['body']);
+    return $instance;
+  }
+
 }
 add_action('widgets_init', create_function('', 'return register_widget("MyWidgetItemAdd");'));
 
@@ -131,9 +151,7 @@ add_action('widgets_init', create_function('', 'return register_widget("MyWidget
 
 
 /**
- *
  * trim position chenge in thumbnails
- *
  */
 function test_resize_dimensions( $first, $orig_w, $orig_h, $dest_w, $dest_h, $crop ) {
   if( false ) return $first;
@@ -168,9 +186,7 @@ add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
 
 
 /**
- *
  * description
- *
  */
 function my_description() {
   global $post;
@@ -201,9 +217,7 @@ function my_description() {
 
 
 /**
- *
  * rss in eyecatch
- *
  */
 function rss_post_thumbnail( $content ) {
   global $post;
@@ -219,25 +233,7 @@ add_filter( 'the_content_feed', 'rss_post_thumbnail' );
 
 
 /**
- *
- * remove Contact Form 7 enqueues
- *
- */
-function remove_contact_form_enqueues() {
-  if ( is_page( 'contact' ) === false ) {
-    wp_dequeue_style( 'contact-form-7' );
-    wp_dequeue_script( 'contact-form-7' );
-  }
-}
-add_action( 'wp_enqueue_scripts', 'remove_contact_form_enqueues' );
-
-
-
-
-/**
- *
  * pagination
- *
  */
 function my_pagination() {
   global $wp_query, $paged;
@@ -267,9 +263,7 @@ function my_pagination() {
 
 
 /**
- *
  * quick tag
- *
  */
 function my_add_quicktags() {
   if (wp_script_is('quicktags')) {
@@ -286,9 +280,7 @@ add_action( 'admin_print_footer_scripts', 'my_add_quicktags' );
 
 
 /**
- *
- * search
- *
+ * search post type only
  */
 function my_search_filter($query) {
   if ( !$query->is_admin && $query->is_search ) {
@@ -302,27 +294,23 @@ add_filter( 'pre_get_posts', 'my_search_filter' );
 
 
 /**
- *
  * plugin wp ulike
- *
  */
-function wp_ulike_new_format_number( $value, $num, $plus ) {
-  if ( $num >= 1000 && get_option( 'wp_ulike_format_number' ) == '1' ) {
-    $value = round($num/1000, 2) . 'K';
-  } else {
-    $value = $num;
-  }
-  return $value;
-}
-add_filter( 'wp_ulike_format_number', 'wp_ulike_new_format_number', 10, 3 );
+// function wp_ulike_new_format_number( $value, $num, $plus ) {
+//   if ( $num >= 1000 && get_option( 'wp_ulike_format_number' ) == '1' ) {
+//     $value = round($num/1000, 2) . 'K';
+//   } else {
+//     $value = $num;
+//   }
+//   return $value;
+// }
+// add_filter( 'wp_ulike_format_number', 'wp_ulike_new_format_number', 10, 3 );
 
 
 
 
 /**
- *
  * submenu  category -> service
- *
  */
 function change_post_label() {
   //global $menu;
@@ -339,9 +327,7 @@ add_action( 'admin_menu', 'change_post_label' );
 
 
 /**
- *
  * category -> service
- *
  */
 function re_register_post_category_taxonomy() {
   global $wp_rewrite;
@@ -387,9 +373,7 @@ add_action( 'init', 're_register_post_category_taxonomy' );
 
 
 /**
- *
  * tag hierarchical
- *
  */
 function re_register_post_tag_taxonomy() {
   global $wp_rewrite;
@@ -435,9 +419,7 @@ add_action( 'init', 're_register_post_tag_taxonomy' );
 
 
 /**
- *
  * custom taxonomies
- *
  */
 function create_post_type() {
 
@@ -481,9 +463,7 @@ add_action( 'init', 'create_post_type' );
 
 
 /**
- *
  * admin page - footer coment remove
- *
  */
 function custom_admin_footer() {}
 add_filter( 'admin_footer_text', 'custom_admin_footer' );
@@ -492,9 +472,7 @@ add_filter( 'admin_footer_text', 'custom_admin_footer' );
 
 
 /**
- *
  * maintenance
- *
  */
 /*
 function wpr_maintenance_mode() {
@@ -504,7 +482,6 @@ function wpr_maintenance_mode() {
 }
 add_action( 'get_header', 'wpr_maintenance_mode' );
 */
-
 
 
 
