@@ -8,12 +8,10 @@ const dir = {
 
 module.exports = {
 
-
   root: {
     src   : './src/',
     dest  : dist
   },
-
 
   sass: {
     src   : `${dir.src}styles/**/*.scss`,
@@ -21,13 +19,11 @@ module.exports = {
     watch : `${dir.src}styles/**/*.scss`
   },
 
-
   js: {
     src   : `${dir.src}scripts/*.js`,
     dest  : `${dir.dest}scripts/`,
     watch : `${dir.src}scripts/*.js`
   },
-
 
   images: {
     src   : `${dir.src}images/**/*.+(jpg|jpeg|png|gif|svg)`,
@@ -35,12 +31,17 @@ module.exports = {
     watch : `${dir.src}images/**/*.+(jpg|jpeg|png|gif|svg)`
   },
 
+  favicon: {
+    src        : `${dir.src}favicon/master_picture.png`,
+    dest       : `${dir.dest}images/favicons/`,
+    iconPath   : './assets/images/favicons/',
+    srcFile    : './src/inc/'
+  },
 
   copy: {
     src   : ['./src/*.+(html|php|css|png)', './src/inc/**/*.+(html|php)'],//['./src/**/*.+(html|css|php|png)', '!./src/assets/**'],
     dest  : dist,
     watch : ['./src/*.+(html|php|css|png)', './src/inc/**/*.+(html|php)']//['./src/**/*.+(html|css|php|png)', '!./src/assets/**']
   }
-
 
 };

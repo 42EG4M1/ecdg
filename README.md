@@ -22,6 +22,9 @@ This theme is set up for use with VCCW.
 ## Build
     $ npm run gulp
 
+## Favicon generate
+    $ npm run favicon
+
 The dist directory is destored at the same level as the working directory.  
 
     ├─ dev-ecdg (working directory)
