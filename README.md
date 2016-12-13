@@ -13,17 +13,27 @@ This theme is set up for use with VCCW.
 [http://ecdesigngallery.com/](http://ecdesigngallery.com/)
 
 ## Clone
+
     $ cd ~/app/ecdesigngallery.com/public_html/wp/wp-content/themes
     $ git clone git@github.com:42EG4M1/ecdg.git dev-ecdg
 
+
 ## Install npm packages
+
     $ npm i
 
+
 ## Build
+
     $ npm run gulp
 
+
 ## Favicon generate
+
     $ npm run favicon
+
+
+## Directory
 
 The dist directory is destored at the same level as the working directory.  
 
