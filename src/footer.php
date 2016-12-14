@@ -10,7 +10,7 @@
 
 <?php if ( !is_page() ) : ?>
 <?php if ( is_active_sidebar('widget_footer_aff') ) : ?>
-<aside class="p-aff">
+<aside class="p-aff" id="js-aff">
   <div class="p-aff__inner">
 <?php dynamic_sidebar('widget_footer_aff'); ?>
 

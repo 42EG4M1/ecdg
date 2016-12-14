@@ -1,7 +1,7 @@
 (function () {
 //  "use strict";
-  
-  
+
+
   function coverFixed() {
     var _window = $(window),
         elm = document.getElementById('js-cover');
@@ -18,15 +18,15 @@
       }
     });
   }
-  
-  
+
+
   function clearContens(elm, speed) {
     elm.on('click', function () {
       $(this).parent().fadeOut(speed);
     });
   }
-  
-  
+
+
   function modalOpen() {
     var $open = $('#is-open'),
         $close = $('#is-close'),
@@ -38,8 +38,8 @@
       $modal.addClass('is-visible');
     });
   }
-  
-  
+
+
   function toTop() {
     $('a[href^="#"]').on('click', function() {
       var speed = 800,
@@ -50,8 +50,8 @@
       return false;
     });
   }
-  
-  
+
+
   function sideFixed() {
     var _window = $(window);
     $("#js-articleHeader").each(function() {
@@ -94,8 +94,8 @@
       $(this).css(obj);
     });
   }
-  
-  
+
+
   $.fn.inViews = function(inviewCase) {
     var _window = $(window),
         views = {},
@@ -120,8 +120,8 @@
         return ((elm.top <= views.bottom) && (elm.top >= views.top));
     }
   };
-  
-  
+
+
   function scrollInViews() {
     var _window = $(window),
         winH = _window.height(),
@@ -133,9 +133,9 @@
       $wrap.removeClass('is-active');
     }
   }
-  
-  
-  
+
+
+
   function tapAddClass() {
     var $search = $('#js-search'),
         $main = $('#js-main');
@@ -143,16 +143,16 @@
       $(this).addClass('is-search-open');
       e.stopPropagation();
     });
-    
+
     if ($('.is-search-open').length !== null) {
       $main.on('click', function() {
         $search.removeClass('is-search-open');
       });
     }
   }
-  
-  
-  
+
+
+
   function init() {
     toTop();
     modalOpen();
@@ -164,82 +164,47 @@
       effect_speed: 800
     });
   }
-  
-  
+
+
   function scrollInit() {
     coverFixed();
     scrollInViews();
     sideFixed();
   }
-  
-  
+
+
+
+  var addHeight = function() {
+    var windowHeight = (window.innerHeight || document.documentElement.clientHeight || 0);
+    var main = document.getElementById('js-main');
+    var mainHeight = main.clientHeight;
+    var aff = document.getElementById('js-aff');
+    if (windowHeight > mainHeight + 80) {
+      if (aff !== null) {
+        var affHeight = aff.clientHeight;
+        main.style.height = windowHeight - affHeight - 80 + 'px';
+      } else {
+        main.style.height = windowHeight - 80 + 'px';
+      }
+    }
+  };
+
+
   $(function () {
     var _window = $(window);
-    
+
     _window.on({
-      load: function () { scrollInit() },
-      scroll: function () { scrollInit() }
+      load: function () {
+        addHeight();
+        scrollInit();
+      },
+      scroll: function () {
+        scrollInit();
+      }
     });
-    
+
     init();
-    
+
   });
-  
-  
 
 }());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
