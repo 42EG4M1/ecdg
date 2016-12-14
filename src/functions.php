@@ -235,10 +235,9 @@ function my_pagination() {
   $p_format = 'page/%#%';
 
   if ( $word = strpos($p_base, '?') ) {
-    $p_base = get_option(home).(substr(get_option(home), -1 ,1) === '/' ? '' : '/')
-      .'%_%'.substr($p_base, $word);
+    $p_base = get_option('home') . (substr(get_option('home'), -1 ,1) === '/' ? '' : '/') . '%_%' . substr($p_base, $word);
   } else {
-    $p_base .= (substr($p_base, -1 ,1) === '/' ? '' : '/') .'%_%';
+    $p_base .= (substr($p_base, -1 ,1) === '/' ? '' : '/') . '%_%';
   }
 
   echo paginate_links(array(
