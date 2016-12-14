@@ -6,8 +6,6 @@
  */
 
 
-
-
 /**
  * setup
  */
@@ -55,14 +53,12 @@ endif;
 add_action( 'after_setup_theme', 'ecdg_setup' );
 
 
-
-
 /**
  * script and style
  */
 function my_enqueue() {
 
-  // only contact page enqueues
+  // outside the contact page enqueues
   if ( is_page( 'contact' ) === false ) {
     wp_dequeue_style( 'contact-form-7' );
     wp_dequeue_script( 'contact-form-7' );
@@ -71,8 +67,6 @@ function my_enqueue() {
 
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue' );
-
-
 
 
 /**
@@ -119,8 +113,6 @@ function my_widgets_init() {
 add_action( 'widgets_init', 'my_widgets_init' );
 
 
-
-
 /**
  * widget html
  */
@@ -157,8 +149,6 @@ class MyWidgetItemAdd extends WP_Widget {
 add_action('widgets_init', create_function('', 'return register_widget("MyWidgetItemAdd");'));
 
 
-
-
 /**
  * trim position chenge in thumbnails
  */
@@ -192,8 +182,6 @@ function test_resize_dimensions( $first, $orig_w, $orig_h, $dest_w, $dest_h, $cr
 add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
 
 
-
-
 /**
  * description
  */
@@ -203,7 +191,7 @@ function my_description() {
   $desc = 'カラーミーショップデザインギャラリーは、カラーミーショップで制作されたECサイト（オンラインショップ）だけを集めたニッチなWebサイトギャラリーです。デザイン性の高いサイトを中心に、カスタマイズやデザインの参考となるようなハイクオリティなサイトを掲載しています。';
   $sub_desc = ' &#8211; カラーミーショップデザインギャラリー';
   $title = wp_get_document_title();
-  $title = str_replace( $sub_desc, "", $title );
+  $title = str_replace( $sub_desc, '', $title );
 
   if ( is_home() ) {
     echo $desc;
@@ -223,22 +211,19 @@ function my_description() {
 }
 
 
-
-
 /**
  * rss in eyecatch
  */
 function rss_post_thumbnail( $content ) {
   global $post;
   if ( has_post_thumbnail( $post->ID ) ) {
-    $content = '<div>' . get_the_post_thumbnail( $post->ID,'thumbnail' ) . '</div>' . $content;
+    $ttl = get_the_title();
+    $content = '<div>' . get_the_post_thumbnail( $post->ID, 'thumbnail' ) . '</div>' . $ttl . $content;
   }
   return $content;
 }
 add_filter( 'the_excerpt_rss', 'rss_post_thumbnail' );
 add_filter( 'the_content_feed', 'rss_post_thumbnail' );
-
-
 
 
 /**
@@ -268,9 +253,6 @@ function my_pagination() {
 }
 
 
-
-
-
 /**
  * quick tag
  */
@@ -286,8 +268,6 @@ function my_add_quicktags() {
 add_action( 'admin_print_footer_scripts', 'my_add_quicktags' );
 
 
-
-
 /**
  * search post type only
  */
@@ -298,8 +278,6 @@ function my_search_filter($query) {
   return $query;
 }
 add_filter( 'pre_get_posts', 'my_search_filter' );
-
-
 
 
 /**
@@ -316,8 +294,6 @@ add_filter( 'pre_get_posts', 'my_search_filter' );
 // add_filter( 'wp_ulike_format_number', 'wp_ulike_new_format_number', 10, 3 );
 
 
-
-
 /**
  * submenu  category -> service
  */
@@ -331,8 +307,6 @@ function change_post_label() {
   $submenu['edit.php'][15][0] = 'サービス';
 }
 add_action( 'admin_menu', 'change_post_label' );
-
-
 
 
 /**
@@ -379,8 +353,6 @@ function re_register_post_category_taxonomy() {
 add_action( 'init', 're_register_post_category_taxonomy' );
 
 
-
-
 /**
  * tag hierarchical
  */
@@ -425,8 +397,6 @@ function re_register_post_tag_taxonomy() {
 add_action( 'init', 're_register_post_tag_taxonomy' );
 
 
-
-
 /**
  * custom taxonomies
  */
@@ -469,15 +439,11 @@ function create_post_type() {
 add_action( 'init', 'create_post_type' );
 
 
-
-
 /**
  * admin page - footer coment remove
  */
 function custom_admin_footer() {}
 add_filter( 'admin_footer_text', 'custom_admin_footer' );
-
-
 
 
 /**
@@ -491,8 +457,6 @@ function wpr_maintenance_mode() {
 }
 add_action( 'get_header', 'wpr_maintenance_mode' );
 */
-
-
 
 
 ?>
