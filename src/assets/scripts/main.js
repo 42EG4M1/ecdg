@@ -174,28 +174,11 @@
 
 
 
-  var addHeight = function() {
-    var windowHeight = (window.innerHeight || document.documentElement.clientHeight || 0);
-    var main = document.getElementById('js-main');
-    var mainHeight = main.clientHeight;
-    var aff = document.getElementById('js-aff');
-    if (windowHeight > mainHeight + 80) {
-      if (aff !== null) {
-        var affHeight = aff.clientHeight;
-        main.style.height = windowHeight - affHeight - 80 + 'px';
-      } else {
-        main.style.height = windowHeight - 80 + 'px';
-      }
-    }
-  };
-
-
   $(function () {
     var _window = $(window);
 
     _window.on({
       load: function () {
-        addHeight();
         scrollInit();
       },
       scroll: function () {
@@ -207,4 +190,21 @@
 
   });
 
+
 }());
+
+
+window.onload = function() {
+  var mainHeightAdd = function() {
+    var windowHeight = (window.innerHeight || document.documentElement.clientHeight || 0);
+    var main = document.getElementById('js-main');
+    var mainHeight = main.clientHeight;
+    var headerAndFooter = 80;
+    var aff = document.getElementById('js-aff');
+    var affHeight = aff !== null ? aff.clientHeight : 0;
+    if (windowHeight > mainHeight + headerAndFooter + affHeight) {
+      main.style.height = windowHeight - affHeight - headerAndFooter + 'px';
+    }
+  };
+  mainHeightAdd();
+};
