@@ -37,12 +37,12 @@ if ( ! function_exists( 'ecdg_setup' ) ) :
     remove_action( 'admin_print_styles',  'print_emoji_styles' );
 
     // Disable REST API
-    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-    remove_action( 'template_redirect', 'rest_output_link_header', 11 );
-    remove_action( 'wp_head', 'rest_output_link_wp_head' );
-    remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
-    add_filter( 'rest_enabled', '__return_false' );
+    // remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+    // remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+    // remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+    // remove_action( 'wp_head', 'rest_output_link_wp_head' );
+    // remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
+    // add_filter( 'rest_enabled', '__return_false' );
 
     // remove srcset
     add_filter( 'wp_calculate_image_srcset', '__return_false' );
@@ -185,7 +185,7 @@ class MyWidgetItemAdd extends WP_Widget {
   }
 
 }
-add_action('widgets_init', create_function('', 'return register_widget("MyWidgetItemAdd");'));
+add_action( 'widgets_init', create_function('', 'return register_widget("MyWidgetItemAdd");') );
 
 
 /**
