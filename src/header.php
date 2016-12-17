@@ -14,9 +14,6 @@
   <meta name="description" content="<?php my_description(); ?>">
   <meta name="keywords" content="カラーミーショップ, カラーミー, ネットショップ, オンラインショップ, EC, ギャラリー">
 
-  <!-- styles -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/styles/all.min.css?ver=<?php echo wp_get_theme()->get( 'Version' ); ?>" media="all">
-
   <!-- favicon -->
 <?php get_template_part( 'inc/favicon' ); ?>
 
@@ -24,6 +21,7 @@
 <?php get_template_part( 'inc/ogp' ); ?>
 
 <?php wp_head(); ?>
+
 </head>
 
 <body>

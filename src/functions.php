@@ -10,45 +10,44 @@
  * setup
  */
 if ( ! function_exists( 'ecdg_setup' ) ) :
-function ecdg_setup() {
+  function ecdg_setup() {
 
-  // use eyecatch
-  add_theme_support( 'post-thumbnails' );
+    // use eyecatch
+    add_theme_support( 'post-thumbnails' );
 
-  // auto title
-  add_theme_support( 'title-tag' );
+    // auto title
+    add_theme_support( 'title-tag' );
 
-  // feed
-  add_theme_support( 'automatic-feed-links' );
-  add_filter( 'feed_links_show_comments_feed', '__return_false' ); // remove comments feed
+    // feed
+    add_theme_support( 'automatic-feed-links' );
+    add_filter( 'feed_links_show_comments_feed', '__return_false' ); // remove comments feed
 
-  // clear wp_head
-  remove_action( 'wp_head', 'rsd_link' );                      // rsd
-  remove_action( 'wp_head', 'wlwmanifest_link' );              // Windows Live Writer
-  remove_action( 'wp_head', 'wp_generator' );                  // version
-  remove_action( 'wp_head', 'wp_shortlink_wp_head' );          // shortlink
-  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' ); // oEmbed
-  remove_action( 'wp_head', 'wp_oembed_add_host_js' );         // oEmbed
+    // clear wp_head
+    remove_action( 'wp_head', 'rsd_link' );                      // rsd
+    remove_action( 'wp_head', 'wlwmanifest_link' );              // Windows Live Writer
+    remove_action( 'wp_head', 'wp_generator' );                  // version
+    remove_action( 'wp_head', 'wp_shortlink_wp_head' );          // shortlink
+    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' ); // oEmbed
+    remove_action( 'wp_head', 'wp_oembed_add_host_js' );         // oEmbed
 
-  // emoji
-  remove_action( 'wp_head',             'print_emoji_detection_script', 7 );
-  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-  remove_action( 'wp_print_styles',     'print_emoji_styles' );
-  remove_action( 'admin_print_styles',  'print_emoji_styles' );
+    // emoji
+    remove_action( 'wp_head',             'print_emoji_detection_script', 7 );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'wp_print_styles',     'print_emoji_styles' );
+    remove_action( 'admin_print_styles',  'print_emoji_styles' );
 
-  // Disable REST API
-  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-  remove_action( 'template_redirect', 'rest_output_link_header', 11 );
-  remove_action( 'wp_head', 'rest_output_link_wp_head' );
-  remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
-  add_filter( 'rest_enabled', '__return_false' );
+    // Disable REST API
+    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+    remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+    remove_action( 'wp_head', 'rest_output_link_wp_head' );
+    remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
+    add_filter( 'rest_enabled', '__return_false' );
 
+    // remove srcset
+    add_filter( 'wp_calculate_image_srcset', '__return_false' );
 
-  // remove srcset
-  add_filter( 'wp_calculate_image_srcset', '__return_false' );
-
-}
+  }
 endif;
 add_action( 'after_setup_theme', 'ecdg_setup' );
 
@@ -56,7 +55,17 @@ add_action( 'after_setup_theme', 'ecdg_setup' );
 /**
  * script and style
  */
-function my_enqueue() {
+function ecdg_enqueue_scripts() {
+
+  $theme   = wp_get_theme();
+  $version = $theme->get( 'Version' );
+
+  // style
+  wp_enqueue_style( get_stylesheet(), get_template_directory_uri() . '/assets/styles/all.min.css', array(), $version );
+
+  // script
+  wp_enqueue_script( 'google-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), null, true );
+  wp_enqueue_script( 'ecdg-script', get_template_directory_uri() . '/assets/scripts/app.min.js', array(), $version, true );
 
   // outside the contact page enqueues
   if ( is_page( 'contact' ) === false ) {
@@ -66,13 +75,41 @@ function my_enqueue() {
   }
 
 }
-add_action( 'wp_enqueue_scripts', 'my_enqueue' );
+add_action( 'wp_enqueue_scripts', 'ecdg_enqueue_scripts' );
+
+
+/**
+ * replace style
+ */
+function ecdg_replace_style_tag( $tag ) {
+
+  return str_replace( " type='text/css' media='all' />", " media='all'>", $tag );
+
+}
+add_filter( 'style_loader_tag', 'ecdg_replace_style_tag' );
+
+
+/**
+ * replace script
+ */
+function ecdg_replace_script_tag( $tag, $handle ) {
+
+  if ( 'google-adsense' === $handle ) {
+    return str_replace( "type='text/javascript'", 'async', $tag );
+  } elseif ( 'ecdg-script' === $handle ) {
+    return str_replace( "type='text/javascript'", "charset='utf-8'", $tag );
+  }
+  return str_replace( " type='text/javascript'", "", $tag );
+
+}
+add_filter( 'script_loader_tag', 'ecdg_replace_script_tag', 10, 2 );
 
 
 /**
  * widget
  */
 function my_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => 'アフィリエイト',
 		'id'            => 'widget_footer_aff',
@@ -109,6 +146,7 @@ function my_widgets_init() {
   	'before_title'  => '',
   	'after_title'   => '',
   ));
+
 }
 add_action( 'widgets_init', 'my_widgets_init' );
 
@@ -117,6 +155,7 @@ add_action( 'widgets_init', 'my_widgets_init' );
  * widget html
  */
 class MyWidgetItemAdd extends WP_Widget {
+
   function __construct() {
 		parent::__construct(false, $name = 'HTMLコード');
 	}
@@ -153,6 +192,7 @@ add_action('widgets_init', create_function('', 'return register_widget("MyWidget
  * trim position chenge in thumbnails
  */
 function test_resize_dimensions( $first, $orig_w, $orig_h, $dest_w, $dest_h, $crop ) {
+
   if( false ) return $first;
   if ( $crop ) {
     $aspect_ratio = $orig_w / $orig_h;
@@ -178,6 +218,7 @@ function test_resize_dimensions( $first, $orig_w, $orig_h, $dest_w, $dest_h, $cr
   }
   if ( $new_w >= $orig_w && $new_h >= $orig_h ) return false;
   return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
+
 }
 add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
 
@@ -186,6 +227,7 @@ add_filter( 'image_resize_dimensions', 'test_resize_dimensions', 10, 6 );
  * description
  */
 function my_description() {
+
   global $post;
 
   $desc = 'カラーミーショップデザインギャラリーは、カラーミーショップで制作されたECサイト（オンラインショップ）だけを集めたニッチなWebサイトギャラリーです。デザイン性の高いサイトを中心に、カスタマイズやデザインの参考となるようなハイクオリティなサイトを掲載しています。';
@@ -208,6 +250,7 @@ function my_description() {
   } else {
     echo $desc;
   }
+
 }
 
 
@@ -215,12 +258,14 @@ function my_description() {
  * rss in eyecatch
  */
 function rss_post_thumbnail( $content ) {
+
   global $post;
   if ( has_post_thumbnail( $post->ID ) ) {
     $ttl = get_the_title();
     $content = '<div>' . get_the_post_thumbnail( $post->ID, 'thumbnail' ) . '</div>' . $ttl . $content;
   }
   return $content;
+
 }
 add_filter( 'the_excerpt_rss', 'rss_post_thumbnail' );
 add_filter( 'the_content_feed', 'rss_post_thumbnail' );
@@ -230,6 +275,7 @@ add_filter( 'the_content_feed', 'rss_post_thumbnail' );
  * pagination
  */
 function my_pagination() {
+
   global $wp_query, $paged;
   $p_base = get_pagenum_link(1);
   $p_format = 'page/%#%';
@@ -249,6 +295,7 @@ function my_pagination() {
     'prev_text' => 'PREV',
     'next_text' => 'NEXT'
   ));
+
 }
 
 
@@ -256,13 +303,15 @@ function my_pagination() {
  * quick tag
  */
 function my_add_quicktags() {
-  if (wp_script_is('quicktags')) {
+
+  if ( wp_script_is('quicktags') ) {
 ?>
 <script type="text/javascript">
   QTags.addButton('qt-http', 'http入力', 'http:///', '', false);
 </script>
 <?php
   }
+
 }
 add_action( 'admin_print_footer_scripts', 'my_add_quicktags' );
 
@@ -271,10 +320,12 @@ add_action( 'admin_print_footer_scripts', 'my_add_quicktags' );
  * search post type only
  */
 function my_search_filter($query) {
+
   if ( !$query->is_admin && $query->is_search ) {
     $query->set( 'post_type', 'post' );
   }
   return $query;
+
 }
 add_filter( 'pre_get_posts', 'my_search_filter' );
 
@@ -297,6 +348,7 @@ add_filter( 'pre_get_posts', 'my_search_filter' );
  * submenu  category -> service
  */
 function change_post_label() {
+
   //global $menu;
   global $submenu;
 
@@ -304,6 +356,7 @@ function change_post_label() {
   // var_dump($submenu);
 
   $submenu['edit.php'][15][0] = 'サービス';
+
 }
 add_action( 'admin_menu', 'change_post_label' );
 
@@ -312,6 +365,7 @@ add_action( 'admin_menu', 'change_post_label' );
  * category -> service
  */
 function re_register_post_category_taxonomy() {
+
   global $wp_rewrite;
 
   $labels = array(
@@ -348,6 +402,7 @@ function re_register_post_category_taxonomy() {
       'rewrite'           => array( 'slug' => 'service' )
     )
   );
+
 }
 add_action( 'init', 're_register_post_category_taxonomy' );
 
@@ -356,6 +411,7 @@ add_action( 'init', 're_register_post_category_taxonomy' );
  * tag hierarchical
  */
 function re_register_post_tag_taxonomy() {
+
   global $wp_rewrite;
 
   $labels = array(
@@ -392,6 +448,7 @@ function re_register_post_tag_taxonomy() {
       'rewrite'           => array( 'slug' => 'tag' )
     )
   );
+
 }
 add_action( 'init', 're_register_post_tag_taxonomy' );
 
@@ -434,6 +491,7 @@ function create_post_type() {
       'labels'            => $labels
     )
   );
+
 }
 add_action( 'init', 'create_post_type' );
 
