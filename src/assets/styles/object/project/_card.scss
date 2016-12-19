@@ -87,6 +87,7 @@ $post-margin-left: 1.5625%;// 30px / 1920px * 100
       top: 0;
       left: 0;
       display: block;
+      max-width: 100%;
       &:before {
         content: "";
         position: absolute;
