@@ -22,7 +22,18 @@
 </head>
 
 <body>
-<?php dynamic_sidebar( 'widget_analytics' ); ?>
+<?php
+$options = get_option('ecdg_theme_options');
+if ( $options['gaBoolean'] ) : ?>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-<?php echo esc_html($options['gaUA']); ?>', 'auto');
+  ga('send', 'pageview');
+</script>
+<?php endif; ?>
 
 <noscript class="noscript" data-noscript="本サイトは JavaScript が有効な状態にないと正常に表示されません。このメッセージが表示される場合、ブラウザの設定状況をご確認ください。"></noscript>
 
