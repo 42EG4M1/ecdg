@@ -119,33 +119,33 @@ function my_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
   ));
-  register_sidebar( array(
-  	'name'          => 'アドセンス',
-  	'id'            => 'widget_adsense',
-  	'description'   => 'アドセンス用（「HTMLコード」のみ対応）',
-  	'before_widget' => '',
-		'after_widget'  => '',
-  	'before_title'  => '',
-  	'after_title'   => '',
-  ));
-  register_sidebar( array(
-  	'name'          => 'アナリティクス',
-  	'id'            => 'widget_analytics',
-  	'description'   => 'アナリティクス用（「HTMLコード」のみ対応）',
-  	'before_widget' => '',
-		'after_widget'  => '',
-  	'before_title'  => '',
-  	'after_title'   => '',
-  ));
-  register_sidebar( array(
-  	'name'          => 'OGP',
-  	'id'            => 'widget_ogp_private',
-  	'description'   => 'OGP用（「HTMLコード」のみ対応）',
-  	'before_widget' => '',
-		'after_widget'  => '',
-  	'before_title'  => '',
-  	'after_title'   => '',
-  ));
+  // register_sidebar( array(
+  // 	'name'          => 'アドセンス',
+  // 	'id'            => 'widget_adsense',
+  // 	'description'   => 'アドセンス用（「HTMLコード」のみ対応）',
+  // 	'before_widget' => '',
+	// 	'after_widget'  => '',
+  // 	'before_title'  => '',
+  // 	'after_title'   => '',
+  // ));
+  // register_sidebar( array(
+  // 	'name'          => 'アナリティクス',
+  // 	'id'            => 'widget_analytics',
+  // 	'description'   => 'アナリティクス用（「HTMLコード」のみ対応）',
+  // 	'before_widget' => '',
+	// 	'after_widget'  => '',
+  // 	'before_title'  => '',
+  // 	'after_title'   => '',
+  // ));
+  // register_sidebar( array(
+  // 	'name'          => 'OGP',
+  // 	'id'            => 'widget_ogp_private',
+  // 	'description'   => 'OGP用（「HTMLコード」のみ対応）',
+  // 	'before_widget' => '',
+	// 	'after_widget'  => '',
+  // 	'before_title'  => '',
+  // 	'after_title'   => '',
+  // ));
 
 }
 add_action( 'widgets_init', 'my_widgets_init' );
