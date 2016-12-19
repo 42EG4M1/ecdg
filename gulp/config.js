@@ -39,9 +39,9 @@ module.exports = {
   },
 
   copy: {
-    src   : ['./src/*.+(html|php|css|png)', './src/inc/**/*.+(html|php)'],//['./src/**/*.+(html|css|php|png)', '!./src/assets/**'],
+    src   : ['./src/*.+(html|php|css|png)', './src/inc/**/*.+(html|php)', './src/template-parts/**/*.+(html|php)'],//['./src/**/*.+(html|css|php|png)', '!./src/assets/**'],
     dest  : dist,
-    watch : ['./src/*.+(html|php|css|png)', './src/inc/**/*.+(html|php)']//['./src/**/*.+(html|css|php|png)', '!./src/assets/**']
+    watch : ['./src/*.+(html|php|css|png)', './src/inc/**/*.+(html|php)', './src/template-parts/**/*.+(html|php)']//['./src/**/*.+(html|css|php|png)', '!./src/assets/**']
   }
 
 };
