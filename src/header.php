@@ -157,8 +157,10 @@ if ( $options['gaBoolean'] ) : ?>
 
       <div class="p-cover__menu p-menu">
         <div class="p-menu__inner">
-          <div class="p-menu__btn c-btn--menu" id="is-open">
-            <span class="c-btn--menu-t"></span><span class="c-btn--menu-m"></span><span class="c-btn--menu-b"></span>
+          <div class="p-menu__btn" id="is-open">
+            <div class="p-menu__btn-hold c-btn--menu">
+              <span class="c-btn--menu-t"></span><span class="c-btn--menu-m"></span><span class="c-btn--menu-b"></span>
+            </div>
           </div>
           <div class="p-menu__item p-search" id="js-search">
             <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="p-search__inner">

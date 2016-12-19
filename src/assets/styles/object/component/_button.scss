@@ -27,17 +27,39 @@
 
 // menu btn
 .c-btn--menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
+  position: relative;
+  &:before {
+    content: "MENU";
+    position: absolute;
+    top: 0;
+    left: 27px;
+    display: block;
+    width: 50px;
+    height: 18px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 10px;
+    font-family: $font-family-q-sans;
+    letter-spacing: 1px;
+  }
   &-t,
   &-m,
   &-b {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 2px;
     background: $color-link;
     transition: $transition-base;
+  }
+  &-m {
+    bottom: 0;
+    margin: auto;
+  }
+  &-b {
+    top: auto;
+    bottom: 0;
   }
   &:hover &-t,
   &:hover &-m,

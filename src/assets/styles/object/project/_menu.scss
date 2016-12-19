@@ -3,27 +3,16 @@
 
 .p-menu {
   &__inner {
-    position: relative;
     display: flex;
     align-items: center;
   }
   &__btn {
-    width: 27px;
+    width: 77px;
     height: 18px;
-    margin-right: 50px;
-    &:before {
-      content: "MENU";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 62px;
-      height: 18px;
-      line-height: 19px;
-      margin: auto;
-      text-align: right;
-      font-size: 10px;
-      font-family: $font-family-q-sans;
+    cursor: pointer;
+    &-hold {
+      width: 27px;
+      height: 100%;
     }
   }
   &__item {

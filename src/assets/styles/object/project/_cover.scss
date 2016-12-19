@@ -25,13 +25,14 @@
     width: 100%;
     max-width: $width-max;
     height: 40px;
-    line-height: 40px;
+    // line-height: 40px;
     margin: 0 auto;
   }
   &__ttl {
     order: 2;
     flex: 1 1 40%;
     text-align: center;
+    line-height: 40px;
   }
   &__menu {
     order: 1;
@@ -41,6 +42,7 @@
     order: 3;
     flex: 1 1 30%;
     text-align: right;
+    line-height: 40px;
   }
 }
 
