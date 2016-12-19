@@ -504,6 +504,12 @@ add_filter( 'admin_footer_text', 'custom_admin_footer' );
 
 
 /**
+ * Customizer additions.
+ */
+require 'inc/customizer.php';
+
+
+/**
  * maintenance
  */
 /*
@@ -514,6 +520,3 @@ function wpr_maintenance_mode() {
 }
 add_action( 'get_header', 'wpr_maintenance_mode' );
 */
-
-
-?>
