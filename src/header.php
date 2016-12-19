@@ -14,14 +14,11 @@
   <meta name="description" content="<?php my_description(); ?>">
   <meta name="keywords" content="カラーミーショップ, カラーミー, ネットショップ, オンラインショップ, EC, ギャラリー">
 
-  <!-- favicon -->
-<?php get_template_part( 'inc/favicon' ); ?>
+<?php get_template_part( 'template-parts/favicon' ); ?>
 
-  <!-- ogp -->
-<?php get_template_part( 'inc/ogp' ); ?>
+<?php get_template_part( 'template-parts/ogp' ); ?>
 
 <?php wp_head(); ?>
-
 </head>
 
 <body>

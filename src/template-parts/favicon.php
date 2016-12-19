@@ -4,6 +4,7 @@
  * favicon
  *
 **/ ?>
+  <!-- favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-16x16.png" sizes="16x16">
@@ -14,4 +15,3 @@
   <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/mstile-144x144.png">
   <meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-  
