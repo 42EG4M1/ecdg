@@ -44,30 +44,33 @@ get_header(); ?>
     </div>
 <?php endif; ?>
 
-<?php if ( is_active_sidebar('widget_adsense') ) : ?>
+<?php
+$options = get_option('ecdg_theme_options');
+if ( $options['adBoolean']) : ?>
 <?php if ( $count >= 0 ) : ?>
     <aside class="p-card__item--no1 p-ads">
       <div class="p-ads__inner">
-        <?php dynamic_sidebar( 'widget_adsense' ); ?>
+        <?php echo '<ins class="' . esc_html($options['adClass']) . '" style="' . esc_html($options['adStyle']) . '" data-ad-client="' . esc_html($options['adDataAdClient']) . '" data-ad-slot="' . esc_html($options['adDataAdSlot']) . '" data-ad-format="' . esc_html($options['adDataAdFormat']) . '"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'; ?>
 
       </div>
     </aside>
 <?php endif; if ( $count > 20 ) : ?>
     <aside class="p-card__item--no2 p-ads">
       <div class="p-ads__inner">
-        <?php dynamic_sidebar( 'widget_adsense' ); ?>
+        <?php echo '<ins class="' . esc_html($options['adClass']) . '" style="' . esc_html($options['adStyle']) . '" data-ad-client="' . esc_html($options['adDataAdClient']) . '" data-ad-slot="' . esc_html($options['adDataAdSlot']) . '" data-ad-format="' . esc_html($options['adDataAdFormat']) . '"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'; ?>
 
       </div>
     </aside>
 <?php endif; if ( $count > 40 ) : ?>
     <aside class="p-card__item--no3 p-ads">
       <div class="p-ads__inner">
-        <?php dynamic_sidebar( 'widget_adsense' ); ?>
+        <?php echo '<ins class="' . esc_html($options['adClass']) . '" style="' . esc_html($options['adStyle']) . '" data-ad-client="' . esc_html($options['adDataAdClient']) . '" data-ad-slot="' . esc_html($options['adDataAdSlot']) . '" data-ad-format="' . esc_html($options['adDataAdFormat']) . '"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'; ?>
 
       </div>
     </aside>
 <?php endif; ?>
 <?php endif; ?>
+
 
   </div>
 </section>
