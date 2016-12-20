@@ -115,7 +115,7 @@ add_filter( 'script_loader_tag', 'ecdg_replace_script_tag', 10, 2 );
 function my_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => 'アフィリエイト',
+		'name'          => '【利用停止】アフィリエイト',
 		'id'            => 'widget_footer_aff',
 		'description'   => 'アフィリエイト用（「HTMLコード」のみ対応）',
 		'before_widget' => '',
@@ -123,34 +123,34 @@ function my_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
   ));
-  // register_sidebar( array(
-  // 	'name'          => 'アドセンス',
-  // 	'id'            => 'widget_adsense',
-  // 	'description'   => 'アドセンス用（「HTMLコード」のみ対応）',
-  // 	'before_widget' => '',
-	// 	'after_widget'  => '',
-  // 	'before_title'  => '',
-  // 	'after_title'   => '',
-  // ));
-  // register_sidebar( array(
-  // 	'name'          => 'アナリティクス',
-  // 	'id'            => 'widget_analytics',
-  // 	'description'   => 'アナリティクス用（「HTMLコード」のみ対応）',
-  // 	'before_widget' => '',
-	// 	'after_widget'  => '',
-  // 	'before_title'  => '',
-  // 	'after_title'   => '',
-  // ));
-  // register_sidebar( array(
-  // 	'name'          => 'OGP',
-  // 	'id'            => 'widget_ogp_private',
-  // 	'description'   => 'OGP用（「HTMLコード」のみ対応）',
-  // 	'before_widget' => '',
-	// 	'after_widget'  => '',
-  // 	'before_title'  => '',
-  // 	'after_title'   => '',
-  // ));
-
+//   register_sidebar( array(
+//   	'name'          => 'アドセンス',
+//   	'id'            => 'widget_adsense',
+//   	'description'   => 'アドセンス用（「HTMLコード」のみ対応）',
+//   	'before_widget' => '',
+// 		'after_widget'  => '',
+//   	'before_title'  => '',
+//   	'after_title'   => '',
+//   ));
+//   register_sidebar( array(
+//   	'name'          => 'アナリティクス',
+//   	'id'            => 'widget_analytics',
+//   	'description'   => 'アナリティクス用（「HTMLコード」のみ対応）',
+//   	'before_widget' => '',
+// 		'after_widget'  => '',
+//   	'before_title'  => '',
+//   	'after_title'   => '',
+//   ));
+//   register_sidebar( array(
+//   	'name'          => 'OGP',
+//   	'id'            => 'widget_ogp_private',
+//   	'description'   => 'OGP用（「HTMLコード」のみ対応）',
+//   	'before_widget' => '',
+// 		'after_widget'  => '',
+//   	'before_title'  => '',
+//   	'after_title'   => '',
+//   ));
+//
 }
 add_action( 'widgets_init', 'my_widgets_init' );
 

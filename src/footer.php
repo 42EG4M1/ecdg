@@ -3,20 +3,18 @@
  *
  * footer
  *
- */
-?>
+ */ ?>
 </main>
 
-
-<?php if ( !is_page() ) : ?>
-<?php if ( is_active_sidebar('widget_footer_aff') ) : ?>
+<?php
+$options = get_option('ecdg_theme_options');
+if ( !is_page() && $options['affBoolean'] ) : ?>
 <aside class="p-aff" id="js-aff">
   <div class="p-aff__inner">
-<?php dynamic_sidebar('widget_footer_aff'); ?>
-
+    <?php echo $options['affTags']; ?>
   </div>
 </aside>
-<?php endif; endif; ?>
+<?php endif; ?>
 
 
 <div class="p-fixed">

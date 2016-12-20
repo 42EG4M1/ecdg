@@ -108,6 +108,35 @@ function ecdg_customize_register( $wp_customize ) {
 
 
 	/**
+	 * aff
+	 */
+	$wp_customize->add_section( 'aff_settings_section', array(
+		'title'    => 'Affiliate Settings',
+		'priority' => 200,
+	));
+	// aff bool
+	$wp_customize->add_setting( 'ecdg_theme_options[affBoolean]', array(
+  	'type'     => 'option',
+  ));
+	$wp_customize->add_control( 'ecdg_theme_options_aff_boolean', array(
+		'settings' => 'ecdg_theme_options[affBoolean]',
+    'label'    => 'Affiliateを設置する',
+    'section'  => 'aff_settings_section',
+    'type'     => 'checkbox',
+	));
+	// aff tags
+	$wp_customize->add_setting( 'ecdg_theme_options[affTags]', array(
+  	'type'     => 'option',
+  ));
+  $wp_customize->add_control( 'ecdg_theme_options_aff_tags', array(
+		'settings' => 'ecdg_theme_options[affTags]',
+    'label'    => 'tags',
+    'section'  => 'aff_settings_section',
+    'type'     => 'textarea',
+	));
+
+
+	/**
 	 * ogp
 	 */
 	$wp_customize->add_section( 'ogp_settings_section', array(
