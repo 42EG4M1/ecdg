@@ -28,6 +28,13 @@ This theme is set up for use with VCCW.
     $ npm run gulp
 
 
+## SVG Sprite generate
+
+    $ npm run svg
+
+If you want to add a new image to the SVG sprite, put it in 'src/assets/svgs' directory and type above command.  
+
+
 ## Favicon generate
 
     $ npm run favicon
@@ -37,19 +44,36 @@ This theme is set up for use with VCCW.
 
 The dist directory is destored at the same level as the working directory.  
 
-    ├─ dev-ecdg (working directory)
-    │   ├─ gulp
-    │   │   ├─ tasks
-    │   │   ...
-    │   ├─ src
-    │   │   ├─ assets
-    │   │   ...
-    │   ├─ .git
-    │   ├─ .gitignore
-    │   ├─ package.json
-    │   ├─ gulpfile.js
-    │   ├─ README.md
-    │   ...
-    ├─ ecdg (dest directory)
-    ...
-
+    themes/
+     ├─ dev-ecdg/ (working directory) - Do not deploy!!
+     │   ├─ gulp/
+     │   │   ├─ tasks/
+     │   │   └─ config.js
+     │   ├─ src/
+     │   │   ├─ assets/
+     │   │   │   ├─ favicon/
+     │   │   │   ├─ images/
+     │   │   │   ├─ scripts/
+     │   │   │   ├─ styles/
+     │   │   │   └─ svgs/
+     │   │   ├─ inc/
+     │   │   ├─ template-parts/
+     │   │   ├─ index.php
+     │   │   ├─ style.css
+     │   │   ...
+     │   ├─ node_modules/
+     │   ├─ .git/
+     │   ├─ .gitignore
+     │   ├─ package.json
+     │   ├─ gulpfile.js
+     │   ├─ README.md
+     │   ├─ faviconData.json
+     │   └─ _sample.html
+     ├─ ecdg/ (dest directory) - Deploy
+     │   ├─ assets/
+     │   ├─ inc/
+     │   ├─ template-parts
+     │   ├─ index.php
+     │   ├─ style.css
+     │   ...
+     ...
