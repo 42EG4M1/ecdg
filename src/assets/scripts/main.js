@@ -177,6 +177,15 @@
   $(function () {
     var _window = $(window);
 
+    // svg icon
+    $.ajax({
+      type: 'get',
+      url: ecdg_temp_url + '/assets/images/svg/sprite.min.svg'
+    }).done(function(data) {
+      var svg = $(data).find('svg');
+      $('body').prepend(svg);
+    });
+
     _window.on({
       load: function () {
         scrollInit();

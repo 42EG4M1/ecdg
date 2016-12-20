@@ -59,13 +59,17 @@ function ecdg_enqueue_scripts() {
 
   $theme   = wp_get_theme();
   $version = $theme->get( 'Version' );
+  $ecdg_temp_url  = get_template_directory_uri();
 
   // style
   wp_enqueue_style( get_stylesheet(), get_template_directory_uri() . '/assets/styles/all.min.css', array(), $version );
 
   // script
   wp_enqueue_script( 'google-adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', array(), null, true );
-  wp_enqueue_script( 'ecdg-script', get_template_directory_uri() . '/assets/scripts/app.min.js', array(), $version, true );
+  wp_enqueue_script( 'ecdg-script', $ecdg_temp_url . '/assets/scripts/app.min.js', array(), $version, true );
+
+  // create js var
+  wp_localize_script( 'ecdg-script', 'ecdg_temp_url', $ecdg_temp_url );
 
   // outside the contact page enqueues
   if ( is_page( 'contact' ) === false ) {
