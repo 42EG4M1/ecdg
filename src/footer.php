@@ -11,7 +11,8 @@ $options = get_option('ecdg_theme_options');
 if ( !is_page() && $options['affBoolean'] ) : ?>
 <aside class="p-aff" id="js-aff">
   <div class="p-aff__inner">
-    <?php echo $options['affTags']; ?>
+<?php echo $options['affTags']; ?>
+
   </div>
 </aside>
 <?php endif; ?>

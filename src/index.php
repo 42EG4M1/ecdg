@@ -53,7 +53,7 @@ get_header(); ?>
 
 <?php
 $options = get_option('ecdg_theme_options');
-if ( $options['adBoolean']) : ?>
+if ( $options['adBoolean'] ) : ?>
 <?php if ( $count >= 0 ) : ?>
     <aside class="p-card__item--no1 p-ads">
       <div class="p-ads__inner">

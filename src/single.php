@@ -41,7 +41,7 @@ get_header(); ?>
 
 <?php
 $options = get_option('ecdg_theme_options');
-if ( $options['adBoolean']) : ?>
+if ( $options['adBoolean'] ) : ?>
 <aside class="main__inner p-ads--article">
   <div class="p-ads--article__inner">
     <?php echo '<ins class="' . esc_html($options['adClass']) . '" style="' . esc_html($options['adStyle']) . '" data-ad-client="' . esc_html($options['adDataAdClient']) . '" data-ad-slot="' . esc_html($options['adDataAdSlot']) . '" data-ad-format="' . esc_html($options['adDataAdFormat']) . '"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'; ?>
