@@ -335,20 +335,6 @@ add_filter( 'pre_get_posts', 'my_search_filter' );
 
 
 /**
- * plugin wp ulike
- */
-// function wp_ulike_new_format_number( $value, $num, $plus ) {
-//   if ( $num >= 1000 && get_option( 'wp_ulike_format_number' ) == '1' ) {
-//     $value = round($num/1000, 2) . 'K';
-//   } else {
-//     $value = $num;
-//   }
-//   return $value;
-// }
-// add_filter( 'wp_ulike_format_number', 'wp_ulike_new_format_number', 10, 3 );
-
-
-/**
  * submenu  category -> service
  */
 function change_post_label() {

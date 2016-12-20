@@ -30,7 +30,6 @@ get_header(); ?>
             <div class="p-card__share">
               <p class="p-card__share-item"><a href="https://twitter.com/intent/tweet?original_referer=<?php $pageTitle = urlencode(get_the_title()); $homeUrl = esc_url(home_url('/')); $pageUrl = get_permalink(); $search = array(':','/'); $replace = array('%3A','%2F'); $home = str_replace($search, $replace, $homeUrl); echo $home . '&text=' . $pageTitle . ' | カラーミーショップで制作されたネットショップ事例集 &url=' . $pageUrl; ?>" onclick="window.open(encodeURI(decodeURI(this.href)), 'twetterWindow<?php echo $count; ?>', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a></p>
               <p class="p-card__share-item"><a href="https://www.facebook.com/sharer.php?src=bm&amp;u=<?php $pageTitle = urlencode(get_the_title()); $pageUrl = get_permalink(); echo $pageUrl . '&amp;t=' . $pageTitle . ' | カラーミーショップで制作されたネットショップ事例集'; ?>" onclick="window.open(this.href, 'facebookWindow<?php echo $count; ?>', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon fb"><use xlink:href="#facebookpageIcon"/></svg></a></p>
-              <?php if(function_exists('wp_ulike')) wp_ulike('get'); ?>
             </div>
           </div>
         </div>
