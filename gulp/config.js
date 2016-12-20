@@ -32,10 +32,16 @@ module.exports = {
   },
 
   favicon: {
-    src        : `${dir.src}favicon/master_picture.png`,
-    dest       : `${dir.dest}images/favicons/`,
-    iconPath   : './assets/images/favicons/',
-    srcFile    : './src/inc/'
+    src      : `${dir.src}favicon/master_picture.png`,
+    dest     : `${dir.dest}images/favicons/`,
+    iconPath : './assets/images/favicons/',
+    srcFile  : './src/inc/'
+  },
+
+  svg: {
+    src  : `${dir.src}svgs/*.svg`,
+    dest : `${dir.dest}images/svg/`,
+    html : `${dir.src}svgs/_template.html`
   },
 
   copy: {
