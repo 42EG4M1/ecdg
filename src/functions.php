@@ -114,18 +114,18 @@ add_filter( 'script_loader_tag', 'ecdg_replace_script_tag', 10, 2 );
  */
 function my_widgets_init() {
 
-	register_sidebar( array(
-		'name'          => '【利用停止】アフィリエイト',
-		'id'            => 'widget_footer_aff',
-		'description'   => 'アフィリエイト用（「HTMLコード」のみ対応）',
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '',
-		'after_title'   => '',
+  register_sidebar( array(
+    'name'          => '【利用停止】アフィリエイト',
+    'id'            => 'widget_footer_aff',
+    'description'   => 'アフィリエイト用（「HTMLコード」のみ対応）',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '',
+    'after_title'   => '',
   ));
-//   register_sidebar( array(
-//   	'name'          => 'アドセンス',
-//   	'id'            => 'widget_adsense',
+//  register_sidebar( array(
+//    'name'          => 'アドセンス',
+//    'id'            => 'widget_adsense',
 //   	'description'   => 'アドセンス用（「HTMLコード」のみ対応）',
 //   	'before_widget' => '',
 // 		'after_widget'  => '',
@@ -161,8 +161,8 @@ add_action( 'widgets_init', 'my_widgets_init' );
 class MyWidgetItemAdd extends WP_Widget {
 
   function __construct() {
-		parent::__construct(false, $name = 'HTMLコード');
-	}
+    parent::__construct(false, $name = 'HTMLコード');
+  }
 
   public function widget($args, $instance) {
     extract( $args );
