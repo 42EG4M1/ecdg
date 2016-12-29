@@ -77,3 +77,15 @@ The dist directory is destored at the same level as the working directory.
      │   ├─ style.css
      │   ...
      ...
+
+## Synchronize with production
+Local Development theme(dev-ecdg) is not deleted.
+
+    $ cd [local directory]
+    $ vagrant up
+    $ vagrant ssh
+    $ cd /vagrant/
+    $ wordmove pull --all
+    $ exit
+
+When data synchronization is completed, login to the local WordPress and set the original customizer item to False.
