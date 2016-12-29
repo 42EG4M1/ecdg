@@ -92,7 +92,9 @@ if ( $options['gaBoolean'] ) : ?>
 
       <div class="p-cover__sns c-sns">
         <div class="c-sns__inner">
-          <p class="c-sns__txt"><A href="https://px.a8.net/svt/ejp?a8mat=2BJERR+6CMHUI+348+HWXLE" target="_blank">カラーミーショップ</A><img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=2BJERR+6CMHUI+348+HWXLE" alt=""><svg class="c-icon link"><use xlink:href="#linkIcon"/></svg></p>
+<?php $options = get_option('ecdg_theme_options'); if ( $options['affBoolean'] ) : ?>
+          <p class="c-sns__txt"><?php echo wp_kses_post($options['affHeader']); ?><svg class="c-icon link"><use xlink:href="#linkIcon"/></svg></p>
+<?php endif; ?>
           <input type="checkbox" class="c-form--checked" id="checked">
           <label class="c-sns__svg--hidden" for="checked"><svg class="c-icon share"><use xlink:href="#shareIcon"/></svg></label>
           <div class="c-sns__inner--visible">

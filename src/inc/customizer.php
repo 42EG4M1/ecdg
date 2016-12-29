@@ -124,6 +124,16 @@ function ecdg_customize_register( $wp_customize ) {
 		'section'  => 'aff_settings_section',
 		'type'     => 'checkbox',
 	));
+	// aff header
+	$wp_customize->add_setting( 'ecdg_theme_options[affHeader]', array(
+		'type'     => 'option',
+	));
+	$wp_customize->add_control( 'ecdg_theme_options_aff_header', array(
+		'settings' => 'ecdg_theme_options[affHeader]',
+		'label'    => 'header aff tags',
+		'section'  => 'aff_settings_section',
+		'type'     => 'textarea',
+	));
 	// aff footer
 	$wp_customize->add_setting( 'ecdg_theme_options[affFooter]', array(
 		'type'     => 'option',
