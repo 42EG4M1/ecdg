@@ -78,14 +78,25 @@ The dist directory is destored at the same level as the working directory.
      │   ...
      ...
 
+
 ## Synchronize with production
-Local Development theme(dev-ecdg) is not deleted.
+Synchronization with production is done from VagrantSSH in a WordMove.
 
     $ cd [local directory]
     $ vagrant up
     $ vagrant ssh
     $ cd /vagrant/
     $ wordmove pull --all
-    $ exit
+    // Local Development theme(dev-ecdg) is not deleted.
 
 When data synchronization is completed, login to the local WordPress and set the original customizer item to False.
+
+
+## Deploy to production
+Deployment is done from VagrantSSH in a WordMove.
+
+    $ vagrant ssh
+    $ cd /vagrant/
+    $ wordmove push -t
+
+Deploy only Upload themes directory.
