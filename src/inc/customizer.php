@@ -144,6 +144,16 @@ function ecdg_customize_register( $wp_customize ) {
 		'section'  => 'aff_settings_section',
 		'type'     => 'textarea',
 	));
+	// aff about
+	$wp_customize->add_setting( 'ecdg_theme_options[affAbout]', array(
+		'type'     => 'option',
+	));
+	$wp_customize->add_control( 'ecdg_theme_options_aff_about', array(
+		'settings' => 'ecdg_theme_options[affAbout]',
+		'label'    => 'about aff tags',
+		'section'  => 'aff_settings_section',
+		'type'     => 'textarea',
+	));
 
 	/**
 	 * ogp
