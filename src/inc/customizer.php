@@ -124,17 +124,16 @@ function ecdg_customize_register( $wp_customize ) {
 		'section'  => 'aff_settings_section',
 		'type'     => 'checkbox',
 	));
-	// aff tags
-	$wp_customize->add_setting( 'ecdg_theme_options[affTags]', array(
+	// aff footer
+	$wp_customize->add_setting( 'ecdg_theme_options[affFooter]', array(
 		'type'     => 'option',
 	));
-	$wp_customize->add_control( 'ecdg_theme_options_aff_tags', array(
-		'settings' => 'ecdg_theme_options[affTags]',
-		'label'    => 'tags',
+	$wp_customize->add_control( 'ecdg_theme_options_aff_footer', array(
+		'settings' => 'ecdg_theme_options[affFooter]',
+		'label'    => 'footer aff tags',
 		'section'  => 'aff_settings_section',
 		'type'     => 'textarea',
 	));
-
 
 	/**
 	 * ogp
