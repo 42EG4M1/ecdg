@@ -31,15 +31,6 @@ get_header(); ?>
 <?php endif; ?>
           </a>
         </figure>
-        <div class="p-card__meta">
-          <div class="p-card__meta-inner">
-            <p class="p-card__date"><?php $days = 7; $today = date_i18n('U'); $entry = get_the_time('U'); $elapsed = date('U',($today - $entry)) / 86400; if( $days > $elapsed ){ echo '<span>NEW</span>'; } ?><?php echo get_post_time('Y.m.d'); ?></p>
-            <div class="p-card__share">
-              <p class="p-card__share-item"><a href="https://twitter.com/intent/tweet?original_referer=<?php $pageTitle = urlencode(get_the_title()); $homeUrl = esc_url(home_url('/')); $pageUrl = get_permalink(); $search = array(':','/'); $replace = array('%3A','%2F'); $home = str_replace($search, $replace, $homeUrl); echo $home . '&text=' . $pageTitle . ' | カラーミーショップで制作されたネットショップ事例集 &url=' . $pageUrl; ?>" onclick="window.open(encodeURI(decodeURI(this.href)), 'twetterWindow<?php echo $count; ?>', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon tw"><use xlink:href="#twitterIcon"/></svg></a></p>
-              <p class="p-card__share-item"><a href="https://www.facebook.com/sharer.php?src=bm&amp;u=<?php $pageTitle = urlencode(get_the_title()); $pageUrl = get_permalink(); echo $pageUrl . '&amp;t=' . $pageTitle . ' | カラーミーショップで制作されたネットショップ事例集'; ?>" onclick="window.open(this.href, 'facebookWindow<?php echo $count; ?>', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" target="_blank"><svg class="c-icon fb"><use xlink:href="#facebookpageIcon"/></svg></a></p>
-            </div>
-          </div>
-        </div>
         <p class="p-card__taxonomy"><span><?php the_category( '</span><span>' ); ?></span><?php the_terms( $post->ID, 'color', '<span>', '</span><span>', '</span>' ); ?><?php the_tags( '<span>', '</span><span>', '</span>' ); ?></p>
       </article>
     </div>
