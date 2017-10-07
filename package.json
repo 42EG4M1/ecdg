@@ -4,8 +4,8 @@
   "description": "ecdg wordpress theme.",
   "main": "gulpfile.js",
   "scripts": {
-    "gulp"   : "gulp",
-    "svg"    : "gulp svg",
+    "gulp": "gulp",
+    "svg": "gulp svg",
     "favicon": "gulp favicon"
   },
   "homepage": "http://ecdesigngallery.com/",
