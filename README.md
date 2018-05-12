@@ -100,3 +100,14 @@ Deployment is done from VagrantSSH in a WordMove.
     $ wordmove push -t
 
 Deploy only Upload themes directory.
+
+
+## Commit Message
+
+    Fix    - Bug fixes.
+    Add    - Add a new files and functions.
+    Modify - Fixing features that are not bugs.
+    Clean  - Organize by refactoring etc.
+    Remove - Delete files.
+    Rename - Rename files.
+    Update - Update files.
