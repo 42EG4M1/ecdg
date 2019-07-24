@@ -20,7 +20,7 @@ get_header(); ?>
       </div>
     </div>
 
-    <div class="p-page__inner p-profile">
+    <!-- div class="p-page__inner p-profile">
       <h4 class="p-page__ttl">Created By</h4>
       <div class="p-profile__inner">
         <p class="p-profile__name">TATSUYA AZEGAMI</p>
@@ -31,7 +31,7 @@ get_header(); ?>
           <li>GitHub : <a href="https://github.com/42EG4M1">42EG4M1</a></li>
         </ul>
       </div>
-    </div>
+    </div-->
 
   </div>
 </section>
