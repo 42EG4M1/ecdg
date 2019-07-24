@@ -35,7 +35,7 @@ module.exports = {
     src      : `${dir.src}favicon/master_picture.png`,
     dest     : `${dir.dest}images/favicons/`,
     iconPath : './assets/images/favicons/',
-    srcFile  : './src/inc/'
+    srcFile  : './src/template-parts/'
   },
 
   svg: {

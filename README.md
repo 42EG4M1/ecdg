@@ -35,7 +35,7 @@ This theme is set up for use with VCCW.
 If you want to add a new image to the SVG sprite, put it in 'src/assets/svgs' directory and type above command.  
 
 
-## Favicon generate
+## Favicon generate　(only the first)
 
     $ npm run favicon
 
@@ -69,6 +69,7 @@ The dist directory is destored at the same level as the working directory.
      │   ├─ README.md
      │   ├─ faviconData.json
      │   └─ _sample.html
+     │
      ├─ ecdg/ (dest directory) - Deploy
      │   ├─ assets/
      │   ├─ inc/
@@ -111,3 +112,7 @@ Deploy only Upload themes directory.
     Remove - Delete files.
     Rename - Rename files.
     Update - Update files.
+
+
+## Update
+19.07.24 Support gulp4.

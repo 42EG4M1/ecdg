@@ -2,9 +2,14 @@ const gulp   = require('gulp');
 const config = require('../config.js').svg;
 const $      = require('gulp-load-plugins')();
 
-gulp.task('svg', () => {
+
+gulp.task('svg', (cb) => {
   gulp.src(config.src)
-  .pipe($.svgmin())
+  .pipe($.svgmin({
+    plugins: [{
+      removeViewBox: false
+    }]
+  }))
   .pipe($.svgstore({ inlineSvg: true }))
   .pipe($.cheerio({
     run: ($, file) => {
@@ -38,4 +43,5 @@ gulp.task('svg', () => {
   }))
   .pipe($.rename('sprite.min.svg'))
   .pipe(gulp.dest(config.dest));
+  cb();
 });

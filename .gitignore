@@ -3,14 +3,6 @@ node_modules
 *.log
 dist
 _dump
-
 .DS_Store
-
-src/inc/ogp
-src/inc/affiliate
-src/inc/ga
-src/inc/adsense
-
 _sample.html
-
 faviconData.json
